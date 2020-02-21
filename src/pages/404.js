@@ -9,7 +9,7 @@ export default function NotFound() {
     <Layout>
       <Head title='404' />
       <h1>Page not found!</h1>
-      <p><Link to='/'> Head home</Link></p>
+      <p><Link to='/'> back to home</Link></p>
     </Layout>
   )
 }

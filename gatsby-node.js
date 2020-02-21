@@ -5,6 +5,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
   //get path to template where we make the dynamic template for posts
   const blogTemplate = path.resolve('./src/templates/blog.js')
   const itemTemplate = path.resolve('./src/templates/items.js')
+  const dealsTemplate = path.resolve('./src/templates/deals.js')
   //get slug from contentful CMS
   const res = await graphql(`
     query {
@@ -16,6 +17,13 @@ module.exports.createPages = async ({ graphql, actions }) => {
         }
       }
       allContentfulItem{
+        edges{
+          node{
+            slug
+          }
+        }
+      }
+      allContentfulDeals{
         edges{
           node{
             slug
@@ -39,6 +47,15 @@ module.exports.createPages = async ({ graphql, actions }) => {
     createPage({
       component: itemTemplate,
       path: `/items/${edge.node.slug}`,
+      context: {
+        slug: edge.node.slug
+      }
+    })
+  })
+  res.data.allContentfulDeals.edges.forEach(edge => {
+    createPage({
+      component: dealsTemplate,
+      path: `/deals/${edge.node.slug}`,
       context: {
         slug: edge.node.slug
       }

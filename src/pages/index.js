@@ -10,12 +10,13 @@ const IndexPage = () =>{
       allContentfulDeals {
         edges {
           node {
+            frontPage
             name
             slug
             shortDescription
             price
             pricePer
-            image {
+            dealsImage {
               file {
                 fileName
                 url
@@ -39,25 +40,27 @@ const IndexPage = () =>{
         <div className={indexStyles.deals}>
         { //maps over the query using allMarkdownRemark to find .md files
         data.allContentfulDeals.edges.map((edge) => {
-          return (
-            <div key={edge.node.slug} className={indexStyles.deal}>
-              <Link to={`/deals/${edge.node.slug}`}>
-                <h2>
-                  {/* make dynamic link to blog post */}
-                    {edge.node.name}
-                </h2>
-                <p>{edge.node.shortDescription}</p>
-                <div>
+          if (edge.node.frontPage){
+            return (
+              <div key={edge.node.slug} className={indexStyles.deal}>
+                <Link to={`/deals/${edge.node.slug}`}>
+                  <h2>
+                    {/* make dynamic link to blog post */}
+                      {edge.node.name}
+                  </h2>
+                  <p>{edge.node.shortDescription}</p>
                   <div>
-                    <p>${edge.node.price} - {edge.node.pricePer}</p>
+                    <div>
+                      <p>${edge.node.price} - {edge.node.pricePer}</p>
+                    </div>
+                    <div>
+                      <img src={edge.node.dealsImage.file.url} alt=""/>
+                    </div>
                   </div>
-                  <div>
-                    <img src={edge.node.image.file.url} alt=""/>
-                  </div>
-                </div>
-              </Link>
-            </div>
-          )
+                </Link>
+              </div>
+            )
+          }
         })
         }
       </div>
