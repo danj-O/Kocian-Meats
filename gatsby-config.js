@@ -10,7 +10,7 @@ module.exports = {
   siteMetadata : {
     //this will be used for header and footer text
     title: 'Kocian Meats',
-    author: 'Kocian Meats',
+    author: 'Daniel Scott',
   },
   plugins : [
     //this places our react-helmet <head> files into the statically generated pages

@@ -3,6 +3,8 @@ import Layout from '../components/Layout'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import blogStyles from './blog.module.scss'
 import Head from '../components/Head'
+import '../styles/globals.scss'
+
 
 
 
@@ -24,8 +26,8 @@ const BlogPage = () => {
   return (
     <Layout>
       <Head title='Blog'/>
-      <h1> Blog</h1>
-      <p>Check here for cool stuff weekly!</p>
+      <h1 className="pageHeader"> Blog</h1>
+      <p className="pageSubHeader">Check here for cool stuff weekly!</p>
       <ol className={blogStyles.posts}>
         { //maps over the query using allMarkdownRemark to find .md files
         data.allContentfulBlog.edges.map((edge) => {

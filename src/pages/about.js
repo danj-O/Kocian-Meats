@@ -7,8 +7,8 @@ const AboutPage = () => {
   return (
     <Layout>
       <Head title='About' />
-      <h1> About </h1>
-      <p>A little about me</p>
+      <h1 className="pageHeader"> The story of Kocian Meats </h1>
+      <p className="pageSubHeader">Since 1922!</p>
     </Layout>
   )
 }

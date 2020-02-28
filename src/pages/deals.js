@@ -3,6 +3,8 @@ import Layout from '../components/Layout'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import dealsStyles from './deals.module.scss'
 import Head from '../components/Head'
+import '../styles/globals.scss'
+
 
 const Deals = () =>{
   const data = useStaticQuery(graphql`
@@ -33,8 +35,8 @@ const Deals = () =>{
     <div>
       <Layout>
         <Head title="home"/>
-        <h1> Our specials! </h1>
-        <h2>Updated daily with our juiciest deals</h2>
+        <h1 className="pageHeader"> Our specials! </h1>
+        <p className="pageSubHeader">Updated daily with our juiciest deals</p>
 
         <div className={dealsStyles.deals}>
         { //maps over the query using allMarkdownRemark to find .md files

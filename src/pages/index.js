@@ -3,6 +3,8 @@ import Layout from '../components/Layout'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import indexStyles from '../styles/index2.module.scss'
 import Head from '../components/Head'
+import '../styles/globals.scss'
+
 
 const IndexPage = () =>{
   const data = useStaticQuery(graphql`
@@ -34,11 +36,11 @@ const IndexPage = () =>{
     <div>
       <Layout>
         <Head title="home"/>
-        <h1> Welcome to the Kocian Meats online market!</h1>
-        <h2>To get started, check out our fresh deals!</h2>
+        <h1 className="pageHeader"> Welcome to the Kocian Meats online market!</h1>
+        <p className="pageSubHeader">To get started, check out our fresh deals!</p>
 
         <div className={indexStyles.deals}>
-        { //maps over the query using allMarkdownRemark to find .md files
+          { //maps over the query using allContefulDeals */
         data.allContentfulDeals.edges.map((edge) => {
           if (edge.node.frontPage){
             return (
