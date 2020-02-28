@@ -26,6 +26,9 @@ export default function SideDrawer(props) {
 
   return (
     <nav className={drawerClasses}>
+      <div onClick={props.click}>
+        <p>Close</p>
+      </div>
       <div className='side-drawer-logo'>
         {
           data.allContentfulAsset.edges.map((edge) => {

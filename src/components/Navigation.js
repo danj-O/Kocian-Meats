@@ -28,7 +28,7 @@ export default class Navigation extends Component {
     return (
       <div>
         <Header drawerClickHandler={this.drawerToggleClickHandler} />
-        <SideDrawer show={this.state.sideDrawerOpen} />
+        <SideDrawer show={this.state.sideDrawerOpen} click={this.backDropClickHandler}/>
         {backDrop}
       </div>
     )
