@@ -21,7 +21,6 @@ export default class Navigation extends Component {
   }
 
   render() {
-    console.log('HEEERRRRREEEEEEEE', this.state.sideDrawerOpen)
     let backDrop;
     if (this.state.sideDrawerOpen){
         backDrop = <BackDrop click={this.backDropClickHandler} />;

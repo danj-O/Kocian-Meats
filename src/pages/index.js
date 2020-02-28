@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from '../components/Layout'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import indexStyles from '../styles/index2.module.scss'
+import itemStyles from './items.module.scss'
 import Head from '../components/Head'
 import '../styles/globals.scss'
 
@@ -33,41 +33,52 @@ const IndexPage = () =>{
 
 
   return(
-    <div>
-      <Layout>
-        <Head title="home"/>
-        <h1 className="pageHeader"> Welcome to the Kocian Meats online market!</h1>
-        <p className="pageSubHeader">To get started, check out our fresh deals!</p>
+    <Layout>
+      <Head title="home"/>
+      <h1 className="pageHeader"> Welcome to the Kocian Meats online market!</h1>
+      <p className="pageSubHeader">To get started, check out our fresh deals!</p>
 
-        <div className={indexStyles.deals}>
-          { //maps over the query using allContefulDeals */
-        data.allContentfulDeals.edges.map((edge) => {
-          if (edge.node.frontPage){
-            return (
-              <div key={edge.node.slug} className={indexStyles.deal}>
-                <Link to={`/deals/${edge.node.slug}`}>
-                  <h2>
-                    {/* make dynamic link to blog post */}
-                      {edge.node.name}
-                  </h2>
-                  <p>{edge.node.shortDescription}</p>
-                  <div>
-                    <div>
-                      <p>${edge.node.price} - {edge.node.pricePer}</p>
-                    </div>
+      <div className={itemStyles.items}>
+        { 
+          data.allContentfulDeals.edges.map((edge) => {
+            if (edge.node.frontPage){
+              return (
+                <div key={edge.node.slug} className={itemStyles.item}>
+                  <Link to={`/deals/${edge.node.slug}`}>
                     <div>
                       <img src={edge.node.dealsImage.file.url} alt=""/>
                     </div>
-                  </div>
-                </Link>
-              </div>
-            )
-          }
-        })
+                    <div className={itemStyles.itemText}>
+                      <h2>{edge.node.name}</h2>
+                      <p>{edge.node.shortDescription}</p>
+                      <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                    </div>
+                  </Link>
+                </div>
+              )
+            }
+            return null
+          })
         }
-        </div>
-      </Layout>
-    </div>
+      </div>
+    </Layout>
   )
 }
 export default IndexPage
+            
+            // <div key={edge.node.slug} className={itemStyles.item}>
+            //   <Link to={`/deals/${edge.node.slug}`}>
+            //     <h2>
+            //         {edge.node.name}
+            //     </h2>
+            //     <p>{edge.node.shortDescription}</p>
+            //     <div>
+            //       <div>
+            //         <p>${edge.node.price} - {edge.node.pricePer}</p>
+            //       </div>
+            //       <div>
+            //         <img src={edge.node.dealsImage.file.url} alt=""/>
+            //       </div>
+            //     </div>
+            //   </Link>
+            // </div>

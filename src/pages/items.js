@@ -13,6 +13,7 @@ const ItemsPage = () => {
       allContentfulItem {
         edges {
           node {
+            meatType
             title
             slug
             shortDescription
@@ -33,30 +34,158 @@ const ItemsPage = () => {
       }
     }
   `)
-
   return (
     <Layout>
       <Head title='Product List'/>
       <h1 className='pageHeader'> Products</h1>
       <p className='pageSubHeader'>In a hurry? Our best selection is now available for preorder/prepay right here!</p>
       <div className={itemStyles.items}>
+        <h1 id='beef'>
+          Beef
+        </h1>
         { //maps over the query using allMarkdownRemark to find .md files
-        data.allContentfulItem.edges.map((edge) => {
-          return (
-            <div key={edge.node.slug} className={itemStyles.item}>
-              <Link to={`/items/${edge.node.slug}`}>
-                <div>
-                  <img src={edge.node.itemImage.file.url} alt=""/>
+          data.allContentfulItem.edges.map((edge) => {
+            if (edge.node.meatType[0] === 'beef'){
+              return (
+                <div key={edge.node.slug} className={itemStyles.item}>
+                  <Link to={`/items/${edge.node.slug}`}>
+                    <div>
+                      <img src={edge.node.itemImage.file.url} alt=""/>
+                    </div>
+                    <div className={itemStyles.itemText}>
+                      <h2>{edge.node.title}</h2>
+                      <p>{edge.node.shortDescription}</p>
+                      <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                      <p>
+                        {edge.node.meatType}
+                      </p>
+                    </div>
+                  </Link>
                 </div>
-                <div className={itemStyles.itemText}>
-                  <h2>{edge.node.title}</h2>
-                  <p>{edge.node.shortDescription}</p>
-                  <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+              )
+            }
+            return null
+          })
+        }
+      </div>
+
+      <div className={itemStyles.items}>
+        <h1 id='pork'>
+          Pork
+        </h1>
+        {
+          data.allContentfulItem.edges.map((edge) => {
+            if (edge.node.meatType[0] === 'pork'){
+              return (
+                <div key={edge.node.slug} className={itemStyles.item}>
+                  <Link to={`/items/${edge.node.slug}`}>
+                    <div>
+                      <img src={edge.node.itemImage.file.url} alt=""/>
+                    </div>
+                    <div className={itemStyles.itemText}>
+                      <h2>{edge.node.title}</h2>
+                      <p>{edge.node.shortDescription}</p>
+                      <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                      <p>
+                        {edge.node.meatType}
+                      </p>
+                    </div>
+                  </Link>
                 </div>
-              </Link>
-            </div>
-          )
-        })
+              )
+            }
+            return null
+          })
+        }
+      </div>
+
+      <div className={itemStyles.items}>
+        <h1 id='chicken'>
+          Chicken
+        </h1>
+        { 
+          data.allContentfulItem.edges.map((edge) => {
+            if (edge.node.meatType[0] === 'chicken'){
+              return (
+                <div key={edge.node.slug} className={itemStyles.item}>
+                  <Link to={`/items/${edge.node.slug}`}>
+                    <div>
+                      <img src={edge.node.itemImage.file.url} alt=""/>
+                    </div>
+                    <div className={itemStyles.itemText}>
+                      <h2>{edge.node.title}</h2>
+                      <p>{edge.node.shortDescription}</p>
+                      <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                      <p>
+                        {edge.node.meatType}
+                      </p>
+                    </div>
+                  </Link>
+                </div>
+              )
+            }
+            return null
+          })
+        }
+      </div>
+
+      <div className={itemStyles.items}>
+        <h1 id='seafood'>
+          Seafood
+        </h1>
+        { 
+          data.allContentfulItem.edges.map((edge) => {
+            if (edge.node.meatType[0] === 'seafood'){
+              return (
+                <div key={edge.node.slug} className={itemStyles.item}>
+                  <Link to={`/items/${edge.node.slug}`}>
+                    <div>
+                      <img src={edge.node.itemImage.file.url} alt=""/>
+                    </div>
+                    <div className={itemStyles.itemText}>
+                      <h2>{edge.node.title}</h2>
+                      <p>{edge.node.shortDescription}</p>
+                      <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                      <p>
+                        {edge.node.meatType}
+                      </p>
+                    </div>
+                  </Link>
+                </div>
+              )
+            }
+            return null
+          })
+        }
+      </div>
+
+      <div className={itemStyles.items}>
+        <h1 id='other'>
+          Other
+        </h1>
+        { 
+          data.allContentfulItem.edges.map((edge) => {
+            if (edge.node.meatType[0] === 'other'){
+              return (
+                <div key={edge.node.slug} className={itemStyles.item}>
+                  <Link to={`/items/${edge.node.slug}`}>
+                    <div>
+                      <img src={edge.node.itemImage.file.url} alt=""/>
+                    </div>
+                    <div className={itemStyles.itemText}>
+                      <h2>{edge.node.title}</h2>
+                      <p>{edge.node.shortDescription}</p>
+                      <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                      <p>
+                        {edge.node.meatType}
+                      </p>
+                    </div>
+                  </Link>
+                </div>
+              )
+            }
+            return null
+          })
         }
       </div>
     </Layout>
