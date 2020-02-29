@@ -1,5 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
+
 html {
   scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Spartan', ;
+}
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 .container {
   // margin: 0 auto;
@@ -13,6 +24,7 @@ html {
 .content {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
   flex-grow: 1;
-  margin-top: 110px;
+  margin-top: 50px;
 }

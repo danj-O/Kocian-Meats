@@ -3,6 +3,7 @@ import Layout from '../components/Layout'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import itemStyles from './items.module.scss'
 import Head from '../components/Head'
+import Hero from '../components/Hero'
 import '../styles/globals.scss'
 
 
@@ -35,6 +36,7 @@ const IndexPage = () =>{
   return(
     <Layout>
       <Head title="home"/>
+      <Hero header="Welcome To Kocian Meats" subHeader='Since 1922' heroImg='hero'/>
       <h1 className="pageHeader"> Welcome to the Kocian Meats online market!</h1>
       <p className="pageSubHeader">To get started, check out our fresh deals!</p>
 

@@ -26,8 +26,8 @@ export default function SideDrawer(props) {
 
   return (
     <nav className={drawerClasses}>
-      <div onClick={props.click}>
-        <p>Close</p>
+      <div className='close-btn' onClick={props.click}>
+        <p>X</p>
       </div>
       <div className='side-drawer-logo'>
         {
@@ -39,36 +39,82 @@ export default function SideDrawer(props) {
           })
         }
       </div>
-      <ul className=''>
+      <ul className='bigList'>
         <li>        
-          <Link className='cat' activeClassName='' to='/'>Home</Link>
+          <Link className='cat' activeClassName='' to='/'>
+            <div>
+              Home
+            </div>
+          </Link>
         </li>
         <li>
-          <Link className='cat' activeClassName='' to='/items'>Products</Link>
+          <Link className='cat' activeClassName='' to='/items'>
+            <div>
+              Products
+            </div>
+          </Link>
+        </li>
+
+        <li>
+          <ul className="subCat-grp">
+            <li>
+              <Link className='subCat' activeClassName='' to='/items#beef'>
+                <div>
+                  Beef
+                </div>
+              </Link>
+            </li>
+            <li>
+              <Link className='subCat' activeClassName='' to='/items#pork'>
+                <div>
+                  Pork
+                </div>
+              </Link>
+            </li>
+            <li>
+              <Link className='subCat' activeClassName='' to='/items#chicken'>
+                <div>
+                  Chicken
+                </div>
+              </Link>
+            </li>
+            <li>
+              <Link className='subCat' activeClassName='' to='/items#seafood'>
+                <div>
+                  Seafood
+                </div>
+              </Link>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <Link className='cat' activeClassName='' to='/deals'>
+            <div>
+              Deals
+            </div>
+          </Link>
         </li>
         <li>
-          <Link className='subCat' activeClassName='' to='/items#beef'>Beef</Link>
+          <Link className='cat' activeClassName='' to='/about'>
+            <div>
+              About
+            </div>
+          </Link>
         </li>
         <li>
-          <Link className='subCat' activeClassName='' to='/items#pork'>Pork</Link>
+          <Link className='cat' activeClassName='' to='/blog'>
+            <div>
+              Blog
+            </div>
+          </Link>
         </li>
         <li>
-          <Link className='subCat' activeClassName='' to='/items#chicken'>Chicken</Link>
-        </li>
-        <li>
-          <Link className='subCat' activeClassName='' to='/items#seafood'>Seafood</Link>
-        </li>
-        <li>
-          <Link className='cat' activeClassName='' to='/deals'> Deals </Link>
-        </li>
-        <li>
-          <Link className='cat' activeClassName='' to='/about'>About</Link>
-        </li>
-        <li>
-          <Link className='cat' activeClassName='' to='/blog'>Blog</Link>
-        </li>
-        <li>
-          <Link className='cat' activeClassName='' to='/contact'>Contact</Link>
+          <Link className='cat' activeClassName='' to='/contact'>
+            <div>
+              Contact
+            </div>
+          </Link>
         </li>
       </ul>
     </nav>

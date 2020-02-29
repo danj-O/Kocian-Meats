@@ -3,6 +3,7 @@ import Layout from '../components/Layout'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import itemStyles from '../pages/items.module.scss'
 import Head from '../components/Head'
+import Hero from '../components/Hero'
 import '../styles/globals.scss'
 
 
@@ -37,6 +38,7 @@ const ItemsPage = () => {
   return (
     <Layout>
       <Head title='Product List'/>
+      <Hero header="Products" subHeader="Our meats are simply the best!" heroImg="item-hero"/>
       <h1 className='pageHeader'> Products</h1>
       <p className='pageSubHeader'>In a hurry? Our best selection is now available for preorder/prepay right here!</p>
       <div className={itemStyles.items}>
