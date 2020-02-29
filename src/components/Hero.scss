@@ -8,10 +8,12 @@
     height: 100%;
   }
   .hero-text {
+    text-align: right;
     position: absolute;
     top: 170px;
     z-index: 0;
-    padding-left: 5vw;
+    right: 0;
+    padding-right: 5rem;
 
     .hero-header{
       color: rgb(34, 34, 34);

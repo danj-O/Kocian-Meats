@@ -36,7 +36,7 @@ const IndexPage = () =>{
   return(
     <Layout>
       <Head title="home"/>
-      <Hero header="Welcome To Kocian Meats" subHeader='Since 1922' heroImg='hero'/>
+      <Hero header="Welcome To Kocian Meats" subHeader='Since 1922' heroImg='deals-hero'/>
       <h1 className="pageHeader"> Welcome to the Kocian Meats online market!</h1>
       <p className="pageSubHeader">To get started, check out our fresh deals!</p>
 
