@@ -29,7 +29,6 @@
     align-items: center;
     width: 100%;
     margin-top: 10px;
-    // height: auto;
     img {
       width: 35%;
       height: auto;
@@ -37,13 +36,12 @@
   }
   .bigList {
     height: 100vh; 
-    width: 100%;
     list-style: none;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    // align-items: center;
-    margin: 1.5rem;
+    margin: 0;
+    padding: 1.5rem 2.5rem;
     li {
       margin: 0.5rem 0;
       .cat {
@@ -66,7 +64,6 @@
       }
       }
       a {
-        // color: black;
         text-decoration: none;
       }
       a:hover,

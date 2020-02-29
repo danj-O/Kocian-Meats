@@ -10,12 +10,12 @@
 }
 .item {
   margin: 1em 0;
-  background: #f4f4f4;
+  // background: #f4f4f4;
   min-width: 300px;
   max-width: 350px;
   padding: 0;
   a {
-    background: #f4f4f4;
+    // background: #f4f4f4;
     color: black;
     display: block;
     text-decoration: none;
@@ -38,5 +38,6 @@
   }
   img {
     max-width: 100%;
+    border-radius: 10%;
   }
 }
