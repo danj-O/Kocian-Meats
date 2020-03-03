@@ -9,8 +9,11 @@
   cursor: pointer;
   padding: 0;
   box-sizing: border-box;
-  border-radius: 50px;
+  transition: transform .3s ease-in-out;
 } 
+.toggle-button:hover {
+  transform: rotate(90deg);
+}
 .toggle-button:focus {
   outline: none;
 }

@@ -1,10 +1,10 @@
 import React from "react"
 import Layout from '../components/Layout'
 import { Link, useStaticQuery, graphql } from 'gatsby'
+import '../styles/globals.scss'
 import itemStyles from './items.module.scss'
 import Head from '../components/Head'
 import Hero from '../components/Hero'
-import '../styles/globals.scss'
 
 
 const IndexPage = () =>{
