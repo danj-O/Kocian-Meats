@@ -28,6 +28,12 @@
     flex-direction: column;
     // background: grey;
   }
+  footer {
+    display: none;
+    height: 0px;
+    padding: 0;
+    margin: 0;
+  }
   .image-container {
     width: 400px;
     img {

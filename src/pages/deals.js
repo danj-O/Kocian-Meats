@@ -38,9 +38,10 @@ const Deals = () =>{
       <Layout>
         <Head title="Deals"/>
         <Hero header="Specials" subHeader="Check back here to catch special deals!" heroImg="deals-hero"/>
-        <h1 className="pageHeader"> Our specials! </h1>
-        <p className="pageSubHeader">Updated daily with our juiciest deals</p>
-
+        <div className='header-box'>
+          <h1 className="pageHeader"> Our specials! </h1>
+          <p className="pageSubHeader">Updated daily with our juiciest deals</p>
+        </div>
         <div className={itemStyles.items}>
         { 
           data.allContentfulDeals.edges.map((edge) => {

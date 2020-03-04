@@ -37,7 +37,7 @@ export default function Items(props) {
 
   return (
     <Layout>
-        <Head title={props.data.contentfulItem.title} />
+      <Head title={props.data.contentfulItem.title} />
       <ModalRoutingContext.Consumer>
         {({ modal, closeTo }) => (
           <div className='content'>

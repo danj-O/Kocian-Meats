@@ -39,9 +39,10 @@ const IndexPage = () =>{
     <Layout>
       <Head title="home"/>
       <Hero header="Welcome To Kocian Meats" subHeader='Since 1922' heroImg='deals-hero'/>
-      <h1 className="pageHeader"> Welcome to the Kocian Meats online market!</h1>
-      <p className="pageSubHeader">To get started, check out our fresh deals!</p>
-
+      <div className="header-box">
+        <h1 className="pageHeader"> Welcome to the Kocian Meats online market!</h1>
+        <p className="pageSubHeader">To get started, check out our fresh deals!</p>
+      </div>
       <div className={itemStyles.items}>
         { 
           data.allContentfulDeals.edges.map((edge) => {
@@ -69,20 +70,3 @@ const IndexPage = () =>{
   )
 }
 export default IndexPage
-            
-            // <div key={edge.node.slug} className={itemStyles.item}>
-            //   <Link to={`/deals/${edge.node.slug}`}>
-            //     <h2>
-            //         {edge.node.name}
-            //     </h2>
-            //     <p>{edge.node.shortDescription}</p>
-            //     <div>
-            //       <div>
-            //         <p>${edge.node.price} - {edge.node.pricePer}</p>
-            //       </div>
-            //       <div>
-            //         <img src={edge.node.dealsImage.file.url} alt=""/>
-            //       </div>
-            //     </div>
-            //   </Link>
-            // </div>
