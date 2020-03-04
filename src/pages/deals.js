@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from '../components/Layout'
+// import Layout from '../components/Layout'
 import { useStaticQuery, graphql } from 'gatsby'
 import itemStyles from './items.module.scss'
 import Head from '../components/Head'
@@ -35,7 +35,7 @@ const Deals = () =>{
 
 
   return(
-      <Layout>
+      <div>
         <Head title="Deals"/>
         <Hero header="Specials" subHeader="Check back here to catch special deals!" heroImg="deals-hero"/>
         <div className='header-box'>
@@ -61,8 +61,8 @@ const Deals = () =>{
             )
           })
         }
+        </div>
       </div>
-      </Layout>
   )
 }
 export default Deals

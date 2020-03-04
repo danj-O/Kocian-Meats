@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../components/Layout'
+// import Layout from '../components/Layout'
 import { useStaticQuery, graphql } from 'gatsby'
 import itemStyles from '../pages/items.module.scss'
 import Head from '../components/Head'
@@ -37,7 +37,7 @@ const ItemsPage = () => {
     }
   `)
   return (
-    <Layout>
+    <div>
       <Head title='Product List'/>
       <Hero header="Products" subHeader="Our meats are simply the best!" heroImg="item-hero"/>
       <div className='header-box'>
@@ -203,7 +203,7 @@ const ItemsPage = () => {
           }
         </div>
       </div>
-    </Layout>
+    </div>
   )
 }
 export default ItemsPage

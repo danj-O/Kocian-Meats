@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from '../components/Layout'
+// import Layout from '../components/Layout'
 import { useStaticQuery, graphql } from 'gatsby'
 import '../styles/globals.scss'
 import itemStyles from './items.module.scss'
@@ -36,7 +36,7 @@ const IndexPage = () =>{
 
 
   return(
-    <Layout>
+    <div>
       <Head title="home"/>
       <Hero header="Welcome To Kocian Meats" subHeader='Since 1922' heroImg='deals-hero'/>
       <div className="header-box">
@@ -66,7 +66,7 @@ const IndexPage = () =>{
           })
         }
       </div>
-    </Layout>
+    </div>
   )
 }
 export default IndexPage

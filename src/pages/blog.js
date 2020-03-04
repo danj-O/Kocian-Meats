@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../components/Layout'
+// import Layout from '../components/Layout'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import blogStyles from './blog.module.scss'
 import Head from '../components/Head'
@@ -24,7 +24,7 @@ const BlogPage = () => {
   `)
 
   return (
-    <Layout>
+    <div>
       <Head title='Blog'/>
       <h1 className="pageHeader"> Blog</h1>
       <p className="pageSubHeader">Check here for cool stuff weekly!</p>
@@ -47,7 +47,7 @@ const BlogPage = () => {
         })
         }
       </ol>
-    </Layout>
+    </div>
   )
 }
 export default BlogPage

@@ -13,8 +13,8 @@ module.exports = {
     author: 'Daniel Scott',
   },
   plugins : [
-    //router for all items' modals
     {
+      //router for all items' modals
       resolve: `gatsby-plugin-modal-routing`,
       options: {
         // A selector to set react-modal's app root to, default is `#___gatsby`
