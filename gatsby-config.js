@@ -14,6 +14,12 @@ module.exports = {
   },
   plugins : [
     {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve('./src/components/Layout'),
+      },
+    },
+    {
       //router for all items' modals
       resolve: `gatsby-plugin-modal-routing`,
       options: {

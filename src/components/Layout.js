@@ -1,5 +1,5 @@
 import React from 'react'
-import Footer from '../components/Footer'
+import Footer from './Footer'
 import layoutStyles from './layout.module.scss'
 import Navigation from './Navigation'
 
@@ -26,7 +26,7 @@ const variants = {
 }
 
 export default function Layout({children, location}) {
-  // console.log(location.pathname)
+  console.log('LOC', location.pathname)
   return (
       <div className= {layoutStyles.container}>
         <Navigation />
