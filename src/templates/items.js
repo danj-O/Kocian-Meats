@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../components/Layout'
+// import Layout from '../components/Layout'
 import { graphql, Link } from 'gatsby'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { ModalRoutingContext } from 'gatsby-plugin-modal-routing'
@@ -36,7 +36,7 @@ export const query = graphql`
 export default function Items(props) {
 
   return (
-    <Layout>
+    <div>
       <Head title={props.data.contentfulItem.title} />
       <ModalRoutingContext.Consumer>
         {({ modal, closeTo }) => (
@@ -62,6 +62,6 @@ export default function Items(props) {
           </div>
         )}
       </ModalRoutingContext.Consumer>
-    </Layout>
+    </div>
   )
 }

@@ -5,7 +5,7 @@ import Navigation from './Navigation'
 
 import { motion, AnimatePresence } from 'framer-motion'
 
-const duration = 0.8
+const duration = 0.7
 
 const variants = {
   initial: {
@@ -21,18 +21,19 @@ const variants = {
   },
   exit: {
     opacity: 0,
-    transition: { duration: duration },
+    transition: { duration: 0.1 },
   },
 }
 
 export default function Layout({children, location}) {
+  // console.log(location.pathname)
   return (
       <div className= {layoutStyles.container}>
         <Navigation />
           <div className={layoutStyles.content}> 
             <AnimatePresence>
               <motion.main
-                // key={location.pathname}
+                key={location.pathname}
                 variants={variants}
                 initial="initial"
                 animate="enter"

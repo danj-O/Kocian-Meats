@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../components/Layout'
+// import Layout from '../components/Layout'
 import { graphql } from 'gatsby'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Head from '../components/Head'
@@ -32,11 +32,11 @@ export default function Blog(props) {
     }
   }
   return (
-    <Layout>
+    <div>
       <Head title={props.data.contentfulBlog.name} />
       <h1>{ props.data.contentfulBlog.name }</h1>
       <p>{ props.data.contentfulBlog.publishedDate }</p>
       {documentToReactComponents(props.data.contentfulBlog.description.json, options)}
-    </Layout>
+    </div>
   )
 }
