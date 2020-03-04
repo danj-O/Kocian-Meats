@@ -32,7 +32,7 @@ export default function Layout({children, location}) {
           <div className={layoutStyles.content}> 
             <AnimatePresence>
               <motion.main
-                key={location.pathname}
+                // key={location.pathname}
                 variants={variants}
                 initial="initial"
                 animate="enter"
