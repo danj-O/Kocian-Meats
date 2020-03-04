@@ -1,10 +1,11 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import itemStyles from '../pages/items.module.scss'
 import Head from '../components/Head'
 import Hero from '../components/Hero'
 import '../styles/globals.scss'
+import { Link } from 'gatsby-plugin-modal-routing'
 
 
 
@@ -50,7 +51,7 @@ const ItemsPage = () => {
             if (edge.node.meatType[0] === 'beef'){
               return (
                 <div key={edge.node.slug} className={itemStyles.item}>
-                  <Link to={`/items/${edge.node.slug}`}>
+                  <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
                     <div>
                       <img src={edge.node.itemImage.file.url} alt=""/>
                     </div>
@@ -80,7 +81,7 @@ const ItemsPage = () => {
             if (edge.node.meatType[0] === 'pork'){
               return (
                 <div key={edge.node.slug} className={itemStyles.item}>
-                  <Link to={`/items/${edge.node.slug}`}>
+                  <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
                     <div>
                       <img src={edge.node.itemImage.file.url} alt=""/>
                     </div>
@@ -110,7 +111,7 @@ const ItemsPage = () => {
             if (edge.node.meatType[0] === 'chicken'){
               return (
                 <div key={edge.node.slug} className={itemStyles.item}>
-                  <Link to={`/items/${edge.node.slug}`}>
+                  <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
                     <div>
                       <img src={edge.node.itemImage.file.url} alt=""/>
                     </div>
@@ -140,7 +141,7 @@ const ItemsPage = () => {
             if (edge.node.meatType[0] === 'seafood'){
               return (
                 <div key={edge.node.slug} className={itemStyles.item}>
-                  <Link to={`/items/${edge.node.slug}`}>
+                  <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
                     <div>
                       <img src={edge.node.itemImage.file.url} alt=""/>
                     </div>
@@ -170,7 +171,7 @@ const ItemsPage = () => {
             if (edge.node.meatType[0] === 'other'){
               return (
                 <div key={edge.node.slug} className={itemStyles.item}>
-                  <Link to={`/items/${edge.node.slug}`}>
+                  <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
                     <div>
                       <img src={edge.node.itemImage.file.url} alt=""/>
                     </div>

@@ -1,8 +1,10 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 // import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Head from '../components/Head'
+import { ModalRoutingContext } from 'gatsby-plugin-modal-routing'
+import '../styles/template.scss'
 
 
 export const query = graphql`
@@ -26,27 +28,34 @@ export const query = graphql`
 
 //this is the template for all blog posts
 export default function Projects(props) {
-  // const options = {
-  //   renderNode: {
-  //     //override specific node types
-  //     "embedded-asset-block": (node)=>{
-  //       //PROBLEM!!!!!!------------
-  //       //Where should the query go to find these two in playground??!!
-  //       const alt = node.data.target.fields.title["en-US"]
-  //       const url = node.data.target.fields.file["en-US"].url
-  //       console.log(alt, url)
-  //       return <img alt={alt} src={url}/>
-  //     }
-  //   }
-  // }
+
   return (
     <Layout>
       <Head title={props.data.contentfulDeals.title} />
-      <h1>{ props.data.contentfulDeals.name }</h1>
-      <p>{ props.data.contentfulDeals.shortDescription }</p>
-      <img src={props.data.contentfulDeals.dealsImage.file.url} alt={props.data.contentfulDeals.dealsImage.file.fileName}/>
-      {/* <img src={props.data.contentfulAsset.file.url} alt=""/> */}
-      {/* {documentToReactComponents(props.data.contentfulItem.description.json)} */}
+      <ModalRoutingContext.Consumer>
+        {({ modal, closeTo }) => (
+          <div className='content'>
+            {modal ? (
+              <Link to={closeTo} state={{noScroll: true}}>
+                Close
+              </Link>
+            ) : (
+              <header>
+                <h1>
+                  <Link to="/deals">Go back to our specials</Link>
+                </h1>
+              </header>
+            )}
+            <div>
+              <h1>{ props.data.contentfulDeals.name }</h1>
+              <p>{ props.data.contentfulDeals.shortDescription }</p>
+              <div className='image-container'>
+                <img src={props.data.contentfulDeals.dealsImage.file.url} alt={props.data.contentfulDeals.dealsImage.file.fileName}/>
+              </div>
+            </div>
+          </div>
+        )}       
+      </ModalRoutingContext.Consumer>
     </Layout>
   )
 }

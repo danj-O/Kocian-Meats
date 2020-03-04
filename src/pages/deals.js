@@ -1,10 +1,12 @@
 import React from "react"
 import Layout from '../components/Layout'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import itemStyles from './items.module.scss'
 import Head from '../components/Head'
 import Hero from '../components/Hero'
 import '../styles/globals.scss'
+import { Link } from 'gatsby-plugin-modal-routing'
+
 
 
 const Deals = () =>{
@@ -44,7 +46,7 @@ const Deals = () =>{
           data.allContentfulDeals.edges.map((edge) => {
             return (
               <div key={edge.node.slug} className={itemStyles.item}>
-                <Link to={`/deals/${edge.node.slug}`}>
+                <Link to={`/deals/${edge.node.slug}`} asModal state={{noScroll: true}}>
                   <div>
                     <img src={edge.node.dealsImage.file.url} alt=""/>
                   </div>
