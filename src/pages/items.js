@@ -55,7 +55,7 @@ const ItemsPage = () => {
                 return (
                   <div key={edge.node.slug} className={itemStyles.item}>
                     <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
-                      <div>
+                      <div className={itemStyles.imageContainer}>
                         <img src={edge.node.itemImage.file.url} alt=""/>
                       </div>
                       <div className={itemStyles.itemText}>
@@ -87,7 +87,7 @@ const ItemsPage = () => {
                 return (
                   <div key={edge.node.slug} className={itemStyles.item}>
                     <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
-                      <div>
+                      <div className={itemStyles.imageContainer}>
                         <img src={edge.node.itemImage.file.url} alt=""/>
                       </div>
                       <div className={itemStyles.itemText}>
@@ -119,7 +119,7 @@ const ItemsPage = () => {
                 return (
                   <div key={edge.node.slug} className={itemStyles.item}>
                     <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
-                      <div>
+                      <div className={itemStyles.imageContainer}>
                         <img src={edge.node.itemImage.file.url} alt=""/>
                       </div>
                       <div className={itemStyles.itemText}>
@@ -151,7 +151,7 @@ const ItemsPage = () => {
                 return (
                   <div key={edge.node.slug} className={itemStyles.item}>
                     <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
-                      <div>
+                      <div className={itemStyles.imageContainer}>
                         <img src={edge.node.itemImage.file.url} alt=""/>
                       </div>
                       <div className={itemStyles.itemText}>
@@ -183,7 +183,7 @@ const ItemsPage = () => {
                 return (
                   <div key={edge.node.slug} className={itemStyles.item}>
                     <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
-                      <div>
+                      <div className={itemStyles.imageContainer}>
                         <img src={edge.node.itemImage.file.url} alt=""/>
                       </div>
                       <div className={itemStyles.itemText}>

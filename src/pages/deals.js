@@ -48,7 +48,7 @@ const Deals = () =>{
             return (
               <div key={edge.node.slug} className={itemStyles.item}>
                 <Link to={`/deals/${edge.node.slug}`} asModal state={{noScroll: true}}>
-                  <div>
+                  <div className={itemStyles.imageContainer}>
                     <img src={edge.node.dealsImage.file.url} alt=""/>
                   </div>
                   <div className={itemStyles.itemText}>

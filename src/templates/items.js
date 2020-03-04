@@ -57,6 +57,12 @@ export default function Items(props) {
               <div className='image-container'>
                 <img src={props.data.contentfulItem.itemImage.file.url} alt={props.data.contentfulItem.itemImage.fileName}/>
               </div>
+              <p>
+                ${props.data.contentfulItem.price} - {props.data.contentfulItem.pricePer}
+              </p>
+              <p>
+                {props.data.contentfulItem.meatType}
+              </p>
               {documentToReactComponents(props.data.contentfulItem.description.json)}
             </div>
           </div>

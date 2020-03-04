@@ -21,9 +21,9 @@
 }
 .item {
   margin: 1em 0;
-  // background: #f4f4f4;
-  min-width: 300px;
-  max-width: 350px;
+  width: 300px;
+  // min-width: 300px;
+  // max-width: 350px;
   padding: 0;
   a {
     // background: #f4f4f4;
@@ -47,8 +47,11 @@
   .price {
     
   }
-  img {
-    max-width: 100%;
-    border-radius: 10%;
+  .imageContainer {
+    // width: 150px;
+    img {
+      max-width: 100%;
+
+    }
   }
 }

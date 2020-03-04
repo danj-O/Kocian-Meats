@@ -14,13 +14,14 @@
   .close-btn {
     position: absolute;
     cursor: pointer;
+    right: 0;
     width: 50px;
     height: 40px;
-    background: rgb(194, 80, 52);
+    background: rgb(0, 0, 0);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 20px;
+    // border-radius: 20px;
     color: white;
   }
   .side-drawer-logo {

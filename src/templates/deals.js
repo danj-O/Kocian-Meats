@@ -52,6 +52,12 @@ export default function Projects(props) {
               <div className='image-container'>
                 <img src={props.data.contentfulDeals.dealsImage.file.url} alt={props.data.contentfulDeals.dealsImage.file.fileName}/>
               </div>
+              <p>
+                ${props.data.contentfulDeals.price} - {props.data.contentfulDeals.pricePer}
+              </p>
+              <p>
+                {props.data.contentfulDeals.meatType}
+              </p>
             </div>
           </div>
         )}       
