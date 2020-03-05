@@ -78,6 +78,9 @@
 .side-drawer.open {
   transform: translateX(0);
 }
+.side-link-active {
+  color: orange;
+}
 .hide {
   display: none;
 }

@@ -20,6 +20,7 @@ const Deals = () =>{
             shortDescription
             price
             pricePer
+            dealType
             dealsImage {
               file {
                 fileName
@@ -42,25 +43,67 @@ const Deals = () =>{
           <h1 className="pageHeader"> Our specials! </h1>
           <p className="pageSubHeader">Updated daily with our juiciest deals</p>
         </div>
-        <div className={itemStyles.items}>
-        { 
-          data.allContentfulDeals.edges.map((edge) => {
-            return (
-              <div key={edge.node.slug} className={itemStyles.item}>
-                <Link to={`/deals/${edge.node.slug}`} asModal state={{noScroll: true}}>
-                  <div className={itemStyles.imageContainer}>
-                    <img src={edge.node.dealsImage.file.url} alt=""/>
-                  </div>
-                  <div className={itemStyles.itemText}>
-                    <h2>{edge.node.name}</h2>
-                    <p>{edge.node.shortDescription}</p>
-                    <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
-                  </div>
-                </Link>
-              </div>
-            )
-          })
-        }
+
+        <div className={itemStyles.meatContainer}>
+          <h1 id='fvp'>
+            Family Value Packs
+          </h1>
+          <div className={itemStyles.items}>
+            { 
+              data.allContentfulDeals.edges.map((edge) => {
+                if (edge.node.dealType[0] === 'FVP'){
+                  return (
+                    <div key={edge.node.slug} className={itemStyles.item}>
+                      <Link to={`/deals/${edge.node.slug}`} asModal state={{noScroll: true}}>
+                        <p>
+                          {edge.node.dealType}
+                        </p>
+                        <div className={itemStyles.imageContainer}>
+                          <img src={edge.node.dealsImage.file.url} alt=""/>
+                        </div>
+                        <div className={itemStyles.itemText}>
+                          <h2>{edge.node.name}</h2>
+                          <p>{edge.node.shortDescription}</p>
+                          <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                        </div>
+                      </Link>
+                    </div>
+                  )
+                }
+              })
+            }
+          </div>
+        </div>
+
+        <div className={itemStyles.meatContainer}>
+          <h1 id='sfvp'>
+            Super Family Value Packs
+          </h1>
+          <div className={itemStyles.items}>
+            { 
+              data.allContentfulDeals.edges.map((edge) => {
+                if (edge.node.dealType[0] === 'SFVP'){
+                  return (
+                    <div key={edge.node.slug} className={itemStyles.item}>
+                      <Link to={`/deals/${edge.node.slug}`} asModal state={{noScroll: true}}>
+                        <p>
+                          {edge.node.dealType}
+                        </p>
+                        <div className={itemStyles.imageContainer}>
+                          <img src={edge.node.dealsImage.file.url} alt=""/>
+                        </div>
+                        <div className={itemStyles.itemText}>
+                          <h2>{edge.node.name}</h2>
+                          <p>{edge.node.shortDescription}</p>
+                          <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                        </div>
+                      </Link>
+                    </div>
+                  )
+                }
+              })
+            }
+          </div>
         </div>
       </div>
   )

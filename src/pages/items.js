@@ -52,9 +52,13 @@ const ItemsPage = () => {
           { //maps over the query using allMarkdownRemark to find .md files
             data.allContentfulItem.edges.map((edge) => {
               if (edge.node.meatType[0] === 'beef'){
+                // let meat = edge.node.meatType[0].toUpperCase()
                 return (
                   <div key={edge.node.slug} className={itemStyles.item}>
                     <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
+                      <p>
+                        {edge.node.meatType[0].toUpperCase()}
+                      </p>
                       <div className={itemStyles.imageContainer}>
                         <img src={edge.node.itemImage.file.url} alt=""/>
                       </div>
@@ -62,9 +66,6 @@ const ItemsPage = () => {
                         <h2>{edge.node.title}</h2>
                         <p>{edge.node.shortDescription}</p>
                         <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
-                        <p>
-                          {edge.node.meatType}
-                        </p>
                       </div>
                     </Link>
                   </div>
@@ -87,6 +88,9 @@ const ItemsPage = () => {
                 return (
                   <div key={edge.node.slug} className={itemStyles.item}>
                     <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
+                      <p>
+                        {edge.node.meatType[0].toUpperCase()}
+                      </p>
                       <div className={itemStyles.imageContainer}>
                         <img src={edge.node.itemImage.file.url} alt=""/>
                       </div>
@@ -119,6 +123,9 @@ const ItemsPage = () => {
                 return (
                   <div key={edge.node.slug} className={itemStyles.item}>
                     <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
+                      <p>
+                        {edge.node.meatType[0].toUpperCase()}
+                      </p>
                       <div className={itemStyles.imageContainer}>
                         <img src={edge.node.itemImage.file.url} alt=""/>
                       </div>
@@ -151,6 +158,9 @@ const ItemsPage = () => {
                 return (
                   <div key={edge.node.slug} className={itemStyles.item}>
                     <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
+                      <p>
+                        {edge.node.meatType[0].toUpperCase()}
+                      </p>
                       <div className={itemStyles.imageContainer}>
                         <img src={edge.node.itemImage.file.url} alt=""/>
                       </div>
@@ -183,6 +193,9 @@ const ItemsPage = () => {
                 return (
                   <div key={edge.node.slug} className={itemStyles.item}>
                     <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
+                      <p>
+                        {edge.node.meatType[0].toUpperCase()}
+                      </p>
                       <div className={itemStyles.imageContainer}>
                         <img src={edge.node.itemImage.file.url} alt=""/>
                       </div>

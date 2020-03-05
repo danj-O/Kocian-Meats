@@ -32,11 +32,11 @@ export default function Layout({children, location}) {
       <div className= {layoutStyles.container}>
         <Navigation />
           <div className={layoutStyles.content}> 
-              <TransitionProvider location={location}>
-                <TransitionViews>
+              {/* <TransitionProvider location={location}>
+                <TransitionViews> */}
                 {children}
-                </TransitionViews>
-              </TransitionProvider>
+                {/* </TransitionViews>
+              </TransitionProvider> */}
           </div>
         <Footer />
       </div>
