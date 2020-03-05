@@ -33,10 +33,15 @@
     padding: 1rem;
     // width: 100%;
   }
+  .itemText {
+    padding: 0;
+    margin-top: -20px;
+  }
   a:hover {
     background: #e4e4e4;
   }
   h2 {
+    // line-height: .4;
     margin-bottom: 0;
   }
   p {
@@ -48,10 +53,13 @@
     
   }
   .imageContainer {
+    padding: 0;
+    margin: 0;
     // width: 150px;
     img {
       max-width: 100%;
 
     }
   }
+  
 }

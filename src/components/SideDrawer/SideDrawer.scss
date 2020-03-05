@@ -50,6 +50,7 @@
         font-size: 1.2rem;
       }
       .subCat-grp {
+        // display: none;
         margin: 0;
         padding-left: 1rem;
         list-style: none;
@@ -76,4 +77,10 @@
 }
 .side-drawer.open {
   transform: translateX(0);
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
 }

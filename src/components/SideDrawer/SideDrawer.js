@@ -4,6 +4,7 @@ import './SideDrawer.scss'
 
 
 export default function SideDrawer(props) {
+  let path = window.location.pathname
   let drawerClasses = 'side-drawer';
   if (props.show) {
     drawerClasses = 'side-drawer open'
@@ -23,7 +24,7 @@ export default function SideDrawer(props) {
       }
     }
   `)
-
+    console.log('sidrawer LOC',path)
   return (
     <nav className={drawerClasses}>
       <div className='close-btn' onClick={props.click}>
@@ -50,51 +51,73 @@ export default function SideDrawer(props) {
         <li>
           <Link className='cat' activeClassName='' to='/items'>
             <div>
-              Products
+              Products *
             </div>
           </Link>
         </li>
 
+            <li 
+              className= {` ${path === '/items' ? 'show': 'hide'}`}>
+              <ul className="subCat-grp">
+                <li>
+                  <Link className='subCat' activeClassName='' to='/items#beef'>
+                    <div>
+                      Beef
+                    </div>
+                  </Link>
+                </li>
+                <li>
+                  <Link className='subCat' activeClassName='' to='/items#pork'>
+                    <div>
+                      Pork
+                    </div>
+                  </Link>
+                </li>
+                <li>
+                  <Link className='subCat' activeClassName='' to='/items#chicken'>
+                    <div>
+                      Chicken
+                    </div>
+                  </Link>
+                </li>
+                <li>
+                  <Link className='subCat' activeClassName='' to='/items#seafood'>
+                    <div>
+                      Seafood
+                    </div>
+                  </Link>
+                </li>
+              </ul>
+            </li>
+
         <li>
+          <Link className='cat' activeClassName='' to='/deals'>
+            <div>
+              Deals *
+            </div>
+          </Link>
+        </li>
+
+        <li className= {` ${path === '/deals' ? 'show': 'hide'}`}>
           <ul className="subCat-grp">
             <li>
-              <Link className='subCat' activeClassName='' to='/items#beef'>
+              <Link className='subCat' activeClassName='' to='/deals#fvp'>
                 <div>
-                  Beef
+                  FVP
                 </div>
               </Link>
             </li>
             <li>
-              <Link className='subCat' activeClassName='' to='/items#pork'>
+              <Link className='subCat' activeClassName='' to='/deals#sfvp'>
                 <div>
-                  Pork
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link className='subCat' activeClassName='' to='/items#chicken'>
-                <div>
-                  Chicken
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link className='subCat' activeClassName='' to='/items#seafood'>
-                <div>
-                  Seafood
+                  Super FVP
                 </div>
               </Link>
             </li>
           </ul>
         </li>
 
-        <li>
-          <Link className='cat' activeClassName='' to='/deals'>
-            <div>
-              Deals
-            </div>
-          </Link>
-        </li>
+
         <li>
           <Link className='cat' activeClassName='' to='/about'>
             <div>

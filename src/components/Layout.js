@@ -27,7 +27,7 @@ import { TransitionProvider, TransitionViews } from "gatsby-plugin-transitions";
 // }
 
 export default function Layout({children, location}) {
-  console.log('LOC', location)
+  // console.log('LOC', location)
   return (
       <div className= {layoutStyles.container}>
         <Navigation />
