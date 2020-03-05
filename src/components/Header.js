@@ -6,11 +6,35 @@ import DrawerButton from '../components/SideDrawer/DrawerButton'
 
 
 export default function Header(props) {
+//   const data = useStaticQuery(graphql`
+//   query {
+//     allContentfulAsset {
+//       edges {
+//         node {
+//           title
+//           file {
+//             url
+//           }
+//         }
+//       }
+//     }
+//   }
+// `)
   const data = useStaticQuery(graphql`
   query {
     site {
       siteMetadata {
         title
+      }
+    }
+    allContentfulAsset {
+      edges {
+        node {
+          title
+          file {
+            url
+          }
+        }
       }
     }
   }
@@ -22,7 +46,21 @@ export default function Header(props) {
         <div>
           <DrawerButton click={props.drawerClickHandler} />
         </div>
-        <h1><Link className={headerStyles.title} to='/'>{data.site.siteMetadata.title}</Link></h1>
+        <h1>
+          <Link className={headerStyles.title} to='/'>
+            {/* {data.site.siteMetadata.title} */}
+            <div className={headerStyles.logo}>
+              {
+                data.allContentfulAsset.edges.map((edge) => {
+                  if (edge.node.title === "old-logo"){     
+                    return (<img key={edge.node.title} src={edge.node.file.url} alt=""/>)
+                  }
+                return null
+                })
+              }
+            </div>
+          </Link>
+        </h1>
         <div className={headerStyles.spacer} />
         <div className={headerStyles.navItems}>
           <ul className={headerStyles.navList}>

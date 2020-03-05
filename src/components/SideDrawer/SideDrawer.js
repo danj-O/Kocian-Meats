@@ -24,7 +24,7 @@ export default function SideDrawer(props) {
       }
     }
   `)
-    console.log('sidrawer LOC',path)
+    // console.log('sidrawer LOC',path)
   return (
     <nav className={drawerClasses}>
       <div className='close-btn' onClick={props.click}>

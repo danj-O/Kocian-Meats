@@ -16,6 +16,15 @@
   font-size: 2rem;
   text-decoration: none;
   margin-left: 1rem;
+  display: flex;
+  // align-items: center;
+  // justify-content: center;
+}
+.logo {
+  width: 350px;
+  img{
+    width: 100%;
+  }
 }
 .spacer {
   flex: 1;
