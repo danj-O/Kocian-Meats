@@ -4,7 +4,7 @@ import './SideDrawer.scss'
 
 
 export default function SideDrawer(props) {
-  let path = window.location.pathname
+  let path = typeof window !== 'undefined' && window.location.pathname
   let drawerClasses = 'side-drawer';
   if (props.show) {
     drawerClasses = 'side-drawer open'
