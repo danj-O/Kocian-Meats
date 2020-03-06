@@ -55,7 +55,7 @@ const Deals = () =>{
                   return (
                     <div key={edge.node.slug} className={itemStyles.item}>
                       <Link to={`/deals/${edge.node.slug}`} asModal state={{noScroll: true}}>
-                        <p>
+                        <p className={itemStyles.meatType}>
                           {edge.node.dealType}
                         </p>
                         <div className={itemStyles.imageContainer}>
@@ -63,13 +63,14 @@ const Deals = () =>{
                         </div>
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.name}</h2>
-                          <p>{edge.node.shortDescription}</p>
+                          <p className={itemStyles.description}>{edge.node.shortDescription}</p>
                           <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
                         </div>
                       </Link>
                     </div>
                   )
                 }
+              return null
               })
             }
           </div>
@@ -86,7 +87,7 @@ const Deals = () =>{
                   return (
                     <div key={edge.node.slug} className={itemStyles.item}>
                       <Link to={`/deals/${edge.node.slug}`} asModal state={{noScroll: true}}>
-                        <p>
+                        <p className={itemStyles.meatType}>
                           {edge.node.dealType}
                         </p>
                         <div className={itemStyles.imageContainer}>
@@ -94,13 +95,14 @@ const Deals = () =>{
                         </div>
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.name}</h2>
-                          <p>{edge.node.shortDescription}</p>
+                          <p className={itemStyles.description}>{edge.node.shortDescription}</p>
                           <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
                         </div>
                       </Link>
                     </div>
                   )
                 }
+              return null
               })
             }
           </div>

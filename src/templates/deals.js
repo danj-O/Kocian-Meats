@@ -13,6 +13,7 @@ export const query = graphql`
       name
       price
       pricePer
+      dealType
       shortDescription
       dealsImage {
         file {
@@ -36,9 +37,11 @@ export default function Projects(props) {
         {({ modal, closeTo }) => (
           <div className='content'>
             {modal ? (
-              <Link to={closeTo} state={{noScroll: true}}>
-                Close
-              </Link>
+              <div className='close-btn-box'>
+                <Link to={closeTo} state={{noScroll: true}}>
+                  X
+                </Link>
+              </div>
             ) : (
               <header>
                 <h1>
@@ -46,18 +49,22 @@ export default function Projects(props) {
                 </h1>
               </header>
             )}
-            <div>
-              <h1>{ props.data.contentfulDeals.name }</h1>
-              <p>{ props.data.contentfulDeals.shortDescription }</p>
-              <div className='image-container'>
-                <img src={props.data.contentfulDeals.dealsImage.file.url} alt={props.data.contentfulDeals.dealsImage.file.fileName}/>
+            <div className='content-container'>
+              <p className='meatType'>
+                {props.data.contentfulDeals.dealType}
+              </p>
+              <div className='big-box'>
+                <div className='image-container'>
+                  <img src={props.data.contentfulDeals.dealsImage.file.url} alt={props.data.contentfulDeals.dealsImage.file.fileName}/>
+                </div>
+                <div className='content-text'>
+                  <h1>{ props.data.contentfulDeals.name }</h1>
+                  <p className='description'>{ props.data.contentfulDeals.shortDescription }</p>
+                  <p>
+                    ${props.data.contentfulDeals.price} - {props.data.contentfulDeals.pricePer}
+                  </p>
+                </div>
               </div>
-              <p>
-                ${props.data.contentfulDeals.price} - {props.data.contentfulDeals.pricePer}
-              </p>
-              <p>
-                {props.data.contentfulDeals.meatType}
-              </p>
             </div>
           </div>
         )}       

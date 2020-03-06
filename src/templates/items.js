@@ -27,10 +27,6 @@ export const query = graphql`
     }
   }
 `
-// const modalStyles = {
-//   background: '#000',
-//   // width: 200px,
-// }
 
 //this is the template for all blog posts
 export default function Items(props) {
@@ -42,9 +38,11 @@ export default function Items(props) {
         {({ modal, closeTo }) => (
           <div className='content'>
             {modal ? (
-              <Link to={closeTo} state={{noScroll: true}}>
-                Close
-              </Link>
+              <div className='close-btn-box'>
+                <Link to={closeTo} state={{noScroll: true}}>
+                  X
+                </Link>
+              </div>
             ) : (
               <header>
                 <h1>
@@ -52,18 +50,24 @@ export default function Items(props) {
                 </h1>
               </header>
             )}
-            <div>
-              <h1>{ props.data.contentfulItem.title }</h1>
-              <div className='image-container'>
-                <img src={props.data.contentfulItem.itemImage.file.url} alt={props.data.contentfulItem.itemImage.fileName}/>
-              </div>
-              <p>
-                ${props.data.contentfulItem.price} - {props.data.contentfulItem.pricePer}
-              </p>
-              <p>
+            <div className='content-container'>
+              <p className='meatType'>
                 {props.data.contentfulItem.meatType}
               </p>
-              {documentToReactComponents(props.data.contentfulItem.description.json)}
+              <div className='big-box'>
+                <div className='image-container'>
+                  <img src={props.data.contentfulItem.itemImage.file.url} alt={props.data.contentfulItem.itemImage.fileName}/>
+                </div>
+                <div className='content-text'>
+                  <h1>{ props.data.contentfulItem.title }</h1>
+                  <p className='description'>
+                    {documentToReactComponents(props.data.contentfulItem.description.json)}
+                  </p>
+                  <p className='price'>
+                    ${props.data.contentfulItem.price} - {props.data.contentfulItem.pricePer}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         )}

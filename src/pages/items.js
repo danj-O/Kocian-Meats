@@ -56,7 +56,7 @@ const ItemsPage = () => {
                 return (
                   <div key={edge.node.slug} className={itemStyles.item}>
                     <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
-                      <p>
+                      <p className={itemStyles.meatType}>
                         {edge.node.meatType[0].toUpperCase()}
                       </p>
                       <div className={itemStyles.imageContainer}>
@@ -64,7 +64,7 @@ const ItemsPage = () => {
                       </div>
                       <div className={itemStyles.itemText}>
                         <h2>{edge.node.title}</h2>
-                        <p>{edge.node.shortDescription}</p>
+                        <p className={itemStyles.description}>{edge.node.shortDescription}</p>
                         <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
                       </div>
                     </Link>
@@ -88,7 +88,7 @@ const ItemsPage = () => {
                 return (
                   <div key={edge.node.slug} className={itemStyles.item}>
                     <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
-                      <p>
+                      <p className={itemStyles.meatType}>
                         {edge.node.meatType[0].toUpperCase()}
                       </p>
                       <div className={itemStyles.imageContainer}>
@@ -96,11 +96,8 @@ const ItemsPage = () => {
                       </div>
                       <div className={itemStyles.itemText}>
                         <h2>{edge.node.title}</h2>
-                        <p>{edge.node.shortDescription}</p>
+                        <p className={itemStyles.description}>{edge.node.shortDescription}</p>
                         <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
-                        <p>
-                          {edge.node.meatType}
-                        </p>
                       </div>
                     </Link>
                   </div>
@@ -123,7 +120,7 @@ const ItemsPage = () => {
                 return (
                   <div key={edge.node.slug} className={itemStyles.item}>
                     <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
-                      <p>
+                      <p className={itemStyles.meatType}>
                         {edge.node.meatType[0].toUpperCase()}
                       </p>
                       <div className={itemStyles.imageContainer}>
@@ -131,11 +128,8 @@ const ItemsPage = () => {
                       </div>
                       <div className={itemStyles.itemText}>
                         <h2>{edge.node.title}</h2>
-                        <p>{edge.node.shortDescription}</p>
+                        <p className={itemStyles.description}>{edge.node.shortDescription}</p>
                         <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
-                        <p>
-                          {edge.node.meatType}
-                        </p>
                       </div>
                     </Link>
                   </div>
@@ -158,7 +152,7 @@ const ItemsPage = () => {
                 return (
                   <div key={edge.node.slug} className={itemStyles.item}>
                     <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
-                      <p>
+                      <p className={itemStyles.meatType}>
                         {edge.node.meatType[0].toUpperCase()}
                       </p>
                       <div className={itemStyles.imageContainer}>
@@ -166,11 +160,8 @@ const ItemsPage = () => {
                       </div>
                       <div className={itemStyles.itemText}>
                         <h2>{edge.node.title}</h2>
-                        <p>{edge.node.shortDescription}</p>
+                        <p className={itemStyles.description}>{edge.node.shortDescription}</p>
                         <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
-                        <p>
-                          {edge.node.meatType}
-                        </p>
                       </div>
                     </Link>
                   </div>
@@ -193,7 +184,7 @@ const ItemsPage = () => {
                 return (
                   <div key={edge.node.slug} className={itemStyles.item}>
                     <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
-                      <p>
+                      <p className={itemStyles.meatType}>
                         {edge.node.meatType[0].toUpperCase()}
                       </p>
                       <div className={itemStyles.imageContainer}>
@@ -201,11 +192,8 @@ const ItemsPage = () => {
                       </div>
                       <div className={itemStyles.itemText}>
                         <h2>{edge.node.title}</h2>
-                        <p>{edge.node.shortDescription}</p>
+                        <p className={itemStyles.description}>{edge.node.shortDescription}</p>
                         <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
-                        <p>
-                          {edge.node.meatType}
-                        </p>
                       </div>
                     </Link>
                   </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import Footer from './Footer'
 import layoutStyles from './layout.module.scss'
 import Navigation from './Navigation'
-import { TransitionProvider, TransitionViews } from "gatsby-plugin-transitions";
+// import { TransitionProvider, TransitionViews } from "gatsby-plugin-transitions";
 
 
 

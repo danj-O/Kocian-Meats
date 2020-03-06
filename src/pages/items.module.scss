@@ -7,6 +7,7 @@
     // width: 200px;
     border: solid 1px;
     text-align: center;
+    padding: 20px;
   }
 }
 .items {
@@ -33,24 +34,13 @@
     padding: 1rem;
     // width: 100%;
   }
-  .itemText {
-    padding: 0;
-    margin-top: -20px;
-  }
   a:hover {
     background: #e4e4e4;
   }
-  h2 {
-    // line-height: .4;
-    margin-bottom: 0;
-  }
-  p {
+  .meatType {
+    margin: 0;
+    font-size: 0.7rem;
     color: #777777;
-    font-size: .8rem;
-    // font-style: italic;
-  }
-  .price {
-    
   }
   .imageContainer {
     padding: 0;
@@ -61,5 +51,27 @@
 
     }
   }
+
+
+  .itemText {
+    padding: 0;
+    margin-top: -15px;
   
+    h2 {
+      // line-height: .4;
+      margin-bottom: 0;
+      font-size: 1.3rem;
+    }
+    .description {
+      margin: 10px 0px;
+      color: #777777;
+      font-size: .8rem;
+      // font-style: italic;
+    }
+    .price {
+      text-align: right;
+      padding: 0;
+      margin: 0;
+    }
+  }
 }
