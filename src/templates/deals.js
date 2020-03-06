@@ -1,7 +1,5 @@
 import React from 'react'
-// import Layout from '../components/Layout'
 import { graphql, Link } from 'gatsby'
-// import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Head from '../components/Head'
 import { ModalRoutingContext } from 'gatsby-plugin-modal-routing'
 import '../styles/template.scss'

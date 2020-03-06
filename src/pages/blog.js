@@ -1,5 +1,5 @@
 import React from 'react'
-// import Layout from '../components/Layout'
+import Hero from '../components/Hero'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import blogStyles from './blog.module.scss'
 import Head from '../components/Head'
@@ -26,8 +26,11 @@ const BlogPage = () => {
   return (
     <div>
       <Head title='Blog'/>
-      <h1 className="pageHeader"> Blog</h1>
-      <p className="pageSubHeader">Check here for cool stuff weekly!</p>
+      <Hero heroImg='blog-hero' />
+      <div className='header-box'>
+        <h1 className="pageHeader"> Blog</h1>
+        <p className="pageSubHeader">Check here for cool stuff weekly!</p>
+      </div>
       <ol className={blogStyles.posts}>
         { //maps over the query using allMarkdownRemark to find .md files
         data.allContentfulBlog.edges.map((edge) => {
