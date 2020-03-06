@@ -55,7 +55,7 @@ const IndexPage = () =>{
                     </div>
                     <div className={itemStyles.itemText}>
                       <h2>{edge.node.name}</h2>
-                      <p>{edge.node.shortDescription}</p>
+                      <p className={itemStyles.description}>{edge.node.shortDescription}</p>
                       <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
                     </div>
                   </Link>
