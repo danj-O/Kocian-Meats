@@ -1,5 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from "gatsby"
+import Img from 'gatsby-image'
 import './Hero.scss'
 
 //props for text over hero
@@ -16,15 +17,27 @@ export default function Hero(props) {
           }
         }
       }
+      allImageSharp {
+        nodes {
+          id
+          fluid {
+            originalName
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
-
+    console.log(data.allImageSharp.nodes)
   return (
     <div className='hero-container'>
       {
-        data.allContentfulAsset.edges.map((edge) => {
-          if (edge.node.title === props.heroImg){     
-            return (<img key={edge.node.title} src={edge.node.file.url} alt="Kocian Meats background"/>)
+        data.allImageSharp.nodes.map((node) => {
+          if (node.fluid.originalName === props.heroImg){     
+            return (
+              <Img 
+                fluid={node.fluid}
+                key={node.originalName}/>)
           }
           return null
         })

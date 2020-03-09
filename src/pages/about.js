@@ -10,7 +10,7 @@ const AboutPage = () => {
   return (
     <div>
         <Head title='About' />
-        <Hero heroImg="about-hero"/>
+        <Hero heroImg="about-hero.jpg"/>
       <div className='about-content'>
         <div className='header-box'>
           <h1 className="pageHeader"> The story of Kocian Meats </h1>

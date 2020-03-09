@@ -38,7 +38,7 @@ const Deals = () =>{
   return(
       <div>
         <Head title="Deals"/>
-        <Hero header="Specials" subHeader="Check back here to catch special deals!" heroImg="deals-hero"/>
+        <Hero header="Specials" subHeader="Check back here to catch special deals!" heroImg="deals-hero.jpg"/>
         <div className='header-box'>
           <h1 className="pageHeader"> Our specials! </h1>
           <p className="pageSubHeader">Updated daily with our juiciest deals</p>

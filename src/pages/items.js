@@ -34,25 +34,47 @@ const ItemsPage = () => {
           }
         }
       }
+      allContentfulAsset {
+        edges {
+          node {
+            title
+            file {
+              url
+            }
+          }
+        }
+      }
     }
   `)
   return (
     <div>
       <Head title='Product List'/>
-      <Hero header="Products" subHeader="Our meats are simply the best!" heroImg="item-hero"/>
+      <Hero header="Products" subHeader="Our meats are simply the best!" heroImg="item-hero.jpg"/>
       <div className='header-box'>
-        <h1 className='pageHeader'> Products</h1>
-        <p className='pageSubHeader'>In a hurry? Our best selection is now available for preorder/prepay right here!</p>
+        {/* <h1 className='pageHeader'> Products</h1> */}
+        <p className='pageSubHeader'>In a hurry? Our best selection is now available for viewing online!  Have a look then call your order in!</p>
       </div>
-      <div className={itemStyles.meatContainer}>
-        <h1 id='beef'>
-          Beef
-        </h1>
+      <div id='beef' className={itemStyles.meatContainer}>
+        <div className={itemStyles.meatTypeHeader}>
+          <h1>
+            Beef
+          </h1>
+          <div className={itemStyles.meatImgBox}>
+            {
+              data.allContentfulAsset.edges.map((edge) => {
+                if (edge.node.title === 'cow-parts'){
+                  return (
+                    <img key={edge.node.title} src={edge.node.file.url} alt="cow-parts"/>
+                  )
+                }
+              })
+            }
+          </div>
+        </div>
         <div className={itemStyles.items}>
           { //maps over the query using allMarkdownRemark to find .md files
             data.allContentfulItem.edges.map((edge) => {
               if (edge.node.meatType[0] === 'beef'){
-                // let meat = edge.node.meatType[0].toUpperCase()
                 return (
                   <div key={edge.node.slug} className={itemStyles.item}>
                     <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
@@ -78,9 +100,22 @@ const ItemsPage = () => {
       </div>
 
       <div className={itemStyles.meatContainer}>
-        <h1 id='pork'>
-          Pork
-        </h1>
+        <div className={itemStyles.meatTypeHeader}>
+          <h1 id='pork'>
+            Pork
+          </h1>
+          <div className={itemStyles.meatImgBox}>
+            {
+              data.allContentfulAsset.edges.map((edge) => {
+                if (edge.node.title === 'pig-parts'){
+                  return (
+                    <img key={edge.node.title} src={edge.node.file.url} alt="pig-parts"/>
+                  )
+                }
+              })
+            }
+          </div>
+        </div>
         <div className={itemStyles.items}>
           {
             data.allContentfulItem.edges.map((edge) => {
@@ -110,9 +145,23 @@ const ItemsPage = () => {
       </div>
 
       <div className={itemStyles.meatContainer}>
-        <h1 id='chicken'>
-          Chicken
-        </h1>
+        <div className={itemStyles.meatTypeHeader}>
+          <h1 id='chicken'>
+            Chicken
+          </h1>
+          <div className={itemStyles.meatImgBox}>
+            {
+              data.allContentfulAsset.edges.map((edge) => {
+                if (edge.node.title === 'chicken'){
+                  return (
+                    <img key={edge.node.title} src={edge.node.file.url} alt="chicken"/>
+                  )
+                }
+              })
+            }
+          </div>
+        </div>
+
         <div className={itemStyles.items}>
           { 
             data.allContentfulItem.edges.map((edge) => {
@@ -142,9 +191,23 @@ const ItemsPage = () => {
       </div>
 
       <div className={itemStyles.meatContainer}>
-        <h1 id='seafood'>
-          Seafood
-        </h1>
+        <div className={itemStyles.meatTypeHeader}>
+          <h1 id='seafood'>
+            Seafood
+          </h1>
+          <div className={itemStyles.meatImgBox}>
+            {
+              data.allContentfulAsset.edges.map((edge) => {
+                if (edge.node.title === 'crab'){
+                  return (
+                    <img key={edge.node.title} src={edge.node.file.url} alt="crab"/>
+                  )
+                }
+              })
+            }
+          </div>
+        </div>
+
         <div className={itemStyles.items}>
           { 
             data.allContentfulItem.edges.map((edge) => {
@@ -174,9 +237,22 @@ const ItemsPage = () => {
       </div>
 
       <div className={itemStyles.meatContainer}>
-        <h1 id='other'>
-          Other
-        </h1>
+        <div className={itemStyles.meatTypeHeader}>
+          <h1 id='other'>
+            Other
+          </h1>
+          <div className={itemStyles.meatImgBox}>
+            {
+              data.allContentfulAsset.edges.map((edge) => {
+                if (edge.node.title === 'cheese'){
+                  return (
+                    <img key={edge.node.title} src={edge.node.file.url} alt="cheese"/>
+                  )
+                }
+              })
+            }
+          </div>
+        </div>
         <div className={itemStyles.items}>
           { 
             data.allContentfulItem.edges.map((edge) => {

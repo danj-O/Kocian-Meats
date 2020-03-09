@@ -13,6 +13,7 @@ module.exports = {
     author: 'Daniel Scott',
   },
   plugins : [
+    // this plugin wraps the layout file around pages
     {
       resolve: `gatsby-plugin-layout`,
       options: {
@@ -58,6 +59,7 @@ module.exports = {
       }
     },
     'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       //tranformer remark parses markdown files with remark
       resolve : 'gatsby-transformer-remark',
