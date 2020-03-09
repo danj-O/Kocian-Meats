@@ -24,11 +24,14 @@ export default function Hero(props) {
             originalName
             ...GatsbyImageSharpFluid
           }
+          fixed {
+            originalName
+          }
         }
       }
     }
   `)
-    // console.log(data.allImageSharp.nodes)
+    console.log(data.allImageSharp.nodes)
   return (
     <div className='hero-container'>
       {
