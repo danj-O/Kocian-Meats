@@ -2,6 +2,10 @@ import React from 'react'
 import { Link, graphql, useStaticQuery } from "gatsby"
 import './footer.scss'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons'
+
 export default function Footer() {
   const data = useStaticQuery(graphql`
   query {
@@ -22,10 +26,10 @@ export default function Footer() {
             For customized and wholesale ordering, please call or send and email.
           </p>
           <ul className='social-links'>
-            <li>Call</li>
-            <li>Email</li>
-            <li>FaceBook</li>
-            <li>Twitter</li>
+            <li><FontAwesomeIcon icon={faPhone} /></li>
+            <li><FontAwesomeIcon icon={faEnvelope} /></li>
+            <li><FontAwesomeIcon icon={faFacebook} /></li>
+            <li><FontAwesomeIcon icon={faTwitter} /></li>
           </ul>
       </div>
       <div className='footer-box'>

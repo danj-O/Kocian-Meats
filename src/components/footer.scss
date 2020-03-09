@@ -7,14 +7,22 @@ footer {
     font-size: 1.1em;
     font-style: italic;
     text-align: center;
-    margin: 20px 100px;
-    border-bottom: rgba(204, 204, 204, 0.438) solid 1px;
+    margin: 0px 100px;
+    margin-top: 20px;
+    // border-bottom: rgba(204, 204, 204, 0.438) solid 1px;
 
     .social-links {
+      font-size: 1.7em;
       display: flex;
-      justify-content: space-evenly;
+      justify-content: center;
       list-style: none;
-      color: inherit;
+      color: white;
+      li {
+        padding: 0px 17px;
+      }
+      li:hover {
+        color: orange;
+      }
     }
   }
   .footer-box {

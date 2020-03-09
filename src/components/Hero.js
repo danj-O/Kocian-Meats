@@ -28,7 +28,7 @@ export default function Hero(props) {
       }
     }
   `)
-    console.log(data.allImageSharp.nodes)
+    // console.log(data.allImageSharp.nodes)
   return (
     <div className='hero-container'>
       {
@@ -37,7 +37,7 @@ export default function Hero(props) {
             return (
               <Img 
                 fluid={node.fluid}
-                key={node.originalName}/>)
+                key={node.id}/>)
           }
           return null
         })
