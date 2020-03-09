@@ -26,10 +26,26 @@ export default function Footer() {
             For customized and wholesale ordering, please call or send and email.
           </p>
           <ul className='social-links'>
-            <li><FontAwesomeIcon icon={faPhone} /></li>
-            <li><FontAwesomeIcon icon={faEnvelope} /></li>
-            <li><FontAwesomeIcon icon={faFacebook} /></li>
-            <li><FontAwesomeIcon icon={faTwitter} /></li>
+            <li> 
+              <a href="tel:2168817676">
+                <FontAwesomeIcon icon={faPhone} />
+              </a>
+            </li>
+            <li>
+            <a href="mailto:info@kocianmeats.com?Subject=Special%20order" target="_top">
+              <FontAwesomeIcon icon={faEnvelope} />
+            </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/kocianmeats/" target="_blank">
+                <FontAwesomeIcon icon={faFacebook} />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/kocianmeats/">
+                <FontAwesomeIcon icon={faTwitter} />
+              </a>
+            </li>
           </ul>
       </div>
       <div className='footer-box'>

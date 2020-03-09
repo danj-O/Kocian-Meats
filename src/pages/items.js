@@ -154,7 +154,7 @@ const ItemsPage = () => {
               data.allContentfulAsset.edges.map((edge) => {
                 if (edge.node.title === 'chicken'){
                   return (
-                    <img key={edge.node.title} src={edge.node.file.url} alt="chicken"/>
+                    <img className={itemStyles.chicken} key={edge.node.title} src={edge.node.file.url} alt="chicken"/>
                   )
                 }
               })
