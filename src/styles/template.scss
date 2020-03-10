@@ -125,6 +125,9 @@
     .content-container {
       .big-box {
         flex-direction: column;
+        .content-text {
+          padding: 0;
+        }
       }
     }
   }

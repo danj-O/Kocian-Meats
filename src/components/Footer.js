@@ -61,10 +61,11 @@ export default function Footer() {
           <li>Sunday and Monday: Closed</li>
           <li>Tuesday - Saturday: 9:30-5:30</li>
         </ul>
-        <div>
+        <div className='subscribe-box'>
           <p>
             Subscribe to our mailing list to get exclusive deals!
           </p>
+          <input type="text"/>
         </div>
         <ul className='bigList'>
           <li>        

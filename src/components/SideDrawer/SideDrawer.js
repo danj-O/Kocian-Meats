@@ -147,6 +147,12 @@ export default function SideDrawer(props) {
           </Link>
         </li>
       </ul>
+      <div className='subscribe-box'>
+        <p>
+          Subscribe to Kocian Meats Newsletter for special deals!
+        </p>
+        <input type="text"/>
+      </div>
     </nav>
   )
 }

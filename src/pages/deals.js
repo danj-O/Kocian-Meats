@@ -45,7 +45,7 @@ const Deals = () =>{
         </div>
 
         <div className={itemStyles.meatContainer}>
-          <h1 id='fvp'>
+          <h1 id='fvp' className={itemStyles.meatTypeHeader}>
             Family Value Packs
           </h1>
           <div className={itemStyles.items}>
@@ -77,7 +77,7 @@ const Deals = () =>{
         </div>
 
         <div className={itemStyles.meatContainer}>
-          <h1 id='sfvp'>
+          <h1 id='sfvp' className={itemStyles.meatTypeHeader}>
             Super Family Value Packs
           </h1>
           <div className={itemStyles.items}>
