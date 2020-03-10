@@ -1,6 +1,6 @@
 import React from 'react'
-// import Layout from '../components/Layout'
 import { graphql, Link } from 'gatsby'
+import Img from 'gatsby-image'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { ModalRoutingContext } from 'gatsby-plugin-modal-routing'
 import Head from '../components/Head'
@@ -18,10 +18,18 @@ export const query = graphql`
         json
       }
       itemImage {
-        file {
-          fileName
-          url
-          
+        fluid {
+          aspectRatio
+          sizes
+          src
+          srcSet
+        }
+        fixed {
+          aspectRatio
+          height
+          src
+          srcSet
+          width
         }
       }
     }
@@ -56,13 +64,15 @@ export default function Items(props) {
               </p>
               <div className='big-box'>
                 <div className='image-container'>
-                  <img src={props.data.contentfulItem.itemImage.file.url} alt={props.data.contentfulItem.itemImage.fileName}/>
+                  <Img 
+                    fluid={props.data.contentfulItem.itemImage.fluid}
+                  />
                 </div>
                 <div className='content-text'>
                   <h1>{ props.data.contentfulItem.title }</h1>
-                  <p className='description'>
+                  <div className='description'>
                     {documentToReactComponents(props.data.contentfulItem.description.json)}
-                  </p>
+                  </div>
                   <p className='price'>
                     ${props.data.contentfulItem.price} - {props.data.contentfulItem.pricePer}
                   </p>

@@ -21,7 +21,6 @@ export default function Hero(props) {
               srcSet
               aspectRatio
               sizes
-              
             }
           }
         }
@@ -34,7 +33,7 @@ export default function Hero(props) {
       {
         data.allContentfulAsset.edges.map((edge) => {
           if (edge.node.title === props.heroImg){     
-            console.log('edge',edge)
+            // console.log('edge',edge)
             return (
               <Img 
                 fluid={edge.node.fluid}
