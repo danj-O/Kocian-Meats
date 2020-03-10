@@ -10,37 +10,35 @@ export default function Hero(props) {
       allContentfulAsset {
         edges {
           node {
+            id
             title
-            file {
-              url
+            fixed {
+              src
+              srcSet
             }
-          }
-        }
-      }
-      allImageSharp {
-        nodes {
-          id
-          fluid {
-            originalName
-            ...GatsbyImageSharpFluid
-          }
-          fixed {
-            originalName
+            fluid {
+              src
+              srcSet
+              aspectRatio
+              sizes
+              
+            }
           }
         }
       }
     }
   `)
-    console.log(data.allImageSharp.nodes)
+    // console.log('edges',data.allContentfulAsset.edges.node.fluid)
   return (
     <div className='hero-container'>
       {
-        data.allImageSharp.nodes.map((node) => {
-          if (node.fluid.originalName === props.heroImg){     
+        data.allContentfulAsset.edges.map((edge) => {
+          if (edge.node.title === props.heroImg){     
+            console.log('edge',edge)
             return (
               <Img 
-                fluid={node.fluid}
-                key={node.id}/>)
+                fluid={edge.node.fluid}
+                key={edge.node.id}/>)
           }
           return null
         })

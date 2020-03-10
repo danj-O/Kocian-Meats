@@ -49,7 +49,7 @@ const ItemsPage = () => {
   return (
     <div>
       <Head title='Product List'/>
-      <Hero header="Products" subHeader="Our meats are simply the best!" heroImg="cheese.png"/>
+      <Hero header="Products" subHeader="Our meats are simply the best!" heroImg="item-hero"/>
       <div className='header-box'>
         {/* <h1 className='pageHeader'> Products</h1> */}
         <p className='pageSubHeader'>In a hurry? Our best selection is now available for viewing online!  Have a look then call your order in!</p>
