@@ -77,9 +77,9 @@ const IndexPage = () =>{
           See all Products
         </Link>
       </div>
-      <div>
+      {/* <div>
         <MyCarousel />
-      </div>
+      </div> */}
       {/* <div>
         All of our products come locally sourced so you know it'll be the best every time!
       </div> */}
