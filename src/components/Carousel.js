@@ -36,14 +36,14 @@ export default function MyCarousel() {
   })
   return (
     <div className='carousel-box'>
-      <Carousel
+      {/* <Carousel
         centered
         // infinite
         arrows
         slidesPerPage={3}
       >
         {pics}
-      </Carousel>
+      </Carousel> */}
     </div>
   )
 }

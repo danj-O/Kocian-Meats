@@ -6,7 +6,7 @@ import itemStyles from './items.module.scss'
 import './index.scss'
 import Head from '../components/Head'
 import Hero from '../components/Hero'
-import MyCarousel from '../components/Carousel'
+// import MyCarousel from '../components/Carousel'
 import { Link } from 'gatsby-plugin-modal-routing'
 
 
