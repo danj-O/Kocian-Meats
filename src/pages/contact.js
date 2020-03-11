@@ -39,9 +39,9 @@ const ContactPage = () => {
           <WrappedMap 
             // isMarkerShown
             googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyD9Xdn8aWVDbWcSD1MgKf2LZeJ4vrmdpSY`}
-            loadingElement={<div style={{ height: `100%` }} />}
-            containerElement={<div style={{ height: `400px`, width: `600px` }} />}
-            mapElement={<div style={{ height: `100%` }} />}
+            loadingElement={<div style={{ height: `100%`, margin: '0', padding: '0', boxSizing: 'border-box' }} />}
+            containerElement={<div style={{ height: `400px`, width: `400px`, margin: '0', padding: '0', boxSizing: 'border-box' }} />}
+            mapElement={<div style={{ height: `100%`, margin: '0', padding: '0', boxSizing: 'border-box' }} />}
           />
         </div>
       </div>

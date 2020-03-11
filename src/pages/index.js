@@ -3,8 +3,10 @@ import React from "react"
 import { useStaticQuery, graphql } from 'gatsby'
 import '../styles/globals.scss'
 import itemStyles from './items.module.scss'
+import './index.scss'
 import Head from '../components/Head'
 import Hero from '../components/Hero'
+import MyCarousel from '../components/Carousel'
 import { Link } from 'gatsby-plugin-modal-routing'
 
 
@@ -67,6 +69,20 @@ const IndexPage = () =>{
           })
         }
       </div>
+      <div className='page-links'>
+        <Link to='/deals'>
+          See all Specials
+        </Link>
+        <Link to='/items'>
+          See all Products
+        </Link>
+      </div>
+      <div>
+        <MyCarousel />
+      </div>
+      {/* <div>
+        All of our products come locally sourced so you know it'll be the best every time!
+      </div> */}
     </div>
   )
 }
