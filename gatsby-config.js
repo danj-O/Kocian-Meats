@@ -9,8 +9,9 @@
 module.exports = {
   siteMetadata : {
     //this will be used for header and footer text
-    title: 'Kocian Meats',
+    title: 'Kocian Meats & Marketplace | #1 meat market in NE Ohio| Cleveland',
     author: 'Daniel Scott',
+    description: `Northeast Ohio's premier meat market. Conveniently located in downtown Cleveland.  Sign up for our newsletter to get special deals on the products you love!`
   },
   plugins : [
     // this plugin wraps the layout file around pages

@@ -10,6 +10,7 @@ export default function Head({ title }) {
       site {
         siteMetadata {
           title
+          description
         }
       }
     }
@@ -17,6 +18,11 @@ export default function Head({ title }) {
 
 
   return (
-    <Helmet title={`${title} |  ${data.site.siteMetadata.title}`}/>
+    <Helmet>
+      <html lang="en" />
+      <title>{`${title} |  ${data.site.siteMetadata.title}`}</title>
+      <meta name="description" content={data.site.siteMetadata.description} />
+      <link rel='canonical' href='http://kocianmeats.com/' />
+    </Helmet>
   )
 }
