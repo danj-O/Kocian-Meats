@@ -52,9 +52,13 @@ footer {
       }
     }
     ul {
+      .foot-sub-head {
+        font-weight: bold;
+      }
       padding: 0;
       list-style: none;
       li {
+        font-weight: 300;
         line-height: 2;
         a {
           text-decoration: none;

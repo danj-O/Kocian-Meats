@@ -8,6 +8,7 @@
   top: 0;
   left: 0;
   background: rgb(255, 255, 255);
+  transition: all ease .4s;
 }
 .title {
   // font-family: 'Spartan';
@@ -63,6 +64,9 @@
   }
 }
 @media (max-width:480px){
+  .header {
+    height: 60px;
+  }
   .logo {
     height: 35px;
   }
