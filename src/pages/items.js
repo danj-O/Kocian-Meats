@@ -200,7 +200,7 @@ const ItemsPage = () => {
               data.allContentfulAsset.edges.map((edge) => {
                 if (edge.node.title === 'crab'){
                   return (
-                    <img key={edge.node.title} src={edge.node.file.url} alt="crab"/>
+                    <img className={itemStyles.seafood} key={edge.node.title} src={edge.node.file.url} alt="crab"/>
                   )
                 }
               })
@@ -246,7 +246,7 @@ const ItemsPage = () => {
               data.allContentfulAsset.edges.map((edge) => {
                 if (edge.node.title === 'cheese'){
                   return (
-                    <img key={edge.node.title} src={edge.node.file.url} alt="cheese"/>
+                    <img className={itemStyles.other} key={edge.node.title} src={edge.node.file.url} alt="cheese"/>
                   )
                 }
               })

@@ -46,12 +46,11 @@ const Deals = () =>{
         </div>
           <div className='subscribe-box-deals'>
             <p>
-              Like these great specials? Subscribe to our mailing list to be the first to hear about them!
+              Like these great specials?<Link to="/deals#subscribe">Sign up</Link> for our mailing list to be the first to hear about them!
             </p>
-            
-            <Link to="/deals#subscribe">
-              Sign up here!
-            </Link>
+            {/* <Link to="/deals#subscribe">
+              Sign up
+            </Link> */}
           </div>
 
 

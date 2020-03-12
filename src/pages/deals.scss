@@ -6,8 +6,20 @@
   align-items: center;
   text-align: center;
   p {
+    line-height: 2;
     font-size: 0.7em;
     width: 300px;
+    a {
+      background: rgb(240, 152, 38);
+      color: white;
+      text-decoration: none;
+      // border: black 1px solid;
+      padding: 5px;
+      margin: 3px;
+    }
+    a:hover {
+      background: rgb(82, 82, 82);
+    }
   }
   input {
     width: 200px;
