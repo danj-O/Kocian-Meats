@@ -48,7 +48,10 @@ const Deals = () =>{
             <p>
               Like these great specials? Subscribe to our mailing list to be the first to hear about them!
             </p>
-            <input type="text"/>
+            
+            <Link to="/deals#subscribe">
+              Sign up here!
+            </Link>
           </div>
 
 
