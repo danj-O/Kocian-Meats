@@ -1,10 +1,8 @@
 import React from 'react'
 import { useStaticQuery, graphql } from "gatsby"
-import Carousel, { Dots } from '@brainhubeu/react-carousel';
-import '@brainhubeu/react-carousel/lib/style.css';
 import Img from 'gatsby-image'
 import './Carousel.scss'
-
+import Carousel from 'nuka-carousel'
 
 export default function MyCarousel() {
   const data = useStaticQuery(graphql`
@@ -36,14 +34,13 @@ export default function MyCarousel() {
   })
   return (
     <div className='carousel-box'>
-      {/* <Carousel
-        centered
-        // infinite
-        arrows
-        slidesPerPage={3}
+      <Carousel
+        autoplay= {'true'}
+        cellAlign={'center'}
+        slidesToShow={3}
       >
         {pics}
-      </Carousel> */}
+      </Carousel>
     </div>
   )
 }

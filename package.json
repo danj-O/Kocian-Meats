@@ -14,7 +14,6 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@brainhubeu/react-carousel": "^1.12.20",
     "@contentful/rich-text-react-renderer": "^13.4.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-brands-svg-icons": "^5.12.1",
@@ -38,6 +37,7 @@
     "gatsby-transformer-remark": "^2.6.52",
     "gatsby-transformer-sharp": "^2.3.17",
     "node-sass": "^4.13.1",
+    "nuka-carousel": "^4.6.6",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-google-maps": "^9.4.5",

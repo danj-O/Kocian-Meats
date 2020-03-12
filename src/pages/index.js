@@ -6,7 +6,7 @@ import itemStyles from './items.module.scss'
 import './index.scss'
 import Head from '../components/Head'
 import Hero from '../components/Hero'
-// import MyCarousel from '../components/Carousel'
+import Carousel from '../components/Carousel'
 import { Link } from 'gatsby-plugin-modal-routing'
 
 
@@ -77,9 +77,9 @@ const IndexPage = () =>{
           See all Products
         </Link>
       </div>
-      {/* <div>
-        <MyCarousel />
-      </div> */}
+      <div>
+        <Carousel />
+      </div>
       {/* <div>
         All of our products come locally sourced so you know it'll be the best every time!
       </div> */}
