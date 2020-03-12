@@ -17,36 +17,42 @@
     right: 0;
     width: 50px;
     height: 40px;
-    background: rgb(0, 0, 0);
+    // background: rgb(0, 0, 0);
     display: flex;
     align-items: center;
     justify-content: center;
     // border-radius: 20px;
-    color: white;
+    color: rgb(163, 163, 163);
+    font-weight: 700;
+    font-size: 1.5em;
   }
   .side-drawer-logo {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 20px;
+    // padding-bottom: 8px;
     img {
-      width: 35%;
+      width: 50%;
       height: auto;
     }
   }
   .bigList {
     // height: 100vh; 
+    // border-top: 1px solid rgb(116, 116, 116);
     list-style: none;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     margin: 0;
-    padding: 1.5rem 2.5rem;
+    padding: 1rem 0rem;
+    padding-left: 3.5rem;
+    // border: black solid 1px;
     li {
       margin: 0.5rem 0;
       .cat {
-        color: black;
+        color: rgb(49, 49, 49);
         font-size: 1.2rem;
       }
       .subCat-grp {
@@ -64,24 +70,31 @@
         a:hover,
         a:active {
           color: #fa923f;
-      }
+        }
       }
       a {
         text-decoration: none;
+        display: flex;
+        align-items: center;
       }
       a:hover,
       a:active {
         color: #fa923f;
       }
+      
     }
   }
   .subscribe-box {
     // width: 100%;
+    border-top: solid rgb(233, 233, 233) 1px;
+    color: rgb(63, 63, 63);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin: 0px 15px;
+    padding-top: 25px;
     p {
       font-size: 0.7em;
     }

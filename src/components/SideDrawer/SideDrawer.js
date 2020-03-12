@@ -28,7 +28,7 @@ export default function SideDrawer(props) {
   return (
     <nav className={drawerClasses}>
       <div className='close-btn' onClick={props.click}>
-        <p>X</p>
+        <p>x</p>
       </div>
       <div className='side-drawer-logo'>
         {
@@ -43,6 +43,7 @@ export default function SideDrawer(props) {
       <ul className='bigList'>
         <li>        
           <Link className='cat' activeClassName='' to='/'>
+            {/* <span>o</span> */}
             <div>
               Home
             </div>

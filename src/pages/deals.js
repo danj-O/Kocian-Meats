@@ -6,6 +6,7 @@ import Head from '../components/Head'
 import Hero from '../components/Hero'
 import '../styles/globals.scss'
 import { Link } from 'gatsby-plugin-modal-routing'
+import './deals.scss'
 
 
 
@@ -43,6 +44,13 @@ const Deals = () =>{
           <h1 className="pageHeader"> Our specials! </h1>
           <p className="pageSubHeader">Updated daily with our juiciest deals</p>
         </div>
+          <div className='subscribe-box-deals'>
+            <p>
+              Like these great specials? Subscribe to our mailing list to be the first to hear about them!
+            </p>
+            <input type="text"/>
+          </div>
+
 
         <div className={itemStyles.meatContainer}>
           <h1 id='fvp' className={itemStyles.meatTypeHeader}>
