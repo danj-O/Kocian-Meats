@@ -19,6 +19,12 @@ export default function MyCarousel() {
               height
               width
             }
+            fluid {
+              aspectRatio
+              sizes
+              src
+              srcSet
+            }
           }
         }
       }
@@ -28,7 +34,7 @@ export default function MyCarousel() {
   let pics = data.allContentfulAsset.edges.map(edge => {
     if (edge.node.title.includes('carousel')){
       // console.log(edge.node)
-      return <Img fixed={edge.node.fixed} />
+      return <Img  key={edge.node.id} fluid={edge.node.fluid} />
     }
     return null
   })
@@ -37,7 +43,16 @@ export default function MyCarousel() {
       <Carousel
         autoplay= {'true'}
         cellAlign={'center'}
-        slidesToShow={3}
+        slidesToShow={2}
+        // scrollMode={'remainder'}
+        // cellSpacing={'.5'}
+        wrapAround={'true'}
+        transitionMode={'scroll'}
+        slideWidth={.8}
+        frameOverflow={'hidden'}
+        autoGenerateStyleTag={'true'}
+        pauseOnHover={'false'}
+        // framePadding={'20px 20px'}
       >
         {pics}
       </Carousel>
