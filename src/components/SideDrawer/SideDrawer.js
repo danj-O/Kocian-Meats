@@ -27,7 +27,7 @@ export default function SideDrawer(props) {
     // console.log('sidrawer LOC',path)
   return (
     <nav className={drawerClasses}>
-      <div className='close-btn' onClick={props.click}>
+      <div className='close-btn' onClick={props.click} onKeyDown={props.click} role='button' tabIndex='0'>
         <p>x</p>
       </div>
       <div className='side-drawer-logo'>
