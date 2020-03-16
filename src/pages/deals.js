@@ -23,6 +23,7 @@ const Deals = () =>{
             pricePer
             dealType
             dealsImage {
+              description
               file {
                 fileName
                 url
@@ -44,14 +45,11 @@ const Deals = () =>{
           <h1 className="pageHeader"> Our specials! </h1>
           <p className="pageSubHeader">Updated daily with our juiciest deals</p>
         </div>
-          <div className='subscribe-box-deals'>
-            <p>
-              Like these great specials?<Link to="/deals#subscribe">Sign up</Link> for our mailing list to be the first to hear about them!
-            </p>
-            {/* <Link to="/deals#subscribe">
-              Sign up
-            </Link> */}
-          </div>
+        <div className='subscribe-box-deals'>
+          <p>
+            Like these great specials?<Link to="/deals#subscribe">Sign up</Link> for our mailing list to be the first to hear about them!
+          </p>
+        </div>
 
 
         <div className={itemStyles.meatContainer}>
@@ -69,12 +67,12 @@ const Deals = () =>{
                           {edge.node.dealType}
                         </p>
                         <div className={itemStyles.imageContainer}>
-                          <img src={edge.node.dealsImage.file.url} alt=""/>
+                          <img src={edge.node.dealsImage.file.url} alt={edge.node.dealsImage.description}/>
                         </div>
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.name}</h2>
                           <p className={itemStyles.description}>{edge.node.shortDescription}</p>
-                          <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                          <p className={itemStyles.price}>${edge.node.price} / {edge.node.pricePer}</p>
                         </div>
                       </Link>
                     </div>
@@ -101,12 +99,12 @@ const Deals = () =>{
                           {edge.node.dealType}
                         </p>
                         <div className={itemStyles.imageContainer}>
-                          <img src={edge.node.dealsImage.file.url} alt=""/>
+                          <img src={edge.node.dealsImage.file.url} alt={edge.node.dealsImage.description}/>
                         </div>
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.name}</h2>
                           <p className={itemStyles.description}>{edge.node.shortDescription}</p>
-                          <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                          <p className={itemStyles.price}>${edge.node.price} / {edge.node.pricePer}</p>
                         </div>
                       </Link>
                     </div>

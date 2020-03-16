@@ -24,6 +24,7 @@ const IndexPage = () =>{
             price
             pricePer
             dealsImage {
+              description
               file {
                 fileName
                 url
@@ -54,7 +55,7 @@ const IndexPage = () =>{
                 <div key={edge.node.slug} className={itemStyles.item}>
                   <Link to={`/deals/${edge.node.slug}`} asModal state={{noScroll: true}}>
                     <div className={itemStyles.imageContainer}>
-                      <img src={edge.node.dealsImage.file.url} alt=""/>
+                      <img src={edge.node.dealsImage.file.url} alt={edge.node.dealsImage.description}/>
                     </div>
                     <div className={itemStyles.itemText}>
                       <h2>{edge.node.name}</h2>

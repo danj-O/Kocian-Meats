@@ -25,6 +25,7 @@ const ItemsPage = () => {
               json
             }
             itemImage {
+              description
               file {
                 fileName
                 url
@@ -37,6 +38,7 @@ const ItemsPage = () => {
       allContentfulAsset {
         edges {
           node {
+            description
             title
             file {
               url
@@ -67,6 +69,7 @@ const ItemsPage = () => {
                     <img key={edge.node.title} src={edge.node.file.url} alt="cow-parts"/>
                   )
                 }
+                return null
               })
             }
           </div>
@@ -82,7 +85,7 @@ const ItemsPage = () => {
                         {edge.node.meatType[0].toUpperCase()}
                       </p>
                       <div className={itemStyles.imageContainer}>
-                        <img src={edge.node.itemImage.file.url} alt=""/>
+                        <img src={edge.node.itemImage.file.url} alt={edge.node.itemImage.description}/>
                       </div>
                       <div className={itemStyles.itemText}>
                         <h2>{edge.node.title}</h2>
@@ -112,6 +115,7 @@ const ItemsPage = () => {
                     <img key={edge.node.title} src={edge.node.file.url} alt="pig-parts"/>
                   )
                 }
+                return null
               })
             }
           </div>
@@ -127,7 +131,7 @@ const ItemsPage = () => {
                         {edge.node.meatType[0].toUpperCase()}
                       </p>
                       <div className={itemStyles.imageContainer}>
-                        <img src={edge.node.itemImage.file.url} alt=""/>
+                        <img src={edge.node.itemImage.file.url} alt={edge.node.itemImage.description}/>
                       </div>
                       <div className={itemStyles.itemText}>
                         <h2>{edge.node.title}</h2>
@@ -157,6 +161,7 @@ const ItemsPage = () => {
                     <img className={itemStyles.chicken} key={edge.node.title} src={edge.node.file.url} alt="chicken"/>
                   )
                 }
+                return null
               })
             }
           </div>
@@ -173,7 +178,7 @@ const ItemsPage = () => {
                         {edge.node.meatType[0].toUpperCase()}
                       </p>
                       <div className={itemStyles.imageContainer}>
-                        <img src={edge.node.itemImage.file.url} alt=""/>
+                        <img src={edge.node.itemImage.file.url} alt={edge.node.itemImage.description}/>
                       </div>
                       <div className={itemStyles.itemText}>
                         <h2>{edge.node.title}</h2>
@@ -203,6 +208,7 @@ const ItemsPage = () => {
                     <img className={itemStyles.seafood} key={edge.node.title} src={edge.node.file.url} alt="crab"/>
                   )
                 }
+                return null
               })
             }
           </div>
@@ -219,7 +225,7 @@ const ItemsPage = () => {
                         {edge.node.meatType[0].toUpperCase()}
                       </p>
                       <div className={itemStyles.imageContainer}>
-                        <img src={edge.node.itemImage.file.url} alt=""/>
+                        <img src={edge.node.itemImage.file.url} alt={edge.node.itemImage.description}/>
                       </div>
                       <div className={itemStyles.itemText}>
                         <h2>{edge.node.title}</h2>
@@ -246,9 +252,10 @@ const ItemsPage = () => {
               data.allContentfulAsset.edges.map((edge) => {
                 if (edge.node.title === 'cheese'){
                   return (
-                    <img className={itemStyles.other} key={edge.node.title} src={edge.node.file.url} alt="cheese"/>
+                    <img className={itemStyles.other} key={edge.node.title} src={edge.node.file.url} alt={edge.node.description}/>
                   )
                 }
+                return null
               })
             }
           </div>
@@ -264,7 +271,7 @@ const ItemsPage = () => {
                         {edge.node.meatType[0].toUpperCase()}
                       </p>
                       <div className={itemStyles.imageContainer}>
-                        <img src={edge.node.itemImage.file.url} alt=""/>
+                        <img src={edge.node.itemImage.file.url} alt={edge.node.itemImage.description}/>
                       </div>
                       <div className={itemStyles.itemText}>
                         <h2>{edge.node.title}</h2>

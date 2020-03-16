@@ -37,12 +37,12 @@ export default function Footer() {
             </a>
             </li>
             <li>
-              <a href="https://www.facebook.com/kocianmeats/" target="_blank">
+              <a href="https://www.facebook.com/kocianmeats/" target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={faFacebook} />
               </a>
             </li>
             <li>
-              <a href="https://www.facebook.com/kocianmeats/">
+              <a href="https://www.facebook.com/kocianmeats/" target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={faTwitter} />
               </a>
             </li>

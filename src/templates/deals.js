@@ -14,6 +14,7 @@ export const query = graphql`
       dealType
       shortDescription
       dealsImage {
+        description
         file {
           fileName
           url
@@ -53,13 +54,13 @@ export default function Projects(props) {
               </p>
               <div className='big-box'>
                 <div className='image-container'>
-                  <img src={props.data.contentfulDeals.dealsImage.file.url} alt={props.data.contentfulDeals.dealsImage.file.fileName}/>
+                  <img src={props.data.contentfulDeals.dealsImage.file.url} alt={props.data.contentfulDeals.dealsImage.description}/>
                 </div>
                 <div className='content-text'>
                   <h1>{ props.data.contentfulDeals.name }</h1>
                   <p className='description'>{ props.data.contentfulDeals.shortDescription }</p>
-                  <p>
-                    ${props.data.contentfulDeals.price} - {props.data.contentfulDeals.pricePer}
+                  <p className='price'>
+                    Just ${props.data.contentfulDeals.price} / {props.data.contentfulDeals.pricePer}
                   </p>
                 </div>
               </div>

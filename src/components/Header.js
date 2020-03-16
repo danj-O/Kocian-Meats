@@ -30,6 +30,7 @@ export default function Header(props) {
     allContentfulAsset {
       edges {
         node {
+          description
           title
           file {
             url
@@ -53,7 +54,7 @@ export default function Header(props) {
               {
                 data.allContentfulAsset.edges.map((edge) => {
                   if (edge.node.title === "old-logo"){     
-                    return (<img key={edge.node.title} src={edge.node.file.url} alt=""/>)
+                    return (<img key={edge.node.title} src={edge.node.file.url} alt={edge.node.description}/>)
                   }
                 return null
                 })

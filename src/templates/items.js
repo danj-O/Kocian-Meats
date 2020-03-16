@@ -18,6 +18,7 @@ export const query = graphql`
         json
       }
       itemImage {
+        description
         fluid {
           aspectRatio
           sizes
@@ -66,6 +67,7 @@ export default function Items(props) {
                 <div className='image-container'>
                   <Img 
                     fluid={props.data.contentfulItem.itemImage.fluid}
+                    alt={props.data.contentfulItem.itemImage.description}
                   />
                 </div>
                 <div className='content-text'>

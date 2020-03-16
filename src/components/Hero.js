@@ -12,6 +12,7 @@ export default function Hero(props) {
           node {
             id
             title
+            description
             fixed {
               src
               srcSet
@@ -37,6 +38,7 @@ export default function Hero(props) {
             return (
               <Img 
                 fluid={edge.node.fluid}
+                alt={edge.node.description}
                 key={edge.node.id}/>)
           }
           return null
