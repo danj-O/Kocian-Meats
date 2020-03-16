@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Head from '../components/Head'
 import { ModalRoutingContext } from 'gatsby-plugin-modal-routing'
 import '../styles/template.scss'
@@ -13,6 +14,9 @@ export const query = graphql`
       pricePer
       dealType
       shortDescription
+      description {
+        json
+      }
       dealsImage {
         description
         file {
@@ -58,7 +62,9 @@ export default function Projects(props) {
                 </div>
                 <div className='content-text'>
                   <h1>{ props.data.contentfulDeals.name }</h1>
-                  <p className='description'>{ props.data.contentfulDeals.shortDescription }</p>
+                  <div className='description'>
+                    {documentToReactComponents(props.data.contentfulDeals.description.json)}
+                  </div>
                   <p className='price'>
                     Just ${props.data.contentfulDeals.price} / {props.data.contentfulDeals.pricePer}
                   </p>

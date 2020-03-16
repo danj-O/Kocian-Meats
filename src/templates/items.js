@@ -13,6 +13,9 @@ export const query = graphql`
       title
       meatType
       price
+      fvpPrice
+      sfvpPrice
+      boxPrice
       pricePer
       description {
         json
@@ -39,6 +42,22 @@ export const query = graphql`
 
 //this is the template for all blog posts
 export default function Items(props) {
+
+
+
+  let fvpSave = (props.data.contentfulItem.fvpPrice !== null) 
+    ? <p>FVP ${props.data.contentfulItem.fvpPrice} -- SAVE ${(props.data.contentfulItem.fvpPrice % props.data.contentfulItem.price).toFixed(2)}</p>
+    : <p></p>
+
+
+  let sfvpSave = (props.data.contentfulItem.sfvpPrice !== null) 
+    ? <p>SFVP ${props.data.contentfulItem.sfvpPrice} -- SAVE ${(props.data.contentfulItem.sfvpPrice % props.data.contentfulItem.price).toFixed(2)}</p>
+    : <p></p>
+    
+  let boxSave = (props.data.contentfulItem.boxPrice !== null) 
+    ? <p>Box ${props.data.contentfulItem.boxPrice} -- SAVE ${(props.data.contentfulItem.boxPrice % props.data.contentfulItem.price).toFixed(2)}</p>
+    : <p></p>
+
 
   return (
     <div>
@@ -75,9 +94,14 @@ export default function Items(props) {
                   <div className='description'>
                     {documentToReactComponents(props.data.contentfulItem.description.json)}
                   </div>
-                  <p className='price'>
-                    ${props.data.contentfulItem.price} - {props.data.contentfulItem.pricePer}
-                  </p>
+                  <div className='price'>
+                    {fvpSave}
+                    {sfvpSave}
+                    {boxSave}
+                    <p>
+                      ${props.data.contentfulItem.price} - {props.data.contentfulItem.pricePer}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
