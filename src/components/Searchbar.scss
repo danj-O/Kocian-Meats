@@ -1,0 +1,16 @@
+.searchbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .search-field {
+    // width: 500px;
+    // height: 500px;
+    .searchInput{
+      background: rgb(201, 201, 201);
+      width: 200px;
+      padding: 20px 10px;
+      border: none;
+    }
+  }
+}

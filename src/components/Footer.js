@@ -51,8 +51,8 @@ export default function Footer() {
       <div className='footer-box'>
         <ul>
           <li className='foot-sub-head'>Address</li>
-          <li>4058 St Clair Ave, Cleveland, OH </li>
-          <li>44103</li>
+          <li>4058 St Clair Ave</li>
+          <li>Cleveland, OH 44103</li>
           <li> (216) 881-7676 </li>
           <li> info@kocianmeats.com </li>
         </ul>
