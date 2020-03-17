@@ -1,4 +1,4 @@
-import React, { useState, } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import itemStyles from '../pages/items.module.scss'
@@ -54,12 +54,22 @@ const ItemsPage = () => {
     }
   `)
   const [setSearchfield, setSearchfieldState] = useState('')
-  // const [setBeef, setBeefState] = useState('on')
+  const [setHeaderVis, setHeaderVisState] = useState(true)
+
+  useEffect(()=>{
+    
+  })
 
   const onSearchChange = function(event) {
     setSearchfieldState(event.target.value)
-    console.log(setSearchfield)
+    console.log(setSearchfield.length)
+    if (setSearchfield.length > 1){
+      setHeaderVisState(false)
+    } else {
+      setHeaderVisState(true)
+    }
   }
+
 
   return (
     <div>
@@ -73,7 +83,7 @@ const ItemsPage = () => {
         {
           data.allContentfulAsset.edges.map((edge) => {
             if (edge.node.title === 'cow-parts'){
-              if (document.getElementById('beef-vis') !== null){
+              if (setHeaderVis){
                 return (
                   <div className={itemStyles.meatTypeHeader}>
                     <h1>
@@ -96,14 +106,12 @@ const ItemsPage = () => {
         <div className={itemStyles.items}>
           { //maps over the query using allMarkdownRemark to find .md files
             data.allContentfulItem.edges.map((edge) => {
-              //if edge
               if (edge.node.meatType[0] === 'beef'){
                 if (edge.node.title.toLowerCase().includes(setSearchfield.toLowerCase()) 
                   || edge.node.shortDescription.toLowerCase().includes(setSearchfield.toLowerCase()) 
                   || edge.node.meatType[0].includes(setSearchfield.toLowerCase())){
-
                   return (
-                    <div id='beef-vis' key={edge.node.slug} className={itemStyles.item}>
+                    <div key={edge.node.slug} className={itemStyles.item}>
                       <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
                         <p className={itemStyles.meatType}>
                           {edge.node.meatType[0].toUpperCase()}
@@ -131,7 +139,7 @@ const ItemsPage = () => {
         {
           data.allContentfulAsset.edges.map((edge) => {
             if (edge.node.title === 'pig-parts'){
-              if (document.getElementById('pork-vis') !== null){
+              if (setHeaderVis){
                 return (
                   <div className={itemStyles.meatTypeHeader}>
                     <h1>
@@ -160,7 +168,7 @@ const ItemsPage = () => {
                   || edge.node.meatType[0].includes(setSearchfield.toLowerCase())){
                   //SET STATE HERE TO setBeef={on}
                   return (
-                    <div id='pork-vis' key={edge.node.slug} className={itemStyles.item}>
+                    <div key={edge.node.slug} className={itemStyles.item}>
                       <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
                         <p className={itemStyles.meatType}>
                           {edge.node.meatType[0].toUpperCase()}
@@ -188,7 +196,7 @@ const ItemsPage = () => {
         {
           data.allContentfulAsset.edges.map((edge) => {
             if (edge.node.title === 'chicken'){
-              if (document.getElementById('chicken-vis') !== null){
+              if (setHeaderVis){
                 return (
                   <div className={itemStyles.meatTypeHeader}>
                     <h1>
@@ -218,7 +226,7 @@ const ItemsPage = () => {
                   || edge.node.meatType[0].includes(setSearchfield.toLowerCase())){
 
                   return (
-                    <div id='chicken-vis' key={edge.node.slug} className={itemStyles.item}>
+                    <div key={edge.node.slug} className={itemStyles.item}>
                       <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
                         <p className={itemStyles.meatType}>
                           {edge.node.meatType[0].toUpperCase()}
@@ -246,7 +254,7 @@ const ItemsPage = () => {
         {
           data.allContentfulAsset.edges.map((edge) => {
             if (edge.node.title === 'crab'){
-              if (document.getElementById('seafood-vis') !== null){
+              if (setHeaderVis){
                 return (
                   <div className={itemStyles.meatTypeHeader}>
                     <h1>
@@ -276,7 +284,7 @@ const ItemsPage = () => {
                   || edge.node.meatType[0].includes(setSearchfield.toLowerCase())){
 
                   return (
-                    <div id='seafood-vis' key={edge.node.slug} className={itemStyles.item}>
+                    <div key={edge.node.slug} className={itemStyles.item}>
                       <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
                         <p className={itemStyles.meatType}>
                           {edge.node.meatType[0].toUpperCase()}
@@ -304,7 +312,7 @@ const ItemsPage = () => {
         {
           data.allContentfulAsset.edges.map((edge) => {
             if (edge.node.title === 'cheese'){
-              if (document.getElementById('other-vis') !== null){
+              if (setHeaderVis){
                 return (
                   <div className={itemStyles.meatTypeHeader}>
                     <h1>
@@ -333,7 +341,7 @@ const ItemsPage = () => {
                   || edge.node.meatType[0].includes(setSearchfield.toLowerCase())){
 
                   return (
-                    <div id='other-vis' key={edge.node.slug} className={itemStyles.item}>
+                    <div key={edge.node.slug} className={itemStyles.item}>
                       <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
                         <p className={itemStyles.meatType}>
                           {edge.node.meatType[0].toUpperCase()}
