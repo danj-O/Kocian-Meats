@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from "gatsby"
+import Img from 'gatsby-image'
+
 import './SideDrawer.scss'
 
 
@@ -16,8 +18,19 @@ export default function SideDrawer(props) {
         edges {
           node {
             title
-            file {
-              url
+            description
+            fixed {
+              aspectRatio
+              src
+              srcSet
+              height
+              width
+            }
+            fluid {
+              aspectRatio
+              sizes
+              src
+              srcSet
             }
           }
         }
@@ -30,15 +43,17 @@ export default function SideDrawer(props) {
       <div className='close-btn' onClick={props.click} onKeyDown={props.click}>
         <p>x</p>
       </div>
-      <div className='side-drawer-logo'>
-        {
-          data.allContentfulAsset.edges.map((edge) => {
-            if (edge.node.title === "logo"){     
-              return (<img key={edge.node.title} src={edge.node.file.url} alt=""/>)
-            }
-            return null
-          })
-        }
+      <div className='side-drawer-logo-container'>
+        <div className='side-drawer-logo'>
+          {
+            data.allContentfulAsset.edges.map((edge) => {
+              if (edge.node.title === "logo"){     
+                return (<Img key={edge.node.title} fluid={edge.node.fluid} alt={edge.node.description}/>)
+              }
+              return null
+            })
+          }
+        </div>
       </div>
       <ul className='bigList'>
         <li>        

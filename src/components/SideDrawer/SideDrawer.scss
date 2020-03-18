@@ -26,16 +26,26 @@
     font-weight: 700;
     font-size: 1.5em;
   }
-  .side-drawer-logo {
+  .side-drawer-logo-container {
     display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    margin-top: 20px;
-    // padding-bottom: 8px;
-    img {
-      width: 50%;
-      height: auto;
+    .side-drawer-logo {
+      width: 130px;
+      margin-top: 20px;
+      // padding-bottom: 8px;
+      img {
+        // width: 50%;
+        // height: auto;
+      }
+    }
+  }
+  @media (max-width:500px){
+    .side-drawer-logo-container {
+      .side-drawer-logo {
+        width: 100px;
+      }
     }
   }
   .bigList {
@@ -50,7 +60,7 @@
     padding-left: 3.5rem;
     // border: black solid 1px;
     li {
-      margin: 0.5rem 0;
+      margin: 0.3rem 0;
       .cat {
         color: rgb(49, 49, 49);
         font-size: 1.2rem;
@@ -96,7 +106,7 @@
     align-items: center;
     text-align: center;
     margin: 0px 15px;
-    padding-top: 25px;
+    // padding-top: 25px;
     p {
       font-size: 0.7em;
     }
