@@ -1,5 +1,5 @@
 import React from 'react'
-import Footer from './Footer'
+// import Footer from './Footer'
 import layoutStyles from './layout.module.scss'
 // import Navigation from './Navigation'
 
@@ -12,7 +12,7 @@ export default function Layout({children, location}) {
           <div className={layoutStyles.content}> 
                 {children}
           </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
   )
 }
