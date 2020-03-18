@@ -13,10 +13,6 @@ export default function Hero(props) {
             id
             title
             description
-            fixed {
-              src
-              srcSet
-            }
             fluid {
               src
               srcSet

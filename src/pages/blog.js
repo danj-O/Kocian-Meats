@@ -26,7 +26,7 @@ const BlogPage = () => {
   return (
     <div>
       <Head title='Blog'/>
-      <Hero heroImg='blog-hero' />
+      {/* <Hero heroImg='blog-hero' /> */}
       <div className='header-box'>
         <h1 className="pageHeader"> Blog</h1>
         <p className="pageSubHeader">Check here for cool stuff weekly!</p>
