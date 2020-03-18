@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import SideDrawer from './SideDrawer/SideDrawer'
+import SideDrawer from './SideDrawer/SideDrawer'
 import BackDrop from './BackDrop/BackDrop'
 import Header from '../components/Header'
 import './Navigation.scss'
@@ -29,7 +29,7 @@ export default class Navigation extends Component {
     return (
       <div className='allNav'>
         <Header drawerClickHandler={this.drawerToggleClickHandler} />
-        {/* <SideDrawer show={this.state.sideDrawerOpen} click={this.backDropClickHandler}/> */}
+        <SideDrawer show={this.state.sideDrawerOpen} click={this.backDropClickHandler}/>
         {backDrop}
       </div>
     )
