@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, graphql, useStaticQuery } from "gatsby"
+import Img from 'gatsby-image'
 import headerStyles from './header.module.scss'
 import DrawerButton from '../components/SideDrawer/DrawerButton'
 
@@ -33,7 +34,20 @@ export default function Header(props) {
           description
           title
           file {
-            url
+            url 
+          }
+          fixed {
+            aspectRatio
+            src
+            srcSet
+            height
+            width
+          }
+          fluid {
+            aspectRatio
+            sizes
+            src
+            srcSet
           }
         }
       }
@@ -54,7 +68,7 @@ export default function Header(props) {
               {
                 data.allContentfulAsset.edges.map((edge) => {
                   if (edge.node.title === "old-logo"){     
-                    return (<img key={edge.node.title} src={edge.node.file.url} alt={edge.node.description}/>)
+                    return (<Img key={edge.node.title} fluid={edge.node.fluid} alt={edge.node.description}/>)
                   }
                 return null
                 })
