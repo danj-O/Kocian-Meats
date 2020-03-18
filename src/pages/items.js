@@ -48,6 +48,12 @@ const ItemsPage = () => {
               height
               width
             }
+            fluid {
+              aspectRatio
+              sizes
+              src
+              srcSet
+            }
           }
         }
       }
@@ -56,13 +62,14 @@ const ItemsPage = () => {
   const [setSearchfield, setSearchfieldState] = useState('')
   const [setHeaderVis, setHeaderVisState] = useState(true)
 
-  useEffect(()=>{
-    
-  })
+  // useEffect(()=>{
+
+  // })
 
   const onSearchChange = function(event) {
     setSearchfieldState(event.target.value)
-    console.log(setSearchfield.length)
+    // console.log(setSearchfield.length)
+    //should this go into useEffect - 1 input delay problem
     if (setSearchfield.length > 1){
       setHeaderVisState(false)
     } else {
@@ -70,6 +77,7 @@ const ItemsPage = () => {
     }
   }
 
+  // console.log(setSearchfield)
 
   return (
     <div>
@@ -92,7 +100,7 @@ const ItemsPage = () => {
                     <div className={itemStyles.meatImgBox}>
                       <Img 
                         key={edge.node.title} 
-                        fixed={edge.node.fixed} 
+                        fluid={edge.node.fluid} 
                         alt={edge.node.description}
                         />
                     </div>
@@ -148,7 +156,7 @@ const ItemsPage = () => {
                     <div className={itemStyles.meatImgBox}>
                       <Img 
                         key={edge.node.title} 
-                        fixed={edge.node.fixed} 
+                        fluid={edge.node.fluid} 
                         alt={edge.node.description}
                       />
                     </div>
@@ -204,8 +212,9 @@ const ItemsPage = () => {
                     </h1>
                     <div className={itemStyles.meatImgBox}>
                       <Img 
+                        className='chicken'
                         key={edge.node.title} 
-                        fixed={edge.node.fixed} 
+                        fluid={edge.node.fluid} 
                         alt={edge.node.description}
                       />
                     </div>
@@ -258,12 +267,13 @@ const ItemsPage = () => {
                 return (
                   <div className={itemStyles.meatTypeHeader}>
                     <h1>
-                      seafood
+                      Seafood
                     </h1>
                     <div className={itemStyles.meatImgBox}>
                       <Img 
+                        className='seafood'
                         key={edge.node.title} 
-                        fixed={edge.node.fixed} 
+                        fluid={edge.node.fluid} 
                         alt={edge.node.description}
                       />
                     </div>
@@ -320,8 +330,9 @@ const ItemsPage = () => {
                     </h1>
                     <div className={itemStyles.meatImgBox}>
                       <Img 
+                        className='other'
                         key={edge.node.title} 
-                        fixed={edge.node.fixed} 
+                        fluid={edge.node.fluid} 
                         alt={edge.node.description}
                       />
                     </div>

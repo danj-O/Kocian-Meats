@@ -16,23 +16,25 @@
       padding: 20px;
     }
     .meatImgBox {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 40vw;
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+      width: 30vw;
+      // height: 400px;
       img {
-        width: auto;
-        width: 100%;
-        // height: auto;
+        // width: auto;
+        // width: 100px;
+        // height: 100px;
       }
       .chicken {
-        max-width: 200px;
+        // max-height: 20px;
+        // max-width: 200px;
       }
       .seafood {
-        max-width: 200px;
+        // max-width: 200px;
       }
       .other {
-        max-width: 200px;
+        // max-width: 200px;
 
       }
     }
