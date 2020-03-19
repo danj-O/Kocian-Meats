@@ -25,7 +25,7 @@ export default function Footer() {
           <p>
             For customized and wholesale ordering, please call or send and email.
           </p>
-          {/* <ul className='social-links'>
+          <ul className='social-links'>
             <li> 
               <a href="tel:2168817676">
                 <FontAwesomeIcon icon={faPhone} />
@@ -46,7 +46,7 @@ export default function Footer() {
                 <FontAwesomeIcon icon={faTwitter} />
               </a>
             </li>
-          </ul> */}
+          </ul>
       </div>
       <div className='footer-box'>
         <ul>
