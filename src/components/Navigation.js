@@ -22,10 +22,10 @@ export default class Navigation extends Component {
   }
 
   render() {
-    // let backDrop;
-    // if (this.state.sideDrawerOpen){
-    //     backDrop = <BackDrop click={this.backDropClickHandler} />;
-    // }
+    let backDrop;
+    if (this.state.sideDrawerOpen){
+        backDrop = <BackDrop click={this.backDropClickHandler} />;
+    }
     return (
       <div className='allNav'>
         {/* <Header drawerClickHandler={this.drawerToggleClickHandler} /> */}
