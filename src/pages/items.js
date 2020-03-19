@@ -30,7 +30,19 @@ const ItemsPage = () => {
               file {
                 fileName
                 url
-                
+              }
+              fixed {
+                aspectRatio
+                height
+                src
+                srcSet
+                width
+              }
+              fluid {
+                aspectRatio
+                sizes
+                src
+                srcSet
               }
             }
           }
@@ -125,7 +137,7 @@ const ItemsPage = () => {
                           {edge.node.meatType[0].toUpperCase()}
                         </p>
                         <div className={itemStyles.imageContainer}>
-                          <img src={edge.node.itemImage.file.url} alt={edge.node.itemImage.description}/>
+                          <Img fluid={edge.node.itemImage.fluid} alt={edge.node.itemImage.description}/>
                         </div>
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.title}</h2>
@@ -182,7 +194,7 @@ const ItemsPage = () => {
                           {edge.node.meatType[0].toUpperCase()}
                         </p>
                         <div className={itemStyles.imageContainer}>
-                          <img src={edge.node.itemImage.file.url} alt={edge.node.itemImage.description}/>
+                          <Img fluid={edge.node.itemImage.fluid} alt={edge.node.itemImage.description}/>
                         </div>
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.title}</h2>
@@ -241,7 +253,7 @@ const ItemsPage = () => {
                           {edge.node.meatType[0].toUpperCase()}
                         </p>
                         <div className={itemStyles.imageContainer}>
-                          <img src={edge.node.itemImage.file.url} alt={edge.node.itemImage.description}/>
+                          <Img fluid={edge.node.itemImage.fluid} alt={edge.node.itemImage.description}/>
                         </div>
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.title}</h2>
@@ -300,7 +312,7 @@ const ItemsPage = () => {
                           {edge.node.meatType[0].toUpperCase()}
                         </p>
                         <div className={itemStyles.imageContainer}>
-                          <img src={edge.node.itemImage.file.url} alt={edge.node.itemImage.description}/>
+                          <Img fluid={edge.node.itemImage.fluid} alt={edge.node.itemImage.description}/>
                         </div>
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.title}</h2>
@@ -358,7 +370,7 @@ const ItemsPage = () => {
                           {edge.node.meatType[0].toUpperCase()}
                         </p>
                         <div className={itemStyles.imageContainer}>
-                          <img src={edge.node.itemImage.file.url} alt={edge.node.itemImage.description}/>
+                          <Img fluid={edge.node.itemImage.fluid} alt={edge.node.itemImage.description}/>
                         </div>
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.title}</h2>

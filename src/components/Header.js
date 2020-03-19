@@ -7,20 +7,6 @@ import DrawerButton from '../components/SideDrawer/DrawerButton'
 
 
 export default function Header(props) {
-//   const data = useStaticQuery(graphql`
-//   query {
-//     allContentfulAsset {
-//       edges {
-//         node {
-//           title
-//           file {
-//             url
-//           }
-//         }
-//       }
-//     }
-//   }
-// `)
   const data = useStaticQuery(graphql`
   query {
     site {
@@ -33,9 +19,6 @@ export default function Header(props) {
         node {
           description
           title
-          file {
-            url 
-          }
           fixed {
             aspectRatio
             src

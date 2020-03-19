@@ -44,7 +44,7 @@ export const query = graphql`
 export default function Items(props) {
 
 
-
+   // THIS WILL NEED TO CHANGE ACCORDING TO WHAT YOU ACTUALLY GET IN THE FVPs
   let fvpSave = (props.data.contentfulItem.fvpPrice !== null) 
     ? <p>FVP ${props.data.contentfulItem.fvpPrice} -- SAVE ${(props.data.contentfulItem.fvpPrice % props.data.contentfulItem.price).toFixed(2)}</p>
     : <p></p>
