@@ -4,7 +4,7 @@ import layoutStyles from './layout.module.scss'
 import Navigation from './Navigation'
 
 
-export default function Layout({children, location}) {
+export default function Layout({children}) {
   // console.log('LOC', location)
   return (
       <div className= {layoutStyles.container}>
