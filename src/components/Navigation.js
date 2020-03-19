@@ -28,9 +28,9 @@ export default class Navigation extends Component {
     // }
     return (
       <div className='allNav'>
-        <Header drawerClickHandler={this.drawerToggleClickHandler} />
-        {/* <SideDrawer show={this.state.sideDrawerOpen} click={this.backDropClickHandler}/> */}
-        {/* {backDrop} */}
+        {/* <Header drawerClickHandler={this.drawerToggleClickHandler} /> */}
+        <SideDrawer show={this.state.sideDrawerOpen} click={this.backDropClickHandler}/>
+        {backDrop}
       </div>
     )
   }
