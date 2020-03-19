@@ -39,12 +39,12 @@ module.exports = {
     },
     //this places our react-helmet <head> files into the statically generated pages
     'gatsby-plugin-react-helmet',
-    // {
-    //   resolve: `gatsby-plugin-canonical-urls`,
-    //   options: {
-    //     siteUrl: `https://www.kocianmeats.com`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://www.kocianmeats.com`,
+      },
+    },
     {
       //contentful plugin
       resolve : 'gatsby-source-contentful',

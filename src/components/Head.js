@@ -22,7 +22,7 @@ export default function Head({ title }) {
       <html lang="en" />
       <title>{`${title} |  ${data.site.siteMetadata.title}`}</title>
       <meta name="description" content={data.site.siteMetadata.description} />
-      <link rel='canonical' href='http://kocianmeats.com/' />
+      {/* <link rel='canonical' href='https://kocianmeats.com/' /> */}
     </Helmet>
   )
 }
