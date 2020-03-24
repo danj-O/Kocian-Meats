@@ -32,12 +32,20 @@ export default class MyGatsbyComponent extends React.Component {
 
   render () {
     return (
-      <form onSubmit={this._handleSubmit}>
-        <input type="text" placeholder="Email Address" name="email" onChange={this.handleChange}/>
-        <button type="submit">Subscribe</button>
-        {this.state.result.result}
-        {this.state.result.msg}
-      </form>
+      <>
+        <form onSubmit={this._handleSubmit}>
+          <input type="text" placeholder="Email Address" name="email" onChange={this.handleChange}/>
+          <button type="submit">Subscribe</button>
+        </form>
+        <div>
+          <p>
+            {this.state.result.result}
+          </p>
+          <p>
+            {this.state.result.msg}
+          </p>
+        </div>
+      </>
     )
   }
 }
