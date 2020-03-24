@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from 'gatsby-image'
+import Subscribe from '../subscribe/Subscribe'
+
 
 import './SideDrawer.scss'
 
@@ -167,7 +169,7 @@ export default function SideDrawer(props) {
         <p>
           Subscribe to Kocian Meats Newsletter for special deals!
         </p>
-        <input type="text"/>
+        <Subscribe />
       </div>
     </nav>
   )

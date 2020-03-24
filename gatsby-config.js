@@ -84,6 +84,12 @@ module.exports = {
           }
         ]
       }
-    }
+    },
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint: 'https://kocianmeats.us19.list-manage.com/subscribe/post?u=b11c5b0ba372ef8270b19c027&amp;id=06d0eb3cb5',
+      },
+    },
   ]
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, graphql, useStaticQuery } from "gatsby"
 import './footer.scss'
+import Subscribe from './subscribe/Subscribe'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
@@ -65,7 +66,7 @@ export default function Footer() {
           <p>
             Subscribe to our mailing list to get exclusive deals!
           </p>
-          <input type="text"/>
+          <Subscribe />
         </div>
         <ul className='bigList'>
           <li>        
