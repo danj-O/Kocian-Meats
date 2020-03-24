@@ -4,16 +4,20 @@ import addToMailchimp from 'gatsby-plugin-mailchimp'
 export default class MyGatsbyComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {email: ''};
+    this.state = {
+      email: '',
+      result: ''
+    };
   }
 
   _handleSubmit = e => {
     e.preventDefault();
     addToMailchimp(this.state.email) // listFields are optional if you are only capturing the email address.
     .then(data => {
+      this.setState({result: data})
       // I recommend setting data to React state
       // but you can do whatever you want (including ignoring this `then()` altogether)
-      console.log(data)
+      console.log('DATA', this.state.result)
     })
     .catch(() => {
       // unnecessary because Mailchimp only ever
@@ -31,6 +35,8 @@ export default class MyGatsbyComponent extends React.Component {
       <form onSubmit={this._handleSubmit}>
         <input type="text" placeholder="Email Address" name="email" onChange={this.handleChange}/>
         <button type="submit">Subscribe</button>
+        {this.state.result.result}
+        {this.state.result.msg}
       </form>
     )
   }

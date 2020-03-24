@@ -41,17 +41,17 @@ export default function MyCarousel() {
   return (
     <div className='carousel-box'>
       <Carousel
-        autoplay= {'true'}
+        autoplay= {true}
         cellAlign={'center'}
         slidesToShow={2}
         // scrollMode={'remainder'}
         // cellSpacing={'.5'}
-        wrapAround={'true'}
+        wrapAround={true}
         transitionMode={'scroll'}
         slideWidth={.8}
         frameOverflow={'hidden'}
-        autoGenerateStyleTag={'true'}
-        pauseOnHover={'false'}
+        autoGenerateStyleTag={true}
+        pauseOnHover={false}
         // framePadding={'20px 20px'}
       >
         {pics}
