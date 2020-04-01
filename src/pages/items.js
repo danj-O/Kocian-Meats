@@ -19,12 +19,8 @@ const ItemsPage = () => {
             meatType
             title
             slug
-            shortDescription
             price
             pricePer
-            description {
-              json
-            }
             itemImage {
               description
               file {
@@ -99,6 +95,9 @@ const ItemsPage = () => {
         <p className='pageSubHeader'>In a hurry? Our best selection is now available for viewing online!  Have a look then call your order in!</p>
         <Searchbar searchChange={onSearchChange} />
       </div>
+
+
+
       <div id='beef' className={itemStyles.meatContainer}>
         {
           data.allContentfulAsset.edges.map((edge) => {
@@ -123,12 +122,11 @@ const ItemsPage = () => {
             return null
           })
         }
-        <div className={itemStyles.items}>
+        <div id='beef-roast' className={itemStyles.items}>
           { //maps over the query using allMarkdownRemark to find .md files
             data.allContentfulItem.edges.map((edge) => {
-              if (edge.node.meatType[0] === 'beef'){
+              if (edge.node.meatType[0] === 'beef-roast'){
                 if (edge.node.title.toLowerCase().includes(setSearchfield.toLowerCase()) 
-                  || edge.node.shortDescription.toLowerCase().includes(setSearchfield.toLowerCase()) 
                   || edge.node.meatType[0].includes(setSearchfield.toLowerCase())){
                   return (
                     <div key={edge.node.slug} className={itemStyles.item}>
@@ -137,11 +135,102 @@ const ItemsPage = () => {
                           {edge.node.meatType[0].toUpperCase()}
                         </p>
                         <div className={itemStyles.imageContainer}>
-                          <Img fluid={edge.node.itemImage.fluid} alt={edge.node.itemImage.description}/>
+                          {/* <Img fluid={edge.node.itemImage.fluid} alt={edge.node.itemImage.description}/> */}
                         </div>
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.title}</h2>
-                          <p className={itemStyles.description}>{edge.node.shortDescription}</p>
+                          <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
+                          {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
+                          <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                        </div>
+                      </Link>
+                    </div>
+                  )
+                }
+              }
+              return null
+            })
+          }
+        </div>
+        <div id='beef-steak' className={itemStyles.items}>
+          { //maps over the query using allMarkdownRemark to find .md files
+            data.allContentfulItem.edges.map((edge) => {
+              if (edge.node.meatType[0] === 'beef-steak'){
+                if (edge.node.title.toLowerCase().includes(setSearchfield.toLowerCase()) 
+                  || edge.node.meatType[0].includes(setSearchfield.toLowerCase())){
+                  return (
+                    <div key={edge.node.slug} className={itemStyles.item}>
+                      <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
+                        <p className={itemStyles.meatType}>
+                          {edge.node.meatType[0].toUpperCase()}
+                        </p>
+                        <div className={itemStyles.imageContainer}>
+                          {/* <Img fluid={edge.node.itemImage.fluid} alt={edge.node.itemImage.description}/> */}
+                        </div>
+                        <div className={itemStyles.itemText}>
+                          <h2>{edge.node.title}</h2>
+                          <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
+                          {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
+                          <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                        </div>
+                      </Link>
+                    </div>
+                  )
+                }
+              }
+              return null
+            })
+          }
+        </div>
+        <div id='beef-ground' className={itemStyles.items}>
+          { //maps over the query using allMarkdownRemark to find .md files
+            data.allContentfulItem.edges.map((edge) => {
+              if (edge.node.meatType[0] === 'beef-ground'){
+                if (edge.node.title.toLowerCase().includes(setSearchfield.toLowerCase()) 
+                  || edge.node.meatType[0].includes(setSearchfield.toLowerCase())){
+                  return (
+                    <div key={edge.node.slug} className={itemStyles.item}>
+                      <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
+                        <p className={itemStyles.meatType}>
+                          {edge.node.meatType[0].toUpperCase()}
+                        </p>
+                        <div className={itemStyles.imageContainer}>
+                          {/* <Img fluid={edge.node.itemImage.fluid} alt={edge.node.itemImage.description}/> */}
+                        </div>
+                        <div className={itemStyles.itemText}>
+                          <h2>{edge.node.title}</h2>
+                          <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
+                          {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
+                          <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                        </div>
+                      </Link>
+                    </div>
+                  )
+                }
+              }
+              return null
+            })
+          }
+        </div>
+        <div id='beef-other' className={itemStyles.items}>
+          { //maps over the query using allMarkdownRemark to find .md files
+            data.allContentfulItem.edges.map((edge) => {
+              if (edge.node.meatType[0] === 'beef-other'){
+                if (edge.node.title.toLowerCase().includes(setSearchfield.toLowerCase()) 
+                  || edge.node.meatType[0].includes(setSearchfield.toLowerCase())){
+                  return (
+                    <div key={edge.node.slug} className={itemStyles.item}>
+                      <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
+                        <p className={itemStyles.meatType}>
+                          {edge.node.meatType[0].toUpperCase()}
+                        </p>
+                        <div className={itemStyles.imageContainer}>
+                          {/* <Img fluid={edge.node.itemImage.fluid} alt={edge.node.itemImage.description}/> */}
+                        </div>
+                        <div className={itemStyles.itemText}>
+                          <h2>{edge.node.title}</h2>
+                          <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
+                          {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
                           <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
                         </div>
                       </Link>
@@ -155,6 +244,9 @@ const ItemsPage = () => {
         </div>
       </div>
 
+
+      {/* //PORK */}
+      
       <div id='pork' className={itemStyles.meatContainer}>
         {
           data.allContentfulAsset.edges.map((edge) => {
@@ -184,7 +276,6 @@ const ItemsPage = () => {
             data.allContentfulItem.edges.map((edge) => {
               if (edge.node.meatType[0] === 'pork'){
                 if (edge.node.title.toLowerCase().includes(setSearchfield.toLowerCase()) 
-                  || edge.node.shortDescription.toLowerCase().includes(setSearchfield.toLowerCase()) 
                   || edge.node.meatType[0].includes(setSearchfield.toLowerCase())){
                   //SET STATE HERE TO setBeef={on}
                   return (
@@ -194,11 +285,109 @@ const ItemsPage = () => {
                           {edge.node.meatType[0].toUpperCase()}
                         </p>
                         <div className={itemStyles.imageContainer}>
-                          <Img fluid={edge.node.itemImage.fluid} alt={edge.node.itemImage.description}/>
+                          {/* <Img fluid={edge.node.itemImage.fluid} alt={edge.node.itemImage.description}/> */}
                         </div>
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.title}</h2>
-                          <p className={itemStyles.description}>{edge.node.shortDescription}</p>
+                          <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
+
+                          {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
+                          <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                        </div>
+                      </Link>
+                    </div>
+                  )
+                }
+              }
+              return null
+            })
+          }
+        </div>
+        <div id='pork-smoked' className={itemStyles.items}>
+          {
+            data.allContentfulItem.edges.map((edge) => {
+              if (edge.node.meatType[0] === 'pork-smoked'){
+                if (edge.node.title.toLowerCase().includes(setSearchfield.toLowerCase()) 
+                  || edge.node.meatType[0].includes(setSearchfield.toLowerCase())){
+                  //SET STATE HERE TO setBeef={on}
+                  return (
+                    <div key={edge.node.slug} className={itemStyles.item}>
+                      <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
+                        <p className={itemStyles.meatType}>
+                          {edge.node.meatType[0].toUpperCase()}
+                        </p>
+                        <div className={itemStyles.imageContainer}>
+                          {/* <Img fluid={edge.node.itemImage.fluid} alt={edge.node.itemImage.description}/> */}
+                        </div>
+                        <div className={itemStyles.itemText}>
+                          <h2>{edge.node.title}</h2>
+                          <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
+
+                          {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
+                          <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                        </div>
+                      </Link>
+                    </div>
+                  )
+                }
+              }
+              return null
+            })
+          }
+        </div>
+        <div id='pork-bacon' className={itemStyles.items}>
+          {
+            data.allContentfulItem.edges.map((edge) => {
+              if (edge.node.meatType[0] === 'pork-bacon'){
+                if (edge.node.title.toLowerCase().includes(setSearchfield.toLowerCase()) 
+                  || edge.node.meatType[0].includes(setSearchfield.toLowerCase())){
+                  //SET STATE HERE TO setBeef={on}
+                  return (
+                    <div key={edge.node.slug} className={itemStyles.item}>
+                      <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
+                        <p className={itemStyles.meatType}>
+                          {edge.node.meatType[0].toUpperCase()}
+                        </p>
+                        <div className={itemStyles.imageContainer}>
+                          {/* <Img fluid={edge.node.itemImage.fluid} alt={edge.node.itemImage.description}/> */}
+                        </div>
+                        <div className={itemStyles.itemText}>
+                          <h2>{edge.node.title}</h2>
+                          <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
+
+                          {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
+                          <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                        </div>
+                      </Link>
+                    </div>
+                  )
+                }
+              }
+              return null
+            })
+          }
+        </div>
+        <div id='pork-other' className={itemStyles.items}>
+          {
+            data.allContentfulItem.edges.map((edge) => {
+              if (edge.node.meatType[0] === 'pork-other'){
+                if (edge.node.title.toLowerCase().includes(setSearchfield.toLowerCase()) 
+                  || edge.node.meatType[0].includes(setSearchfield.toLowerCase())){
+                  //SET STATE HERE TO setBeef={on}
+                  return (
+                    <div key={edge.node.slug} className={itemStyles.item}>
+                      <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
+                        <p className={itemStyles.meatType}>
+                          {edge.node.meatType[0].toUpperCase()}
+                        </p>
+                        <div className={itemStyles.imageContainer}>
+                          {/* <Img fluid={edge.node.itemImage.fluid} alt={edge.node.itemImage.description}/> */}
+                        </div>
+                        <div className={itemStyles.itemText}>
+                          <h2>{edge.node.title}</h2>
+                          <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
+
+                          {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
                           <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
                         </div>
                       </Link>
@@ -212,7 +401,11 @@ const ItemsPage = () => {
         </div>
       </div>
 
-      <div id='chicken' className={itemStyles.meatContainer}>
+
+      {/* //POULTRY */}
+
+
+      <div id='poultry' className={itemStyles.meatContainer}>
         {
           data.allContentfulAsset.edges.map((edge) => {
             if (edge.node.title === 'chicken'){
@@ -220,7 +413,7 @@ const ItemsPage = () => {
                 return (
                   <div className={itemStyles.meatTypeHeader}>
                     <h1>
-                      Chicken
+                      Poultry
                     </h1>
                     <div className={itemStyles.meatImgBox}>
                       <Img 
@@ -241,9 +434,8 @@ const ItemsPage = () => {
         <div className={itemStyles.items}>
           { 
             data.allContentfulItem.edges.map((edge) => {
-              if (edge.node.meatType[0] === 'chicken'){
+              if (edge.node.meatType[0] === 'poultry'){
                 if (edge.node.title.toLowerCase().includes(setSearchfield.toLowerCase()) 
-                  || edge.node.shortDescription.toLowerCase().includes(setSearchfield.toLowerCase()) 
                   || edge.node.meatType[0].includes(setSearchfield.toLowerCase())){
 
                   return (
@@ -253,11 +445,13 @@ const ItemsPage = () => {
                           {edge.node.meatType[0].toUpperCase()}
                         </p>
                         <div className={itemStyles.imageContainer}>
-                          <Img fluid={edge.node.itemImage.fluid} alt={edge.node.itemImage.description}/>
+                          {/* <Img fluid={edge.node.itemImage.fluid} alt={edge.node.itemImage.description}/> */}
                         </div>
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.title}</h2>
-                          <p className={itemStyles.description}>{edge.node.shortDescription}</p>
+                          <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
+
+                          {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
                           <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
                         </div>
                       </Link>
@@ -270,6 +464,10 @@ const ItemsPage = () => {
           }
         </div>
       </div>
+
+
+
+      {/* //SEAFOOOD */}
 
       <div id='seafood' className={itemStyles.meatContainer}>
         {
@@ -302,7 +500,6 @@ const ItemsPage = () => {
             data.allContentfulItem.edges.map((edge) => {
               if (edge.node.meatType[0] === 'seafood'){
                 if (edge.node.title.toLowerCase().includes(setSearchfield.toLowerCase()) 
-                  || edge.node.shortDescription.toLowerCase().includes(setSearchfield.toLowerCase()) 
                   || edge.node.meatType[0].includes(setSearchfield.toLowerCase())){
 
                   return (
@@ -312,11 +509,12 @@ const ItemsPage = () => {
                           {edge.node.meatType[0].toUpperCase()}
                         </p>
                         <div className={itemStyles.imageContainer}>
-                          <Img fluid={edge.node.itemImage.fluid} alt={edge.node.itemImage.description}/>
+                          {/* <Img fluid={edge.node.itemImage.fluid} alt={edge.node.itemImage.description}/> */}
                         </div>
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.title}</h2>
-                          <p className={itemStyles.description}>{edge.node.shortDescription}</p>
+                          <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
+                          {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
                           <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
                         </div>
                       </Link>
@@ -329,6 +527,196 @@ const ItemsPage = () => {
           }
         </div>
       </div>
+
+
+      {/* //DELI MEATS */}
+
+
+      <div id='deli' className={itemStyles.meatContainer}>
+        {
+          data.allContentfulAsset.edges.map((edge) => {
+            if (edge.node.title === 'deli'){
+              if (setHeaderVis){
+                return (
+                  <div className={itemStyles.meatTypeHeader}>
+                    <h1>
+                      Deli Meats - Ready to eat
+                    </h1>
+                    <div className={itemStyles.meatImgBox}>
+                      <Img 
+                        className='deli'
+                        key={edge.node.title} 
+                        fluid={edge.node.fluid} 
+                        alt={edge.node.description}
+                      />
+                    </div>
+                  </div>
+                )
+              }
+            }
+            return null
+          })
+        }
+
+        <div className={itemStyles.items}>
+          { 
+            data.allContentfulItem.edges.map((edge) => {
+              if (edge.node.meatType[0] === 'deli'){
+                if (edge.node.title.toLowerCase().includes(setSearchfield.toLowerCase()) 
+                  || edge.node.meatType[0].includes(setSearchfield.toLowerCase())){
+
+                  return (
+                    <div key={edge.node.slug} className={itemStyles.item}>
+                      <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
+                        <p className={itemStyles.meatType}>
+                          {edge.node.meatType[0].toUpperCase()}
+                        </p>
+                        <div className={itemStyles.imageContainer}>
+                          {/* <Img fluid={edge.node.itemImage.fluid} alt={edge.node.itemImage.description}/> */}
+                        </div>
+                        <div className={itemStyles.itemText}>
+                          <h2>{edge.node.title}</h2>
+                          <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
+                          {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
+                          <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                        </div>
+                      </Link>
+                    </div>
+                  )
+                }
+              }
+              return null
+            })
+          }
+        </div>
+      </div>
+
+
+      {/* //LAMBS */}
+
+      <div id='lamb' className={itemStyles.meatContainer}>
+        {
+          data.allContentfulAsset.edges.map((edge) => {
+            if (edge.node.title === 'lamb'){
+              if (setHeaderVis){
+                return (
+                  <div className={itemStyles.meatTypeHeader}>
+                    <h1>
+                      Lamb & Veal
+                    </h1>
+                    <div className={itemStyles.meatImgBox}>
+                      <Img 
+                        className='lamb'
+                        key={edge.node.title} 
+                        fluid={edge.node.fluid} 
+                        alt={edge.node.description}
+                      />
+                    </div>
+                  </div>
+                )
+              }
+            }
+            return null
+          })
+        }
+
+        <div className={itemStyles.items}>
+          { 
+            data.allContentfulItem.edges.map((edge) => {
+              if (edge.node.meatType[0] === 'lamb'){
+                if (edge.node.title.toLowerCase().includes(setSearchfield.toLowerCase()) 
+                  || edge.node.meatType[0].includes(setSearchfield.toLowerCase())){
+
+                  return (
+                    <div key={edge.node.slug} className={itemStyles.item}>
+                      <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
+                        <p className={itemStyles.meatType}>
+                          {edge.node.meatType[0].toUpperCase()}
+                        </p>
+                        <div className={itemStyles.imageContainer}>
+                          {/* <Img fluid={edge.node.itemImage.fluid} alt={edge.node.itemImage.description}/> */}
+                        </div>
+                        <div className={itemStyles.itemText}>
+                          <h2>{edge.node.title}</h2>
+                          <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
+                          {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
+                          <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                        </div>
+                      </Link>
+                    </div>
+                  )
+                }
+              }
+              return null
+            })
+          }
+        </div>
+      </div>
+
+
+      {/* //WEINERSSSS */}
+
+      <div id='weiners' className={itemStyles.meatContainer}>
+        {
+          data.allContentfulAsset.edges.map((edge) => {
+            if (edge.node.title === 'weiners'){
+              if (setHeaderVis){
+                return (
+                  <div className={itemStyles.meatTypeHeader}>
+                    <h1>
+                      Weiners & More
+                    </h1>
+                    <div className={itemStyles.meatImgBox}>
+                      <Img 
+                        className='weiners'
+                        key={edge.node.title} 
+                        fluid={edge.node.fluid} 
+                        alt={edge.node.description}
+                      />
+                    </div>
+                  </div>
+                )
+              }
+            }
+            return null
+          })
+        }
+
+        <div className={itemStyles.items}>
+          { 
+            data.allContentfulItem.edges.map((edge) => {
+              if (edge.node.meatType[0] === 'weiners'){
+                if (edge.node.title.toLowerCase().includes(setSearchfield.toLowerCase()) 
+                  || edge.node.meatType[0].includes(setSearchfield.toLowerCase())){
+
+                  return (
+                    <div key={edge.node.slug} className={itemStyles.item}>
+                      <Link to={`/items/${edge.node.slug}`} asModal state={{noScroll: true}}>
+                        <p className={itemStyles.meatType}>
+                          {edge.node.meatType[0].toUpperCase()}
+                        </p>
+                        <div className={itemStyles.imageContainer}>
+                          {/* <Img fluid={edge.node.itemImage.fluid} alt={edge.node.itemImage.description}/> */}
+                        </div>
+                        <div className={itemStyles.itemText}>
+                          <h2>{edge.node.title}</h2>
+                          <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
+                          {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
+                          <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                        </div>
+                      </Link>
+                    </div>
+                  )
+                }
+              }
+              return null
+            })
+          }
+        </div>
+      </div>
+
+
+      {/* //OTHER */}
 
       <div id='other' className={itemStyles.meatContainer}>
         {
@@ -360,7 +748,6 @@ const ItemsPage = () => {
             data.allContentfulItem.edges.map((edge) => {
               if (edge.node.meatType[0] === 'other'){
                 if (edge.node.title.toLowerCase().includes(setSearchfield.toLowerCase()) 
-                  || edge.node.shortDescription.toLowerCase().includes(setSearchfield.toLowerCase()) 
                   || edge.node.meatType[0].includes(setSearchfield.toLowerCase())){
 
                   return (
@@ -370,11 +757,13 @@ const ItemsPage = () => {
                           {edge.node.meatType[0].toUpperCase()}
                         </p>
                         <div className={itemStyles.imageContainer}>
-                          <Img fluid={edge.node.itemImage.fluid} alt={edge.node.itemImage.description}/>
+                          {/* <Img fluid={edge.node.itemImage.fluid} alt={edge.node.itemImage.description}/> */}
                         </div>
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.title}</h2>
-                          <p className={itemStyles.description}>{edge.node.shortDescription}</p>
+                          <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
+
+                          {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
                           <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
                         </div>
                       </Link>

@@ -92,9 +92,9 @@ export default function SideDrawer(props) {
                   </Link>
                 </li>
                 <li>
-                  <Link className='subCat' activeClassName='' to='/items#chicken'>
+                  <Link className='subCat' activeClassName='' to='/items#poultry'>
                     <div>
-                      Chicken
+                      Poultry
                     </div>
                   </Link>
                 </li>
@@ -102,6 +102,13 @@ export default function SideDrawer(props) {
                   <Link className='subCat' activeClassName='' to='/items#seafood'>
                     <div>
                       Seafood
+                    </div>
+                  </Link>
+                </li>
+                <li>
+                  <Link className='subCat' activeClassName='' to='/items#deli'>
+                    <div>
+                      Deli Meats
                     </div>
                   </Link>
                 </li>

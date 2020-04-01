@@ -13,13 +13,13 @@ export const query = graphql`
       title
       meatType
       price
-      fvpPrice
-      sfvpPrice
-      boxPrice
       pricePer
-      description {
-        json
-      }
+      fvpPrice
+      fvpRange
+      sfvpPrice
+      sfvpRange
+      boxPrice
+      boxWeight
       itemImage {
         description
         fluid {
@@ -46,16 +46,16 @@ export default function Items(props) {
 
    // THIS WILL NEED TO CHANGE ACCORDING TO WHAT YOU ACTUALLY GET IN THE FVPs
   let fvpSave = (props.data.contentfulItem.fvpPrice !== null) 
-    ? <p>FVP ${props.data.contentfulItem.fvpPrice} -- SAVE ${(props.data.contentfulItem.fvpPrice % props.data.contentfulItem.price).toFixed(2)}</p>
+    ? <p>FVP ${props.data.contentfulItem.fvpPrice} for {props.data.contentfulItem.fvpRange} -- SAVE ${(props.data.contentfulItem.price - props.data.contentfulItem.fvpPrice).toFixed(2)} per lb.</p>
     : <p></p>
 
 
   let sfvpSave = (props.data.contentfulItem.sfvpPrice !== null) 
-    ? <p>SFVP ${props.data.contentfulItem.sfvpPrice} -- SAVE ${(props.data.contentfulItem.sfvpPrice % props.data.contentfulItem.price).toFixed(2)}</p>
+    ? <p>SFVP ${props.data.contentfulItem.sfvpPrice} for {props.data.contentfulItem.sfvpRange} -- SAVE ${(props.data.contentfulItem.price - props.data.contentfulItem.sfvpPrice).toFixed(2)} per lb.</p>
     : <p></p>
     
   let boxSave = (props.data.contentfulItem.boxPrice !== null) 
-    ? <p>Box ${props.data.contentfulItem.boxPrice} -- SAVE ${(props.data.contentfulItem.boxPrice % props.data.contentfulItem.price).toFixed(2)}</p>
+    ? <p> {props.data.contentfulItem.boxWeight}lb. Box ${props.data.contentfulItem.boxPrice} -- ${(props.data.contentfulItem.boxPrice / props.data.contentfulItem.boxWeight).toFixed(2)} lb.</p>
     : <p></p>
 
 
@@ -84,23 +84,23 @@ export default function Items(props) {
               </p>
               <div className='big-box'>
                 <div className='image-container'>
-                  <Img 
+                  {/* <Img 
                     fluid={props.data.contentfulItem.itemImage.fluid}
                     alt={props.data.contentfulItem.itemImage.description}
-                  />
+                  /> */}
                 </div>
                 <div className='content-text'>
                   <h1>{ props.data.contentfulItem.title }</h1>
-                  <div className='description'>
+                  {/* <div className='description'>
                     {documentToReactComponents(props.data.contentfulItem.description.json)}
-                  </div>
+                  </div> */}
                   <div className='price'>
-                    {fvpSave}
-                    {sfvpSave}
-                    {boxSave}
                     <p>
                       ${props.data.contentfulItem.price} - {props.data.contentfulItem.pricePer}
                     </p>
+                    {fvpSave}
+                    {sfvpSave}
+                    {boxSave}
                   </div>
                 </div>
               </div>
