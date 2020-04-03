@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+// import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { ModalRoutingContext } from 'gatsby-plugin-modal-routing'
 import Head from '../components/Head'
 import '../styles/template.scss'
@@ -46,12 +46,12 @@ export default function Items(props) {
 
    // THIS WILL NEED TO CHANGE ACCORDING TO WHAT YOU ACTUALLY GET IN THE FVPs
   let fvpSave = (props.data.contentfulItem.fvpPrice !== null) 
-    ? <p>FVP ${props.data.contentfulItem.fvpPrice} for {props.data.contentfulItem.fvpRange} -- SAVE ${(props.data.contentfulItem.price - props.data.contentfulItem.fvpPrice).toFixed(2)} per lb.</p>
+    ? <p>FVP ${props.data.contentfulItem.fvpPrice} per lb. for {props.data.contentfulItem.fvpRange} -- SAVE ${(props.data.contentfulItem.price - props.data.contentfulItem.fvpPrice).toFixed(2)} per lb.</p>
     : <p></p>
 
 
   let sfvpSave = (props.data.contentfulItem.sfvpPrice !== null) 
-    ? <p>SFVP ${props.data.contentfulItem.sfvpPrice} for {props.data.contentfulItem.sfvpRange} -- SAVE ${(props.data.contentfulItem.price - props.data.contentfulItem.sfvpPrice).toFixed(2)} per lb.</p>
+    ? <p>SFVP ${props.data.contentfulItem.sfvpPrice} per lb. for {props.data.contentfulItem.sfvpRange} -- SAVE ${(props.data.contentfulItem.price - props.data.contentfulItem.sfvpPrice).toFixed(2)} per lb.</p>
     : <p></p>
     
   let boxSave = (props.data.contentfulItem.boxPrice !== null) 

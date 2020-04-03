@@ -104,7 +104,7 @@ const ItemsPage = () => {
             if (edge.node.title === 'cow-parts'){
               if (setHeaderVis){
                 return (
-                  <div className={itemStyles.meatTypeHeader}>
+                  <div key={edge.node.title} className={itemStyles.meatTypeHeader}>
                     <h1>
                       Beef
                     </h1>
@@ -253,7 +253,7 @@ const ItemsPage = () => {
             if (edge.node.title === 'pig-parts'){
               if (setHeaderVis){
                 return (
-                  <div className={itemStyles.meatTypeHeader}>
+                  <div key={edge.node.title} className={itemStyles.meatTypeHeader}>
                     <h1>
                       Pork
                     </h1>
@@ -411,7 +411,7 @@ const ItemsPage = () => {
             if (edge.node.title === 'chicken'){
               if (setHeaderVis){
                 return (
-                  <div className={itemStyles.meatTypeHeader}>
+                  <div key={edge.node.title} className={itemStyles.meatTypeHeader}>
                     <h1>
                       Poultry
                     </h1>
@@ -475,7 +475,7 @@ const ItemsPage = () => {
             if (edge.node.title === 'crab'){
               if (setHeaderVis){
                 return (
-                  <div className={itemStyles.meatTypeHeader}>
+                  <div key={edge.node.title} className={itemStyles.meatTypeHeader}>
                     <h1>
                       Seafood
                     </h1>
@@ -538,7 +538,7 @@ const ItemsPage = () => {
             if (edge.node.title === 'deli'){
               if (setHeaderVis){
                 return (
-                  <div className={itemStyles.meatTypeHeader}>
+                  <div key={edge.node.title} className={itemStyles.meatTypeHeader}>
                     <h1>
                       Deli Meats - Ready to eat
                     </h1>
@@ -600,7 +600,7 @@ const ItemsPage = () => {
             if (edge.node.title === 'lamb'){
               if (setHeaderVis){
                 return (
-                  <div className={itemStyles.meatTypeHeader}>
+                  <div key={edge.node.title} className={itemStyles.meatTypeHeader}>
                     <h1>
                       Lamb & Veal
                     </h1>
@@ -662,7 +662,7 @@ const ItemsPage = () => {
             if (edge.node.title === 'weiners'){
               if (setHeaderVis){
                 return (
-                  <div className={itemStyles.meatTypeHeader}>
+                  <div key={edge.node.title} className={itemStyles.meatTypeHeader}>
                     <h1>
                       Weiners & More
                     </h1>
@@ -724,7 +724,7 @@ const ItemsPage = () => {
             if (edge.node.title === 'cheese'){
               if (setHeaderVis){
                 return (
-                  <div className={itemStyles.meatTypeHeader}>
+                  <div key={edge.node.title} className={itemStyles.meatTypeHeader}>
                     <h1>
                       Other
                     </h1>

@@ -3,8 +3,11 @@ import './Searchbar.scss'
 
 const SearchBar = ({searchChange}) => {
     return (
+      <div className='searchbar-container'>
         <div className='searchbar'>
-          <p>Use our search bar to find something specific.</p>
+          {/* <p>Use the side bar to navigate through the menu by clicking the icon in the top left.</p>
+          <p>-OR-</p> */}
+          <p>Use our search bar to find something specific or scroll down.</p>
           <div className='search-field'>
             <input 
                 className='searchInput'
@@ -14,6 +17,7 @@ const SearchBar = ({searchChange}) => {
             />
           </div>
         </div>
+      </div>
     );
 }
 

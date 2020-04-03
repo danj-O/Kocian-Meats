@@ -125,12 +125,12 @@ export default function SideDrawer(props) {
         <li>
           <Link className='cat' activeClassName='' to='/deals'>
             <div>
-              Deals *
+              Deals
             </div>
           </Link>
         </li>
 
-        <li className= {` ${path === '/deals' ? 'show': 'hide'}`}>
+        {/* <li className= {` ${path === '/deals' ? 'show': 'hide'}`}>
           <ul className="subCat-grp">
             <li>
               <Link className='subCat' activeClassName='' to='/deals#fvp'>
@@ -147,7 +147,7 @@ export default function SideDrawer(props) {
               </Link>
             </li>
           </ul>
-        </li>
+        </li> */}
 
 
         <li>
