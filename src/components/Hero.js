@@ -40,6 +40,11 @@ export default function Hero(props) {
           return null
         })
       }
+      <div className='open-nav-help'>
+        <p>
+          Click the icon to open sidebar for <br/> easy navigation through our site!
+        </p>
+      </div>
       <div className='hero-text'>
         <h1 className='hero-header'>
           {props.header}

@@ -21,6 +21,12 @@ const ItemsPage = () => {
             slug
             price
             pricePer
+            fvpPrice
+            fvpRange
+            sfvpPrice
+            sfvpRange
+            boxPrice
+            boxWeight
             itemImage {
               description
               file {
@@ -85,14 +91,14 @@ const ItemsPage = () => {
     }
   }
 
-  // console.log(setSearchfield)
+  // console.log(typeof(data.allContentfulItem.edges[0].node.price))
 
   return (
     <div>
       <Head title='Product List'/>
       <Hero header="Products" subHeader="Choose from a wide variety of cuts!" heroImg="item-hero"/>
       <div className='header-box'>
-        <p className='pageSubHeader'>In a hurry? Our best selection is now available for viewing online!  Have a look then call your order in!</p>
+        <p className='pageSubHeader'>In a hurry? Our best selection is now available for viewing online!  Have a look then call your order in! <br/>Try clicking the icon in the top left to easily navigate through our selection!</p>
         <Searchbar searchChange={onSearchChange} />
       </div>
 
@@ -134,14 +140,23 @@ const ItemsPage = () => {
                         <p className={itemStyles.meatType}>
                           {edge.node.meatType[0].toUpperCase()}
                         </p>
-                        <div className={itemStyles.imageContainer}>
-                          {/* <Img fluid={edge.node.itemImage.fluid} alt={edge.node.itemImage.description}/> */}
-                        </div>
+                        {/* <div className={itemStyles.imageContainer}>
+                          <Img fluid={edge.node.itemImage.fluid} alt={edge.node.itemImage.description}/>
+                        </div> */}
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.title}</h2>
-                          <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
-                          {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
-                          <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                          <p className={itemStyles.clickhere}>
+                            Click item to see value pricing!
+                          </p>
+                          <p className={itemStyles.price}>
+                            $
+                            {
+                              typeof(edge.node.price) === 'number' ? `${edge.node.price} - ${edge.node.pricePer}`
+                                : typeof(edge.node.fvpPrice) === 'number' ? `${edge.node.fvpPrice}/lb. - ${edge.node.fvpRange}`
+                                : typeof(edge.node.sfvpPrice) === 'number' ? `${edge.node.sfvpPrice}/lb. - ${edge.node.sfvpRange}`
+                                : `${edge.node.boxPrice} - ${edge.node.boxWeight} lbs.`
+                            } 
+                          </p>
                         </div>
                       </Link>
                     </div>

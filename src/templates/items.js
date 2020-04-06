@@ -43,21 +43,22 @@ export const query = graphql`
 //this is the template for all blog posts
 export default function Items(props) {
 
-
-   // THIS WILL NEED TO CHANGE ACCORDING TO WHAT YOU ACTUALLY GET IN THE FVPs
+  let price = (props.data.contentfulItem.price !== null) 
+    ? <p>${props.data.contentfulItem.price} - {props.data.contentfulItem.pricePer}</p>
+    : <p></p>
+  
   let fvpSave = (props.data.contentfulItem.fvpPrice !== null) 
-    ? <p>FVP ${props.data.contentfulItem.fvpPrice} per lb. for {props.data.contentfulItem.fvpRange} -- SAVE ${(props.data.contentfulItem.price - props.data.contentfulItem.fvpPrice).toFixed(2)} per lb.</p>
+    ? <p>Family Value Pack ${props.data.contentfulItem.fvpPrice} per lb. for {props.data.contentfulItem.fvpRange}</p>
     : <p></p>
 
 
   let sfvpSave = (props.data.contentfulItem.sfvpPrice !== null) 
-    ? <p>SFVP ${props.data.contentfulItem.sfvpPrice} per lb. for {props.data.contentfulItem.sfvpRange} -- SAVE ${(props.data.contentfulItem.price - props.data.contentfulItem.sfvpPrice).toFixed(2)} per lb.</p>
+    ? <p>Super FVP ${props.data.contentfulItem.sfvpPrice} per lb. for {props.data.contentfulItem.sfvpRange}</p>
     : <p></p>
     
   let boxSave = (props.data.contentfulItem.boxPrice !== null) 
-    ? <p> {props.data.contentfulItem.boxWeight}lb. Box ${props.data.contentfulItem.boxPrice} -- ${(props.data.contentfulItem.boxPrice / props.data.contentfulItem.boxWeight).toFixed(2)} lb.</p>
+    ? <p> {props.data.contentfulItem.boxWeight}lb. Box ${props.data.contentfulItem.boxPrice}  (${(props.data.contentfulItem.boxPrice / props.data.contentfulItem.boxWeight).toFixed(2)} lb.)</p>
     : <p></p>
-
 
   return (
     <div>
@@ -83,21 +84,19 @@ export default function Items(props) {
                 {props.data.contentfulItem.meatType}
               </p>
               <div className='big-box'>
-                <div className='image-container'>
-                  {/* <Img 
+                {/* <div className='image-container'>
+                  <Img 
                     fluid={props.data.contentfulItem.itemImage.fluid}
                     alt={props.data.contentfulItem.itemImage.description}
-                  /> */}
-                </div>
+                  />
+                </div> */}
                 <div className='content-text'>
                   <h1>{ props.data.contentfulItem.title }</h1>
                   {/* <div className='description'>
                     {documentToReactComponents(props.data.contentfulItem.description.json)}
                   </div> */}
                   <div className='price'>
-                    <p>
-                      ${props.data.contentfulItem.price} - {props.data.contentfulItem.pricePer}
-                    </p>
+                    {price}
                     {fvpSave}
                     {sfvpSave}
                     {boxSave}

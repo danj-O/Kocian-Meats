@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, } from 'react'
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Img from 'gatsby-image'
 import headerStyles from './header.module.scss'
@@ -8,35 +8,47 @@ import DrawerButton from '../components/SideDrawer/DrawerButton'
 
 export default function Header(props) {
   const data = useStaticQuery(graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allContentfulAsset {
-      edges {
-        node {
-          description
+    query {
+      site {
+        siteMetadata {
           title
-          fixed {
-            aspectRatio
-            src
-            srcSet
-            height
-            width
-          }
-          fluid {
-            aspectRatio
-            sizes
-            src
-            srcSet
+        }
+      }
+      allContentfulAsset {
+        edges {
+          node {
+            description
+            title
+            fixed {
+              aspectRatio
+              src
+              srcSet
+              height
+              width
+            }
+            fluid {
+              aspectRatio
+              sizes
+              src
+              srcSet
+            }
           }
         }
       }
     }
-  }
   `)
+
+  // const [setDropDown, setDropDownState] = useState(false)
+
+  // const handleMouseOver = () => {
+  //   setDropDownState(true)
+  //   console.log('yep', setDropDown)
+  // }
+
+  // const handleMouseLeave = () => {
+  //   setDropDownState(false)
+  //   console.log(setDropDown)
+  // }
 
   return (
     <header className={headerStyles.header}>
@@ -63,7 +75,6 @@ export default function Header(props) {
         <div className={headerStyles.navItems}>
           <ul className={headerStyles.navList}>
             <li>
-              
               <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to='/'>Home</Link>
             </li>
             <li>
