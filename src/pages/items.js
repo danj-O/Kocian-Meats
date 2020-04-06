@@ -186,7 +186,15 @@ const ItemsPage = () => {
                           <h2>{edge.node.title}</h2>
                           <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
                           {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
-                          <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                          <p className={itemStyles.price}>
+                            $
+                            {
+                              typeof(edge.node.price) === 'number' ? `${edge.node.price} - ${edge.node.pricePer}`
+                                : typeof(edge.node.fvpPrice) === 'number' ? `${edge.node.fvpPrice}/lb. - ${edge.node.fvpRange}`
+                                : typeof(edge.node.sfvpPrice) === 'number' ? `${edge.node.sfvpPrice}/lb. - ${edge.node.sfvpRange}`
+                                : `${edge.node.boxPrice} - ${edge.node.boxWeight} lbs.`
+                            } 
+                          </p>
                         </div>
                       </Link>
                     </div>
@@ -216,7 +224,15 @@ const ItemsPage = () => {
                           <h2>{edge.node.title}</h2>
                           <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
                           {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
-                          <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                          <p className={itemStyles.price}>
+                            $
+                            {
+                              typeof(edge.node.price) === 'number' ? `${edge.node.price} - ${edge.node.pricePer}`
+                                : typeof(edge.node.fvpPrice) === 'number' ? `${edge.node.fvpPrice}/lb. - ${edge.node.fvpRange}`
+                                : typeof(edge.node.sfvpPrice) === 'number' ? `${edge.node.sfvpPrice}/lb. - ${edge.node.sfvpRange}`
+                                : `${edge.node.boxPrice} - ${edge.node.boxWeight} lbs.`
+                            } 
+                          </p>
                         </div>
                       </Link>
                     </div>
@@ -246,7 +262,15 @@ const ItemsPage = () => {
                           <h2>{edge.node.title}</h2>
                           <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
                           {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
-                          <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                          <p className={itemStyles.price}>
+                            $
+                            {
+                              typeof(edge.node.price) === 'number' ? `${edge.node.price} - ${edge.node.pricePer}`
+                                : typeof(edge.node.fvpPrice) === 'number' ? `${edge.node.fvpPrice}/lb. - ${edge.node.fvpRange}`
+                                : typeof(edge.node.sfvpPrice) === 'number' ? `${edge.node.sfvpPrice}/lb. - ${edge.node.sfvpRange}`
+                                : `${edge.node.boxPrice} - ${edge.node.boxWeight} lbs.`
+                            } 
+                          </p>
                         </div>
                       </Link>
                     </div>
@@ -307,7 +331,15 @@ const ItemsPage = () => {
                           <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
 
                           {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
-                          <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                          <p className={itemStyles.price}>
+                            $
+                            {
+                              typeof(edge.node.price) === 'number' ? `${edge.node.price} - ${edge.node.pricePer}`
+                                : typeof(edge.node.fvpPrice) === 'number' ? `${edge.node.fvpPrice}/lb. - ${edge.node.fvpRange}`
+                                : typeof(edge.node.sfvpPrice) === 'number' ? `${edge.node.sfvpPrice}/lb. - ${edge.node.sfvpRange}`
+                                : `${edge.node.boxPrice} - ${edge.node.boxWeight} lbs.`
+                            } 
+                          </p>
                         </div>
                       </Link>
                     </div>
@@ -339,7 +371,15 @@ const ItemsPage = () => {
                           <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
 
                           {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
-                          <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                          <p className={itemStyles.price}>
+                            $
+                            {
+                              typeof(edge.node.price) === 'number' ? `${edge.node.price} - ${edge.node.pricePer}`
+                                : typeof(edge.node.fvpPrice) === 'number' ? `${edge.node.fvpPrice}/lb. - ${edge.node.fvpRange}`
+                                : typeof(edge.node.sfvpPrice) === 'number' ? `${edge.node.sfvpPrice}/lb. - ${edge.node.sfvpRange}`
+                                : `${edge.node.boxPrice} - ${edge.node.boxWeight} lbs.`
+                            } 
+                          </p>
                         </div>
                       </Link>
                     </div>
@@ -371,7 +411,15 @@ const ItemsPage = () => {
                           <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
 
                           {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
-                          <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                          <p className={itemStyles.price}>
+                            $
+                            {
+                              typeof(edge.node.price) === 'number' ? `${edge.node.price} - ${edge.node.pricePer}`
+                                : typeof(edge.node.fvpPrice) === 'number' ? `${edge.node.fvpPrice}/lb. - ${edge.node.fvpRange}`
+                                : typeof(edge.node.sfvpPrice) === 'number' ? `${edge.node.sfvpPrice}/lb. - ${edge.node.sfvpRange}`
+                                : `${edge.node.boxPrice} - ${edge.node.boxWeight} lbs.`
+                            } 
+                          </p>
                         </div>
                       </Link>
                     </div>
@@ -403,7 +451,15 @@ const ItemsPage = () => {
                           <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
 
                           {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
-                          <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                          <p className={itemStyles.price}>
+                            $
+                            {
+                              typeof(edge.node.price) === 'number' ? `${edge.node.price} - ${edge.node.pricePer}`
+                                : typeof(edge.node.fvpPrice) === 'number' ? `${edge.node.fvpPrice}/lb. - ${edge.node.fvpRange}`
+                                : typeof(edge.node.sfvpPrice) === 'number' ? `${edge.node.sfvpPrice}/lb. - ${edge.node.sfvpRange}`
+                                : `${edge.node.boxPrice} - ${edge.node.boxWeight} lbs.`
+                            } 
+                          </p>
                         </div>
                       </Link>
                     </div>
@@ -467,7 +523,15 @@ const ItemsPage = () => {
                           <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
 
                           {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
-                          <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                          <p className={itemStyles.price}>
+                            $
+                            {
+                              typeof(edge.node.price) === 'number' ? `${edge.node.price} - ${edge.node.pricePer}`
+                                : typeof(edge.node.fvpPrice) === 'number' ? `${edge.node.fvpPrice}/lb. - ${edge.node.fvpRange}`
+                                : typeof(edge.node.sfvpPrice) === 'number' ? `${edge.node.sfvpPrice}/lb. - ${edge.node.sfvpRange}`
+                                : `${edge.node.boxPrice} - ${edge.node.boxWeight} lbs.`
+                            } 
+                          </p>
                         </div>
                       </Link>
                     </div>
@@ -530,7 +594,15 @@ const ItemsPage = () => {
                           <h2>{edge.node.title}</h2>
                           <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
                           {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
-                          <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                          <p className={itemStyles.price}>
+                            $
+                            {
+                              typeof(edge.node.price) === 'number' ? `${edge.node.price} - ${edge.node.pricePer}`
+                                : typeof(edge.node.fvpPrice) === 'number' ? `${edge.node.fvpPrice}/lb. - ${edge.node.fvpRange}`
+                                : typeof(edge.node.sfvpPrice) === 'number' ? `${edge.node.sfvpPrice}/lb. - ${edge.node.sfvpRange}`
+                                : `${edge.node.boxPrice} - ${edge.node.boxWeight} lbs.`
+                            } 
+                          </p>
                         </div>
                       </Link>
                     </div>
@@ -593,7 +665,15 @@ const ItemsPage = () => {
                           <h2>{edge.node.title}</h2>
                           <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
                           {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
-                          <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                          <p className={itemStyles.price}>
+                            $
+                            {
+                              typeof(edge.node.price) === 'number' ? `${edge.node.price} - ${edge.node.pricePer}`
+                                : typeof(edge.node.fvpPrice) === 'number' ? `${edge.node.fvpPrice}/lb. - ${edge.node.fvpRange}`
+                                : typeof(edge.node.sfvpPrice) === 'number' ? `${edge.node.sfvpPrice}/lb. - ${edge.node.sfvpRange}`
+                                : `${edge.node.boxPrice} - ${edge.node.boxWeight} lbs.`
+                            } 
+                          </p>
                         </div>
                       </Link>
                     </div>
@@ -655,7 +735,15 @@ const ItemsPage = () => {
                           <h2>{edge.node.title}</h2>
                           <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
                           {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
-                          <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                          <p className={itemStyles.price}>
+                            $
+                            {
+                              typeof(edge.node.price) === 'number' ? `${edge.node.price} - ${edge.node.pricePer}`
+                                : typeof(edge.node.fvpPrice) === 'number' ? `${edge.node.fvpPrice}/lb. - ${edge.node.fvpRange}`
+                                : typeof(edge.node.sfvpPrice) === 'number' ? `${edge.node.sfvpPrice}/lb. - ${edge.node.sfvpRange}`
+                                : `${edge.node.boxPrice} - ${edge.node.boxWeight} lbs.`
+                            } 
+                          </p>
                         </div>
                       </Link>
                     </div>
@@ -717,7 +805,15 @@ const ItemsPage = () => {
                           <h2>{edge.node.title}</h2>
                           <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
                           {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
-                          <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                          <p className={itemStyles.price}>
+                            $
+                            {
+                              typeof(edge.node.price) === 'number' ? `${edge.node.price} - ${edge.node.pricePer}`
+                                : typeof(edge.node.fvpPrice) === 'number' ? `${edge.node.fvpPrice}/lb. - ${edge.node.fvpRange}`
+                                : typeof(edge.node.sfvpPrice) === 'number' ? `${edge.node.sfvpPrice}/lb. - ${edge.node.sfvpRange}`
+                                : `${edge.node.boxPrice} - ${edge.node.boxWeight} lbs.`
+                            } 
+                          </p>
                         </div>
                       </Link>
                     </div>
@@ -779,7 +875,15 @@ const ItemsPage = () => {
                           <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
 
                           {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
-                          <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                          <p className={itemStyles.price}>
+                            $
+                            {
+                              typeof(edge.node.price) === 'number' ? `${edge.node.price} - ${edge.node.pricePer}`
+                                : typeof(edge.node.fvpPrice) === 'number' ? `${edge.node.fvpPrice}/lb. - ${edge.node.fvpRange}`
+                                : typeof(edge.node.sfvpPrice) === 'number' ? `${edge.node.sfvpPrice}/lb. - ${edge.node.sfvpRange}`
+                                : `${edge.node.boxPrice} - ${edge.node.boxWeight} lbs.`
+                            } 
+                          </p>
                         </div>
                       </Link>
                     </div>
