@@ -12,7 +12,7 @@ export const query = graphql`
       name
       price
       pricePer
-      dealType
+      priceRange
       shortDescription
       description {
         json
@@ -53,9 +53,9 @@ export default function Projects(props) {
               </header>
             )}
             <div className='content-container'>
-              <p className='meatType'>
+              {/* <p className='meatType'>
                 {props.data.contentfulDeals.dealType}
-              </p>
+              </p> */}
               <div className='big-box'>
                 <div className='image-container'>
                   <img src={props.data.contentfulDeals.dealsImage.file.url} alt={props.data.contentfulDeals.dealsImage.description}/>

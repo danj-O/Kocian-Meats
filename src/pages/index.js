@@ -23,6 +23,7 @@ const IndexPage = () =>{
             shortDescription
             price
             pricePer
+            priceRange
             dealsImage {
               description
               file {
@@ -61,6 +62,7 @@ const IndexPage = () =>{
                       <h2>{edge.node.name}</h2>
                       <p className={itemStyles.description}>{edge.node.shortDescription}</p>
                       <p className={itemStyles.price}>${edge.node.price} - {edge.node.pricePer}</p>
+                      <p>{edge.node.priceRange}</p>
                     </div>
                   </Link>
                 </div>

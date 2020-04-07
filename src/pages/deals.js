@@ -21,7 +21,6 @@ const Deals = () =>{
             shortDescription
             price
             pricePer
-            dealType
             dealsImage {
               description
               file {
@@ -59,13 +58,12 @@ const Deals = () =>{
           <div className={itemStyles.items}>
             { 
               data.allContentfulDeals.edges.map((edge) => {
-                if (edge.node.dealType[0] === 'FVP'){
                   return (
                     <div key={edge.node.slug} className={itemStyles.item}>
                       <Link to={`/deals/${edge.node.slug}`} asModal state={{noScroll: true}}>
-                        <p className={itemStyles.meatType}>
+                        {/* <p className={itemStyles.meatType}>
                           {edge.node.dealType}
-                        </p>
+                        </p> */}
                         <div className={itemStyles.imageContainer}>
                           <img src={edge.node.dealsImage.file.url} alt={edge.node.dealsImage.description}/>
                         </div>
@@ -77,40 +75,6 @@ const Deals = () =>{
                       </Link>
                     </div>
                   )
-                }
-              return null
-              })
-            }
-          </div>
-        </div>
-
-        <div className={itemStyles.meatContainer}>
-          <h1 id='sfvp' className={itemStyles.meatTypeHeader}>
-            Super Family Value Packs
-          </h1>
-          <div className={itemStyles.items}>
-            { 
-              data.allContentfulDeals.edges.map((edge) => {
-                if (edge.node.dealType[0] === 'SFVP'){
-                  return (
-                    <div key={edge.node.slug} className={itemStyles.item}>
-                      <Link to={`/deals/${edge.node.slug}`} asModal state={{noScroll: true}}>
-                        <p className={itemStyles.meatType}>
-                          {edge.node.dealType}
-                        </p>
-                        <div className={itemStyles.imageContainer}>
-                          <img src={edge.node.dealsImage.file.url} alt={edge.node.dealsImage.description}/>
-                        </div>
-                        <div className={itemStyles.itemText}>
-                          <h2>{edge.node.name}</h2>
-                          <p className={itemStyles.description}>{edge.node.shortDescription}</p>
-                          <p className={itemStyles.price}>${edge.node.price} / {edge.node.pricePer}</p>
-                        </div>
-                      </Link>
-                    </div>
-                  )
-                }
-              return null
               })
             }
           </div>
