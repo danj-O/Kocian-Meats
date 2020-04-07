@@ -97,13 +97,13 @@ export default function Footer() {
               </div>
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link className='cat' activeClassName='' to='/blog'>
               <div>
                 Blog
               </div>
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link className='cat' activeClassName='' to='/contact'>
               <div>
