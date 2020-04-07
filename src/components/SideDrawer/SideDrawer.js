@@ -132,7 +132,7 @@ export default function SideDrawer(props) {
         <li>
           <Link className='cat' activeClassName='' to='/deals'>
             <div>
-              Deals
+              Specials
             </div>
           </Link>
         </li>
@@ -164,13 +164,13 @@ export default function SideDrawer(props) {
             </div>
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link className='cat' activeClassName='' to='/blog'>
             <div>
               Blog
             </div>
           </Link>
-        </li>
+        </li> */}
         <li>
           <Link className='cat' activeClassName='' to='/contact'>
             <div>

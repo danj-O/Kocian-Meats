@@ -81,14 +81,14 @@ export default function Header(props) {
               <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to='/items'>Products</Link>
             </li>
             <li>
-              <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to='/deals'> Deals </Link>
+              <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to='/deals'> Specials </Link>
             </li>
             <li>
               <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to='/about'>About</Link>
             </li>
-            <li>
+            {/* <li>
               <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to='/blog'>Blog</Link>
-            </li>
+            </li> */}
             <li>
               <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to='/contact'>Contact</Link>
             </li>

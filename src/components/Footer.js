@@ -42,11 +42,11 @@ export default function Footer() {
                 <FontAwesomeIcon icon={faFacebook} />
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href="https://www.facebook.com/kocianmeats/" target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={faTwitter} />
               </a>
-            </li>
+            </li> */}
           </ul>
       </div>
       <div className='footer-box'>

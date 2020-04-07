@@ -7,7 +7,7 @@ const SearchBar = ({searchChange}) => {
         <div className='searchbar'>
           {/* <p>Use the side bar to navigate through the menu by clicking the icon in the top left.</p>
           <p>-OR-</p> */}
-          <p>Use our search bar to find something specific or scroll down.</p>
+          <p>Use our search bar, side drawer or simply scroll down.</p>
           <div className='search-field'>
             <input 
                 className='searchInput'

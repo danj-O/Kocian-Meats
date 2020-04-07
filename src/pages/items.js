@@ -98,7 +98,7 @@ const ItemsPage = () => {
       <Head title='Product List'/>
       <Hero header="Products" subHeader="Choose from a wide variety of cuts!" heroImg="item-hero"/>
       <div className='header-box'>
-        <p className='pageSubHeader'>In a hurry? Our best selection is now available for viewing online!  Have a look then call your order in! <br/>Try clicking the icon in the top left to easily navigate through our selection!</p>
+        <p className='pageSubHeader'>In a hurry? Our best selection is now available for viewing online!  Have a look then call your order in!</p>
         <Searchbar searchChange={onSearchChange} />
       </div>
 
@@ -873,8 +873,6 @@ const ItemsPage = () => {
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.title}</h2>
                           <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
-
-                          {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
                           <p className={itemStyles.price}>
                             $
                             {
