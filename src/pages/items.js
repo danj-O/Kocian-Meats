@@ -751,7 +751,7 @@ const ItemsPage = () => {
       <div id='lamb' className={itemStyles.meatContainer}>
         {
           data.allContentfulAsset.edges.map((edge) => {
-            if (edge.node.title === 'lamb'){
+            if (edge.node.title === 'lamb-hero'){
               if (setHeaderVis){
                 return (
                   <div key={edge.node.title} className={itemStyles.meatTypeHeader}>
@@ -824,19 +824,19 @@ const ItemsPage = () => {
 
       {/* //WEINERSSSS */}
 
-      <div id='weiners' className={itemStyles.meatContainer}>
+      <div id='wieners' className={itemStyles.meatContainer}>
         {
           data.allContentfulAsset.edges.map((edge) => {
-            if (edge.node.title === 'weiners'){
+            if (edge.node.title === 'wieners-hero'){
               if (setHeaderVis){
                 return (
                   <div key={edge.node.title} className={itemStyles.meatTypeHeader}>
                     <h1>
-                      Weiners & More
+                      Wieners & More
                     </h1>
                     <div className={itemStyles.meatImgBox}>
                       <Img 
-                        className='weiners'
+                        className='wieners'
                         key={edge.node.title} 
                         fluid={edge.node.fluid} 
                         alt={edge.node.description}
