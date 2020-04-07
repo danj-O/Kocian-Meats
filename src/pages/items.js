@@ -146,7 +146,11 @@ const ItemsPage = () => {
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.title}</h2>
                           <p className={itemStyles.clickhere}>
-                            Click item to see value pricing!
+                            {
+                              edge.node.fvpPrice !== null || 
+                              edge.node.sfvpPrice !== null || 
+                              edge.node.boxPrice !== null ? "Click item to see value pricing!" : null
+                            }
                           </p>
                           <p className={itemStyles.price}>
                             $
@@ -184,7 +188,13 @@ const ItemsPage = () => {
                         </div>
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.title}</h2>
-                          <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
+                          <p className={itemStyles.clickhere}>
+                            {
+                              edge.node.fvpPrice !== null || 
+                              edge.node.sfvpPrice !== null || 
+                              edge.node.boxPrice !== null ? "Click item to see value pricing!" : null
+                            }
+                          </p>
                           {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
                           <p className={itemStyles.price}>
                             $
@@ -222,7 +232,13 @@ const ItemsPage = () => {
                         </div>
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.title}</h2>
-                          <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
+                          <p className={itemStyles.clickhere}>
+                            {
+                              edge.node.fvpPrice !== null || 
+                              edge.node.sfvpPrice !== null || 
+                              edge.node.boxPrice !== null ? "Click item to see value pricing!" : null
+                            }
+                          </p>
                           {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
                           <p className={itemStyles.price}>
                             $
@@ -260,7 +276,13 @@ const ItemsPage = () => {
                         </div>
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.title}</h2>
-                          <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
+                          <p className={itemStyles.clickhere}>
+                            {
+                              edge.node.fvpPrice !== null || 
+                              edge.node.sfvpPrice !== null || 
+                              edge.node.boxPrice !== null ? "Click item to see value pricing!" : null
+                            }
+                          </p>
                           {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
                           <p className={itemStyles.price}>
                             $
@@ -328,8 +350,13 @@ const ItemsPage = () => {
                         </div>
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.title}</h2>
-                          <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
-
+                          <p className={itemStyles.clickhere}>
+                            {
+                              edge.node.fvpPrice !== null || 
+                              edge.node.sfvpPrice !== null || 
+                              edge.node.boxPrice !== null ? "Click item to see value pricing!" : null
+                            }
+                          </p>
                           {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
                           <p className={itemStyles.price}>
                             $
@@ -368,8 +395,13 @@ const ItemsPage = () => {
                         </div>
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.title}</h2>
-                          <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
-
+                          <p className={itemStyles.clickhere}>
+                            {
+                              edge.node.fvpPrice !== null || 
+                              edge.node.sfvpPrice !== null || 
+                              edge.node.boxPrice !== null ? "Click item to see value pricing!" : null
+                            }
+                          </p>
                           {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
                           <p className={itemStyles.price}>
                             $
@@ -408,8 +440,13 @@ const ItemsPage = () => {
                         </div>
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.title}</h2>
-                          <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
-
+                          <p className={itemStyles.clickhere}>
+                            {
+                              edge.node.fvpPrice !== null || 
+                              edge.node.sfvpPrice !== null || 
+                              edge.node.boxPrice !== null ? "Click item to see value pricing!" : null
+                            }
+                          </p>
                           {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
                           <p className={itemStyles.price}>
                             $
@@ -448,8 +485,13 @@ const ItemsPage = () => {
                         </div>
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.title}</h2>
-                          <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
-
+                          <p className={itemStyles.clickhere}>
+                            {
+                              edge.node.fvpPrice !== null || 
+                              edge.node.sfvpPrice !== null || 
+                              edge.node.boxPrice !== null ? "Click item to see value pricing!" : null
+                            }
+                          </p>
                           {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
                           <p className={itemStyles.price}>
                             $
@@ -520,8 +562,13 @@ const ItemsPage = () => {
                         </div>
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.title}</h2>
-                          <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
-
+                          <p className={itemStyles.clickhere}>
+                            {
+                              edge.node.fvpPrice !== null || 
+                              edge.node.sfvpPrice !== null || 
+                              edge.node.boxPrice !== null ? "Click item to see value pricing!" : null
+                            }
+                          </p>
                           {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
                           <p className={itemStyles.price}>
                             $
@@ -592,7 +639,13 @@ const ItemsPage = () => {
                         </div>
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.title}</h2>
-                          <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
+                          <p className={itemStyles.clickhere}>
+                            {
+                              edge.node.fvpPrice !== null || 
+                              edge.node.sfvpPrice !== null || 
+                              edge.node.boxPrice !== null ? "Click item to see value pricing!" : null
+                            }
+                          </p>
                           {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
                           <p className={itemStyles.price}>
                             $
@@ -663,7 +716,13 @@ const ItemsPage = () => {
                         </div>
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.title}</h2>
-                          <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
+                          <p className={itemStyles.clickhere}>
+                            {
+                              edge.node.fvpPrice !== null || 
+                              edge.node.sfvpPrice !== null || 
+                              edge.node.boxPrice !== null ? "Click item to see value pricing!" : null
+                            }
+                          </p>
                           {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
                           <p className={itemStyles.price}>
                             $
@@ -733,7 +792,13 @@ const ItemsPage = () => {
                         </div>
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.title}</h2>
-                          <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
+                          <p className={itemStyles.clickhere}>
+                            {
+                              edge.node.fvpPrice !== null || 
+                              edge.node.sfvpPrice !== null || 
+                              edge.node.boxPrice !== null ? "Click item to see value pricing!" : null
+                            }
+                          </p>
                           {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
                           <p className={itemStyles.price}>
                             $
@@ -803,7 +868,13 @@ const ItemsPage = () => {
                         </div>
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.title}</h2>
-                          <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
+                          <p className={itemStyles.clickhere}>
+                            {
+                              edge.node.fvpPrice !== null || 
+                              edge.node.sfvpPrice !== null || 
+                              edge.node.boxPrice !== null ? "Click item to see value pricing!" : null
+                            }
+                          </p>
                           {/* <p className={itemStyles.description}>{edge.node.shortDescription}</p> */}
                           <p className={itemStyles.price}>
                             $
@@ -872,7 +943,13 @@ const ItemsPage = () => {
                         </div>
                         <div className={itemStyles.itemText}>
                           <h2>{edge.node.title}</h2>
-                          <p className={itemStyles.clickhere}>Click item to see value pricing!</p>
+                          <p className={itemStyles.clickhere}>
+                            {
+                              edge.node.fvpPrice !== null || 
+                              edge.node.sfvpPrice !== null || 
+                              edge.node.boxPrice !== null ? "Click item to see value pricing!" : null
+                            }
+                          </p>
                           <p className={itemStyles.price}>
                             $
                             {
