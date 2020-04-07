@@ -47,3 +47,11 @@
     }
   }
 }
+
+@media (max-width:500px){
+  .hero-container {
+    .open-nav-help {
+      top: 60px;
+    }
+  }
+}

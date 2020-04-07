@@ -113,6 +113,13 @@ export default function SideDrawer(props) {
                   </Link>
                 </li>
                 <li>
+                  <Link className='subCat' activeClassName='' to='/items#weiners'>
+                    <div>
+                      Weiners
+                    </div>
+                  </Link>
+                </li>
+                <li>
                   <Link className='subCat' activeClassName='' to='/items#lamb'>
                     <div>
                       Lamb

@@ -99,12 +99,12 @@
       color: #777777;
       font-size: .7em;
     }
-    // .description {
-    //   margin: 10px 0px;
-    //   color: #777777;
-    //   font-size: .8rem;
-    //   // font-style: italic;
-    // }
+    .description {
+      margin: 10px 0px;
+      color: #777777;
+      font-size: .8rem;
+      // font-style: italic;
+    }
     .price {
       text-align: right;
       padding: 0;
@@ -141,6 +141,9 @@
       }
       .clickhere {
         font-size: .6em;
+      }
+      .description {
+        font-size: .7em;
       }
     }
   }
