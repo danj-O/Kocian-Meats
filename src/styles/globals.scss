@@ -23,6 +23,9 @@ $primary: green;
 }
 
 @media (max-width:500px){
+  .header-box {
+    margin: 20px 0px;
+  }
   .pageSubHeader{
     font-size: 1em;
   }
