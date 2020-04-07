@@ -21,3 +21,9 @@ $primary: green;
   font-size: 1.3em;
   line-height: 1.4;
 }
+
+@media (max-width:500px){
+  .pageSubHeader{
+    font-size: 1em;
+  }
+}

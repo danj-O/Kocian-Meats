@@ -52,7 +52,7 @@
   box-sizing: border-box;
 }
 .item {
-  margin: 1em 0;
+  // margin: 1em 0;
   width: 300px;
   // min-width: 300px;
   // max-width: 350px;
@@ -146,8 +146,19 @@
   }
 }
 
-
-
+@media (max-width:400px){
+  .item {
+    width: 180px;
+    .itemText {
+      h2 {
+        font-size: 1em;
+      }
+      .clickhere {
+        font-size: .6em;
+      }
+    }
+  }
+}
 
 
 
