@@ -1,5 +1,4 @@
 .hero-container {
-  // position: absolute;
   width: 100vw;
   height: auto;
   z-index: -1;
@@ -50,6 +49,7 @@
 
 @media (max-width:500px){
   .hero-container {
+    margin-top: -40px;
     .open-nav-help {
       top: 60px;
     }
