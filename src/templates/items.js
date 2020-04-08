@@ -48,16 +48,16 @@ export default function Items(props) {
     : <p></p>
   
   let fvpSave = (props.data.contentfulItem.fvpPrice !== null) 
-    ? <p>Family Value Pack ${props.data.contentfulItem.fvpPrice} per lb. for {props.data.contentfulItem.fvpRange}</p>
+    ? <p>Family Value Pack ${props.data.contentfulItem.fvpPrice}/lb. ({props.data.contentfulItem.fvpRange})</p>
     : <p></p>
 
 
   let sfvpSave = (props.data.contentfulItem.sfvpPrice !== null) 
-    ? <p>Super FVP ${props.data.contentfulItem.sfvpPrice} per lb. for {props.data.contentfulItem.sfvpRange}</p>
+    ? <p>Super FVP ${props.data.contentfulItem.sfvpPrice}/lb. ({props.data.contentfulItem.sfvpRange})</p>
     : <p></p>
     
   let boxSave = (props.data.contentfulItem.boxPrice !== null) 
-    ? <p> {props.data.contentfulItem.boxWeight}lb. Box ${props.data.contentfulItem.boxPrice}  (${(props.data.contentfulItem.boxPrice / props.data.contentfulItem.boxWeight).toFixed(2)} lb.)</p>
+    ? <p> {props.data.contentfulItem.boxWeight} lb. Box ${props.data.contentfulItem.boxPrice}  (${(props.data.contentfulItem.boxPrice / props.data.contentfulItem.boxWeight).toFixed(2)} lb.)</p>
     : <p></p>
 
   return (

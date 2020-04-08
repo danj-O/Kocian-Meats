@@ -117,6 +117,7 @@ export default function Footer() {
         </div>
       </div>
       <p className='created-by'>Kocian Meats |  © 2020 Site by {data.site.siteMetadata.author}</p>
+      <br/>
     </footer>
   )
 }

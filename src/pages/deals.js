@@ -21,6 +21,7 @@ const Deals = () =>{
             shortDescription
             price
             pricePer
+            priceRange
             dealsImage {
               description
               file {
@@ -52,9 +53,6 @@ const Deals = () =>{
 
 
         <div className={itemStyles.meatContainer}>
-          <h1 id='fvp' className={itemStyles.meatTypeHeader}>
-            Family Value Packs
-          </h1>
           <div className={itemStyles.items}>
             { 
               data.allContentfulDeals.edges.map((edge) => {
@@ -71,6 +69,7 @@ const Deals = () =>{
                           <h2>{edge.node.name}</h2>
                           <p className={itemStyles.description}>{edge.node.shortDescription}</p>
                           <p className={itemStyles.price}>${edge.node.price} / {edge.node.pricePer}</p>
+                          <p className={itemStyles.price}>{edge.node.priceRange}</p>
                         </div>
                       </Link>
                     </div>

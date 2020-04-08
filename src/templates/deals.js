@@ -68,6 +68,7 @@ export default function Projects(props) {
                   <p className='price'>
                     Just ${props.data.contentfulDeals.price} / {props.data.contentfulDeals.pricePer}
                   </p>
+                  <p className='price-range'>{props.data.contentfulDeals.priceRange}</p>
                 </div>
               </div>
             </div>
