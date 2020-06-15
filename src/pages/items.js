@@ -12,7 +12,7 @@ export default function Items(props) {
   return (
     <div className='items-container'>
       <Head title="Items"/>
-      {/* <Hero header="Welcome To Kocian Meats" subHeader='Since 1922' heroImg='item-hero'/> */}
+      <Hero header="Welcome To Kocian Meats" subHeader='Since 1922' heroImg='item-hero'/>
       <div className='section-links'>
         <div className='section-links-header'>Sections</div>
         <ul>
