@@ -86,7 +86,7 @@ export default function Footer() {
           <li>
             <Link className='cat' activeClassName='' to='/deals'>
               <div>
-                Deals
+                Specials
               </div>
             </Link>
           </li>

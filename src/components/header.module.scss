@@ -39,13 +39,17 @@
   padding: 0 1rem;
 }
 .navItems {
-
+  // position: relative;
 }
 .navList {
   display: flex;
   list-style: none;
   margin: 0;
   padding-left: 10vw;
+
+  li {
+    position: relative;
+  }
 }
 .navItem {
   text-decoration: none;
@@ -81,3 +85,7 @@
     width: 50vw;
   }
 }
+
+// .dropdown {
+//   position: absolute;
+// }

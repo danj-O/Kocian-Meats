@@ -74,8 +74,7 @@ export default function SideDrawer(props) {
           </Link>
         </li>
 
-            <li 
-              className= {``}>
+            <li className= {``}>
               <ul className="subCat-grp">
                 <li>
                   <Link className='subCat' activeClassName='' to='/items#beef'>

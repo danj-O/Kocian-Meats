@@ -3,6 +3,7 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 import Img from 'gatsby-image'
 import headerStyles from './header.module.scss'
 import DrawerButton from '../components/SideDrawer/DrawerButton'
+import DropdownMenu from './dropdown-menu/DropdownMenu'
 
 
 
@@ -38,7 +39,7 @@ export default function Header(props) {
     }
   `)
 
-  // const [setDropDown, setDropDownState] = useState(false)
+  const [isShown, setIsShown] = useState(false)
 
   // const handleMouseOver = () => {
   //   setDropDownState(true)
@@ -77,8 +78,25 @@ export default function Header(props) {
             <li>
               <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to='/'>Home</Link>
             </li>
-            <li>
-              <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to='/items'>Products</Link>
+            <li 
+              onMouseEnter={()=> setIsShown(true)} 
+              onMouseLeave={() => setIsShown(false)}
+            >
+              <Link 
+                className={headerStyles.navItem} 
+                activeClassName={headerStyles.activeNavItem} 
+                to='/items' 
+                
+              >
+                Products
+              </Link>
+              <div className={headerStyles.dropdown}>
+                {
+                  isShown 
+                  ? <DropdownMenu /> 
+                  : null
+                }
+              </div>
             </li>
             <li>
               <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to='/deals'> Specials </Link>

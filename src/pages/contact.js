@@ -3,6 +3,7 @@ import {GoogleMap, withScriptjs, withGoogleMap, Marker} from 'react-google-maps'
 import Head from '../components/Head'
 import './contact.scss'
 import '../styles/globals.scss'
+
 function Map (){
   return (
     <GoogleMap defaultZoom={15} defaultCenter={{lat: 41.516795, lng: -81.663129}}>
